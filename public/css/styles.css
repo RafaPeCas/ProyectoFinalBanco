@@ -1,3 +1,115 @@
+.index {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #014495;
+}
+
+.inicio {
+  color: white;
+  font-size: 2em;
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 5px;
+  margin-top: 15vh;
+}
+
+.inicio img {
+  width: 30%;
+  margin: 20px;
+  -webkit-animation: flotar infinite 3s linear;
+          animation: flotar infinite 3s linear;
+}
+
+@-webkit-keyframes flotar {
+  0% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-18px);
+            transform: translateY(-18px);
+  }
+  100% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+}
+
+@keyframes flotar {
+  0% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-18px);
+            transform: translateY(-18px);
+  }
+  100% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+}
+.inicio h1 {
+  margin: 0;
+  letter-spacing: 10px;
+}
+
+.sesion {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.sesion a {
+  width: 20%;
+}
+
+.sesion button {
+  height: 50px;
+  width: 100%;
+  background-color: #dadada;
+  cursor: pointer;
+  padding-left: 15%;
+  padding-right: 15%;
+  border: solid black 1px;
+}
+
+.button-l {
+  border-radius: 0px 40px 0px 15px;
+}
+
+.button-r {
+  border-radius: 40px 0 15px 0;
+}
+
+.sesion button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
