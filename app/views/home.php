@@ -6,7 +6,7 @@
     <title>Bancoria</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/Favicon.ico" type="image/x-icon">
-    <script defer src="js/app.js"></script>
+    <script defer src="../../public/js/app.js"></script>
 </head>
 <body>
     <h1>BANCORIA</h1>
