@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+@import 'estilos-header';
+@import 'estilos-footer';
+
+@font-face {
+    font-family: "conquera-medium";
+    src: url(../fonts/Conquera-Medium.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: $fuente-principal;
+}

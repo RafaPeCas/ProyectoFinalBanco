@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "conquera-medium";
+  src: url(../fonts/Conquera-Medium.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "conquera-medium", sans-serif;
+}
