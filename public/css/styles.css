@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "conquera-medium";
+  src: url(../fonts/Conquera-Medium.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "drescher-grotesk";
+  src: url(../fonts/Drescher-Grotesk.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "drescher-grotesk", sans-serif;
+  margin: 0;
+}
+
+body p {
+  font-family: "conquera-medium", sans-serif;
+}
