@@ -42,8 +42,7 @@
 }
 
 .form-item p a {
-    color: #3498db;
-    font-size: 1.5em;
+    color: $azul-claro;
 }
 
 .form-item a:hover{
@@ -52,21 +51,21 @@
 
 .login {
     background-color: $azul-oscuro;
-    color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     padding-top: 15vh;
+    font-size: 1.5em;
 }
 
 .login-button{
-    background-color: $azul-oscuro;
+    background-color: $azul-claro;
     color: white;
     height: 50px;
     width: 150px;
     border-radius: 15px;
     border: none;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .login-button:hover{

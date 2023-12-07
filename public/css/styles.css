@@ -314,8 +314,7 @@
 }
 
 .form-item p a {
-  color: #3498db;
-  font-size: 1.5em;
+  color: #0fc9f2;
 }
 
 .form-item a:hover {
@@ -324,21 +323,21 @@
 
 .login {
   background-color: #014495;
-  color: #fff;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   padding-top: 15vh;
+  font-size: 1.5em;
 }
 
 .login-button {
-  background-color: #014495;
+  background-color: #0fc9f2;
   color: white;
   height: 50px;
   width: 150px;
   border-radius: 15px;
   border: none;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .login-button:hover {
