@@ -1,7 +1,4 @@
-$thick : 5px;
-$pad : 0.5em;
-$extra : calc(#{$pad} * 1.2);
-$color : #ffffff;
+@import 'variables';
 
 
 .standard-button {

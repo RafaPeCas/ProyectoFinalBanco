@@ -269,6 +269,46 @@
           transform-origin: left;
 }
 
+.login {
+  background-color: #014495;
+}
+
+.logo img {
+  background-color: white;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.casillas-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: black 2px solid;
+  width: 50vw;
+}
+
+form {
+  width: 100%;
+  background-color: white;
+}
+
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
@@ -290,10 +330,10 @@ body h1 {
   font-family: "conquera-medium", sans-serif;
 }
 
-img {
-  width: 200px;
-}
-
 a {
   text-decoration: none;
+}
+
+.logo img {
+  width: 200px;
 }

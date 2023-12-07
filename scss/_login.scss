@@ -1,0 +1,29 @@
+@import 'variables';
+
+.login {
+    background-color: $azul-oscuro;
+}
+
+.logo img {
+    background-color: white;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.casillas-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black 2px solid;
+    width: 50vw;
+}
+
+form{
+    width: 100%;
+    background-color: white;
+}

@@ -4,6 +4,7 @@
 @import 'estilos-footer';
 @import 'index';
 @import 'login-button';
+@import 'login';
 
 @font-face {
     font-family: "conquera-medium";
@@ -28,10 +29,10 @@ body h1{
     font-family: $fuente-secundaria;
 }
 
-img{
-    width: 200px;
-}
-
 a{
     text-decoration: none;
+}
+
+.logo img{
+    width: 200px;
 }

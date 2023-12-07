@@ -10,7 +10,7 @@
     <script defer src="../../public/js/app.js"></script>
 </head>
 
-<body>
+<body class="login">
     <section class="logo">
         <img src="../../public/images/Logo.svg" alt="">
         <h1>BANCORIA</h1>
