@@ -1,11 +1,11 @@
-$thick : 3px;
-$pad : 0.7em;
+$thick : 5px;
+$pad : 0.5em;
 $extra : calc(#{$pad} * 1.2);
-$color : #f26522;
+$color : #ffffff;
 
 
-.standard-button{
-    background: #2d2d2d;
+.standard-button {
+    background: #0ba2c3;
 
     a {
         color: white;
@@ -13,16 +13,16 @@ $color : #f26522;
         display: inline-block;
         border: $thick solid transparent;
         position: relative;
-        font-size: 1.5em;
+        font-size: 1em;
         cursor: pointer;
         letter-spacing: 0.07em;
 
         .text {
-            // padding: 0 0.3em;
-            font-family: proxima-nova, monospace;
+            padding: 0 0.3em;
             transform: translate3d(0, $pad, 0);
             display: block;
             transition: transform 0.4s cubic-bezier(.2, 0, 0, 1) 0.4s;
+            text-align: center;
         }
 
         &:after {

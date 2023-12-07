@@ -74,32 +74,8 @@
   letter-spacing: 10px;
 }
 
-.sesion a {
-  width: 20%;
-}
-
-.sesion button {
-  height: 50px;
-  width: 100%;
-  background-color: #dadada;
-  cursor: pointer;
-  padding-left: 15%;
-  padding-right: 15%;
-  border: solid black 1px;
-}
-
-.sesion button:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.sesion a {
-  width: 100%;
-  padding-top: 50px;
-}
-
 .sesion {
-  width: 100%;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,14 +85,6 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-.button-l {
-  border-radius: 0;
-}
-
-.button-r {
-  border-radius: 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -131,6 +99,11 @@
     width: 50%;
   }
 }
+.standard-button {
+  margin: 15px;
+  width: auto;
+}
+
 @media only screen and (min-width: 1025px) {
   .sesion {
     -webkit-box-orient: horizontal;
@@ -138,47 +111,39 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .sesion a {
-    width: 20%;
-  }
-  .button-l {
-    border-radius: 0px 40px 0px 15px;
-  }
-  .button-r {
-    border-radius: 40px 0 15px 0;
-  }
 }
 .standard-button {
-  background: #2d2d2d;
+  background: #0ba2c3;
 }
 .standard-button a {
   color: white;
-  padding: 0.7em calc(0.7em * 1.2);
+  padding: 0.5em calc(0.5em * 1.2);
   display: inline-block;
-  border: 3px solid transparent;
+  border: 5px solid transparent;
   position: relative;
-  font-size: 1.5em;
+  font-size: 1em;
   cursor: pointer;
   letter-spacing: 0.07em;
 }
 .standard-button a .text {
-  font-family: proxima-nova, monospace;
-  -webkit-transform: translate3d(0, 0.7em, 0);
-          transform: translate3d(0, 0.7em, 0);
+  padding: 0 0.3em;
+  -webkit-transform: translate3d(0, 0.5em, 0);
+          transform: translate3d(0, 0.5em, 0);
   display: block;
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   transition: -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s, -webkit-transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  text-align: center;
 }
 .standard-button a:after {
   position: absolute;
   content: "";
-  bottom: -3px;
-  left: calc(0.7em * 1.2);
-  right: calc(0.7em * 1.2);
-  height: 3px;
-  background: #f26522;
+  bottom: -5px;
+  left: calc(0.5em * 1.2);
+  right: calc(0.5em * 1.2);
+  height: 5px;
+  background: #ffffff;
   -webkit-transition: right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, -webkit-transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s;
   transition: right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, -webkit-transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s;
   transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
@@ -188,24 +153,24 @@
 }
 .standard-button .line {
   position: absolute;
-  background: #f26522;
+  background: #ffffff;
 }
 .standard-button .line.-right, .standard-button .line.-left {
-  width: 3px;
-  bottom: -3px;
-  top: -3px;
+  width: 5px;
+  bottom: -5px;
+  top: -5px;
   -webkit-transform: scale3d(1, 0, 1);
           transform: scale3d(1, 0, 1);
 }
 .standard-button .line.-top, .standard-button .line.-bottom {
-  height: 3px;
-  left: -3px;
-  right: -3px;
+  height: 5px;
+  left: -5px;
+  right: -5px;
   -webkit-transform: scale3d(0, 1, 1);
           transform: scale3d(0, 1, 1);
 }
 .standard-button .line.-right {
-  right: -3px;
+  right: -5px;
   -webkit-transition: -webkit-transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
   transition: -webkit-transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
   transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
@@ -214,7 +179,7 @@
           transform-origin: top;
 }
 .standard-button .line.-top {
-  top: -3px;
+  top: -5px;
   -webkit-transition: -webkit-transform 0.08s linear 0.43s;
   transition: -webkit-transform 0.08s linear 0.43s;
   transition: transform 0.08s linear 0.43s;
@@ -223,7 +188,7 @@
           transform-origin: left;
 }
 .standard-button .line.-left {
-  left: -3px;
+  left: -5px;
   -webkit-transition: -webkit-transform 0.08s linear 0.51s;
   transition: -webkit-transform 0.08s linear 0.51s;
   transition: transform 0.08s linear 0.51s;
@@ -232,7 +197,7 @@
           transform-origin: bottom;
 }
 .standard-button .line.-bottom {
-  bottom: -3px;
+  bottom: -5px;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
   transition: -webkit-transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
   transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
@@ -253,8 +218,8 @@
 .standard-button a:active:after {
   -webkit-transform: scale3d(0, 1, 1);
           transform: scale3d(0, 1, 1);
-  right: -3px;
-  left: -3px;
+  right: -5px;
+  left: -5px;
   -webkit-transform-origin: right;
           transform-origin: right;
   -webkit-transition: right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s, -webkit-transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s;

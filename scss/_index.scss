@@ -43,44 +43,11 @@
     letter-spacing: 10px;
 }
 
-.sesion a {
-    width: 20%;
-}
-
-.sesion button {
-
-    height: 50px;
-    width: 100%;
-    background-color: #dadada;
-    cursor: pointer;
-    padding-left: 15%;
-    padding-right: 15%;
-    border: solid black 1px;
-}
-
-
-.sesion button:hover {
-    transform: scale(1.2);
-}
-
-.sesion a {
-    width: 100%;
-    padding-top: 50px;
-}
-
 .sesion {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.button-l {
-    border-radius: 0;
-}
-
-.button-r {
-    border-radius: 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -96,28 +63,20 @@
     .inicio img {
         width: 50%;
     }
+
 }
 
+.standard-button{
+    margin: 15px ;
+    width: auto;
+}
 
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
 
 @media only screen and (min-width: 1025px) {
-    .sesion {
+    .sesion{
         flex-direction: row;
     }
-
-    .sesion a{
-        width: 20%;
-    }
-
-    .button-l {
-        border-radius: 0px 40px 0px 15px;
-    }
-
-    .button-r {
-        border-radius: 40px 0 15px 0;
-    }
-
 }
