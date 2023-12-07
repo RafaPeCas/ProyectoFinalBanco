@@ -29,9 +29,8 @@
                     <p><a href="#"><small>Forgot Password ?</small></a></p>
                 </div>
                 <div class="form-item">
-                    <p class="pull-left"><a href="#"><small>Register</small></a></p>
-                    <input type="submit" class="login pull-right" value="Log In">
-                    <div class="clear-fix"></div>
+                    <p class=""><a href="#"><small>Register</small></a></p>
+                    <input type="submit" class="login-button" value="Log In">
                 </div>
             </div>
         </div>

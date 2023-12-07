@@ -1,36 +1,75 @@
 @import 'variables';
 
-.login {
-    background-color: $azul-oscuro;
+/* Estilo general del formulario */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#formWrapper {
+    text-align: center;
 }
 
 .logo img {
-    background-color: white;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px black;
 }
 
-.login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-item {
+    margin-bottom: 15px;
 }
 
-.casillas-form {
+.formLabel {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-style {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: black 2px solid;
-    width: 50vw;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-form{
-    width: 100%;
-    background-color: white;
+.form-item p a {
+    color: #3498db;
+    font-size: 1.5em;
 }
 
-#formWrapper{
-    border: black 1px solid;
-    padding: 15px 20px 15px 20px;
-    margin-top: 15%;
+.form-item a:hover{
+    text-decoration: underline;
+}
 
+.login {
+    background-color: $azul-oscuro;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    padding-top: 15vh;
+}
+
+.login-button{
+    background-color: $azul-oscuro;
+    color: white;
+    height: 50px;
+    width: 150px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.5em;
+}
+
+.login-button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }

@@ -269,50 +269,82 @@
           transform-origin: left;
 }
 
-.login {
-  background-color: #014495;
-}
-
-.logo img {
-  background-color: white;
-}
-
+/* Estilo general del formulario */
 .login-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.casillas-form {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: black 2px solid;
-  width: 50vw;
-}
-
-form {
-  width: 100%;
-  background-color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 #formWrapper {
-  border: black 1px solid;
-  padding: 15px 20px 15px 20px;
-  margin-top: 15%;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+}
+
+.form-item {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-style {
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-item p a {
+  color: #3498db;
+  font-size: 1.5em;
+}
+
+.form-item a:hover {
+  text-decoration: underline;
+}
+
+.login {
+  background-color: #014495;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  padding-top: 15vh;
+}
+
+.login-button {
+  background-color: #014495;
+  color: white;
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.login-button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
 }
 
 @font-face {
