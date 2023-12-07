@@ -11,25 +11,30 @@
 </head>
 
 <body class="login">
-    <section class="logo">
-        <img src="../../public/images/Logo.svg" alt="">
-        <h1>BANCORIA</h1>
-        <p>Invierte en tranquilidad</p>
-    </section>
     <article class="login-form">
-        <section class="casillas-form">
-            <form action="php/validador.php" id="registrarUser" method="post">
-                <div class="">
-                    <label for="dni" class="">DNI</label>
-                    <input type="text" class="" name="dni" id="dni" required>
+        <div id="formWrapper">
+
+            <div id="form">
+                <div class="logo">
+                    <img src="../../public/images/Logo.svg" alt="">
                 </div>
-                <div class="">
-                    <label for="password" class="">Contraseña</label>
-                    <input type="password" class="" name="password" id="password" required>
+                <div class="form-item">
+                    <p class="formLabel">Email</p>
+                    <input type="email" name="email" id="email" class="form-style" autocomplete="off" />
                 </div>
-                <input type="submit" value="Iniciar sesión">
-            </form>
-        </section>
+                <div class="form-item">
+                    <p class="formLabel">Password</p>
+                    <input type="password" name="password" id="password" class="form-style" />
+                    <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+                    <p><a href="#"><small>Forgot Password ?</small></a></p>
+                </div>
+                <div class="form-item">
+                    <p class="pull-left"><a href="#"><small>Register</small></a></p>
+                    <input type="submit" class="login pull-right" value="Log In">
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+        </div>
     </article>
 </body>
 
