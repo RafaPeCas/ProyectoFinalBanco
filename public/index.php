@@ -18,7 +18,7 @@
         <section class="sesion">
             <div class="standard-button">
                 <a href="../app/views/singin.php">
-                    <span class="text">Crear cuenta</span>
+                    <span class="text">Registrarse</span>
                     <span class="line -right"></span>
                     <span class="line -top"></span>
                     <span class="line -left"></span>
