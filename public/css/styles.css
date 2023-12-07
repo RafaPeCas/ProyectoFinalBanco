@@ -309,6 +309,12 @@ form {
   background-color: white;
 }
 
+#formWrapper {
+  border: black 1px solid;
+  padding: 15px 20px 15px 20px;
+  margin-top: 15%;
+}
+
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
