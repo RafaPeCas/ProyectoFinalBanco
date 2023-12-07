@@ -15,10 +15,26 @@
         <img src="images/LogoPajaro.png" alt="">
         <h1>BANCORIA</h1>
         <p>Invierte en tranquilidad, invierte en Bancoria.</p>
-        <div class="sesion">
-            <a href=""><button class="button-l"> Iniciar sesión </button></a>
-            <a href=""><button class="button-r"> Crear cuenta </button></a>
-        </div>
+        <section class="sesion">
+            <div class="standard-button">
+                <a>
+                    <span class="text">Crear cuenta</span>
+                    <span class="line -right"></span>
+                    <span class="line -top"></span>
+                    <span class="line -left"></span>
+                    <span class="line -bottom"></span>
+                </a>
+            </div>
+            <div class="standard-button">
+                <a>
+                    <span class="text">Iniciar sesión</span>
+                    <span class="line -right"></span>
+                    <span class="line -top"></span>
+                    <span class="line -left"></span>
+                    <span class="line -bottom"></span>
+                </a>
+            </div>
+        </section>
     </article>
 
 </body>
