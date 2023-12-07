@@ -25,12 +25,11 @@
                 <div class="form-item">
                     <p class="formLabel">Password</p>
                     <input type="password" name="password" id="password" class="form-style" />
-                    <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
-                    <p><a href="#"><small>Forgot Password ?</small></a></p>
+                    <p><a href="#">¿Ha olvidado su contraseña?</a></p>
                 </div>
                 <div class="form-item">
-                    <p class=""><a href="#"><small>Register</small></a></p>
-                    <input type="submit" class="login-button" value="Log In">
+                    <p class="">¿No tienes cuenta?<a href="#">Registrate</a></p>
+                    <input type="submit" class="login-button" value="Enviar">
                 </div>
             </div>
         </div>
