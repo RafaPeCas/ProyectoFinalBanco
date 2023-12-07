@@ -104,7 +104,7 @@
   width: auto;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
   .sesion {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -292,4 +292,8 @@ body h1 {
 
 img {
   width: 200px;
+}
+
+a {
+  text-decoration: none;
 }

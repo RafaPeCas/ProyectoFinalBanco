@@ -19,7 +19,6 @@
     font-style: normal;
 }
 
-
 body{
     font-family: $fuente-principal;
     margin: 0;
@@ -31,4 +30,8 @@ body h1{
 
 img{
     width: 200px;
+}
+
+a{
+    text-decoration: none;
 }
