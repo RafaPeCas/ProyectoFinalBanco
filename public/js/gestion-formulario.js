@@ -8,7 +8,3 @@ function cambiar(){
     signin.classList.toggle("ocultar");
     console.log("cambio");
 }
-
-function transicion(){
-    
-}

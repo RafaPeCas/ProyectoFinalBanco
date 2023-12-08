@@ -14,9 +14,11 @@
 <body class="login">
     <article class="login-form" id="formulario-1">
         <div id="formWrapper">
+        <h1>BANCORIA</h1>
             <div class="logo">
                 <img src="../../public/images/Logo.svg" alt="">
             </div>
+            <h2>Iniciar sesión</h2>
             <form action="" method="post" name="login">
                 <div class="form-item">
                     <p class="formLabel" id="labelDni">DNI:</p>
@@ -29,7 +31,7 @@
                 </div>
                 <div class="form-item">
                     <p class="">¿No tienes cuenta? <a onclick="cambiar()">Registrate</a></p>
-                    <input type="submit" name="btn" id="btn" class="login-button" value="Enviar">
+                    <input type="submit" name="btn" id="btn" class="login-button" value="Iniciar sesión">
                 </div>
             </form>
         </div>
