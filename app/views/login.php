@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/comprobador-formulario.js"></script>
-    <script defer src="../../public/js/gestion-formulario.js"></script>
+    <script defer src="../../public/js/comprobar-registro.js"></script>
 </head>
 
 <body class="login">
-    <article class="login-form" id="formulario-1">
+<?php  
+        $form = isset($_GET['form']) ? $_GET['form'] : '';
+
+        if ($form === 'login') {
+            echo "<article class='login-form' id='formulario-1'>";
+        } elseif ($form === 'registro') {
+            echo '<article class="login-form ocultar" id="formulario-1">';
+        } 
+    ?>
+    
         <div id="formWrapper">
         <h1>BANCORIA</h1>
             <div class="logo">
                 <img src="../../public/images/Logo.svg" alt="">
             </div>
             <h2>Iniciar sesión</h2>
-            <form action="" method="post" name="login">
+            <form action="" method="post" name="login" id="login">
                 <div class="form-item">
                     <p class="formLabel" id="labelDni">DNI:</p>
                     <input type="text" name="dni" id="dni" maxlength="9" class="form-style" placeholder="12345678X" />

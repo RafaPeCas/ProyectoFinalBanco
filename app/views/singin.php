@@ -5,11 +5,11 @@
             <img src="../../public/images/Logo.svg" alt="">
         </div>
         <h2>Crear cuenta</h2>
-        <form action="" method="post" name="signin">
+        <form action="" method="post" name="signin" id="signin">
 
             <div class="form-item">
                 <p class="formLabel" id="nombre">Nombre:</p>
-                <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael" required/>
+                <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael"/>
             </div>
 
             <div class="grupo-form">
@@ -30,12 +30,12 @@
 
             <div class="form-item">
                 <p class="formLabel" id="email">Email:</p>
-                <input type="email" name="email" id="email" class="form-style" placeholder="ejemplo@gmail.com" />
+                <input type="text" name="email" id="email" class="form-style" placeholder="ejemplo@gmail.com" />
             </div>
 
             <div class="form-item">
                 <p class="formLabel" id="direccion">Dirección:</p>
-                <input type="email" name="direccion" id="direccion" class="form-style" placeholder="C/ calloria número 3" />
+                <input type="text" name="direccion" id="direccion" class="form-style" placeholder="C/ calloria número 3" />
             </div>
 
             <div class="grupo-form">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-item">
                     <p class="formLabel" id="cp">Código postal:</p>
-                    <input type="number" name="cp" id="cp" class="form-style" placeholder="42015" />
+                    <input type="number" name="cp" id="cp" class="form-style" placeholder="42015" maxlength="5"/>
                 </div>
             </div>
 

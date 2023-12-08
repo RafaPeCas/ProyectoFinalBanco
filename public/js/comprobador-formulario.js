@@ -1,6 +1,24 @@
 "use strict"
 
-document.login.dni.focus();
+let mostrarLogin = document.getElementById("formulario-1");
+let mostrarSignin = document.getElementById("formulario-2");
+
+if (mostrarLogin.classList.contains("ocultar")){
+    mostrarSignin.classList.remove("ocultar");
+    document.signin.nombre.focus();
+} else{
+    document.login.dni.focus();
+}
+
+function cambiar(){
+    mostrarLogin.classList.toggle("ocultar");
+    mostrarSignin.classList.toggle("ocultar");
+    if (mostrarLogin.classList.contains("ocultar")){
+        document.signin.nombre.focus();
+    } else{
+        document.login.dni.focus();
+    }
+}
 
 let formulario = document.getElementsByName('login')[0],
     elemetos = formulario.elements,

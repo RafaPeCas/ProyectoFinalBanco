@@ -17,7 +17,7 @@
         <p>Invierte en tranquilidad, invierte en Bancoria.</p>
         <section class="sesion">
             <div class="standard-button">
-                <a href="../app/views/singin.php">
+                <a href="../app/views/login.php?form=registro">
                     <span class="text">Registrarse</span>
                     <span class="line -right"></span>
                     <span class="line -top"></span>
@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="standard-button">
-                <a href="../app/views/login.php">
+                <a href="../app/views/login.php?form=login">
                     <span class="text">Iniciar sesión</span>
                     <span class="line -right"></span>
                     <span class="line -top"></span>
