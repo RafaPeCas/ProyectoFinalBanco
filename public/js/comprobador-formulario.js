@@ -15,10 +15,14 @@ function validarDni(e) {
     labelDni.textContent = "DNI:"
     dniInput.classList.remove("error");
     dniInput.classList.remove("correct");
+    labelDni.classList.remove("bote");
 
     if (dniValue === "") {
         dniInput.classList.add("error");
-        labelDni.textContent = "No debe dejar el campo DNI vacío:"
+        labelDni.textContent = "No debe dejar el campo DNI vacío:";
+        setTimeout(function() {
+            labelDni.classList.add("bote");
+        }, 1);
         dniInput.focus();
         e.preventDefault();
         return;
@@ -28,6 +32,9 @@ function validarDni(e) {
     if (dniValue.length > dniMaxLength) {
         dniInput.classList.add("error");
         labelDni.textContent = "El campo DNI no debe contener más de 9 carácteres"
+        setTimeout(function() {
+            labelDni.classList.add("bote");
+        }, 1);
         e.preventDefault();
         return;
     }
@@ -36,6 +43,9 @@ function validarDni(e) {
     if (!dniRegex.test(dniValue)) {
         dniInput.classList.add("error");
         labelDni.textContent = "Formato de DNI inválido"
+        setTimeout(function() {
+            labelDni.classList.add("bote");
+        }, 1);
         e.preventDefault();
         return;
     }
@@ -49,6 +59,9 @@ function validarDni(e) {
     if (letraControlUsuario !== letraControlCalculada) {
         dniInput.classList.add("error");
         labelDni.textContent = "DNI incorrecto"
+        setTimeout(function() {
+            labelDni.classList.add("bote");
+        }, 1);
         e.preventDefault();
         return;
     }
@@ -59,15 +72,21 @@ function validarPass(e) {
     let passwordInput = formulario.password;
     let labelPass = document.getElementById("labelPass");
 
-    labelPass.textContent = "Contraseña";
+    labelPass.textContent = "Contraseña:";
     passwordInput.classList.remove("error");
+    labelPass.classList.remove("bote");
 
     if (formulario.password.value == 0) {
         passwordInput.classList.add("error");
         labelPass.textContent = "Contraseña incorrecta"
+        setTimeout(function() {
+            labelPass.classList.add("bote");
+        }, 1);
+
         e.preventDefault();
         return
     }
+    passwordInput.classList.add("correct");
 }
 
 function validar(e) {
