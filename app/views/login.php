@@ -12,38 +12,38 @@
 </head>
 
 <body class="login">
-<?php  
-        $form = isset($_GET['form']) ? $_GET['form'] : '';
+    <?php
+    $form = isset($_GET['form']) ? $_GET['form'] : '';
 
-        if ($form === 'login') {
-            echo "<article class='login-form' id='formulario-1'>";
-        } elseif ($form === 'registro') {
-            echo '<article class="login-form ocultar" id="formulario-1">';
-        } 
+    if ($form === 'login') {
+        echo "<article class='login-form' id='formulario-1'>";
+    } elseif ($form === 'registro') {
+        echo '<article class="login-form ocultar" id="formulario-1">';
+    }
     ?>
-    
-        <div id="formWrapper">
+
+    <div id="formWrapper">
         <h1>BANCORIA</h1>
-            <div class="logo">
-                <img src="../../public/images/Logo.svg" alt="">
-            </div>
-            <h2>Iniciar sesión</h2>
-            <form action="" method="post" name="login" id="login">
-                <div class="form-item">
-                    <p class="formLabel" id="labelDni">DNI:</p>
-                    <input type="text" name="dni" id="dni" maxlength="9" class="form-style" placeholder="12345678X" />
-                </div>
-                <div class="form-item">
-                    <p class="formLabel" id="labelPass">Contraseña:</p>
-                    <input type="password" name="password" id="password" class="form-style" placeholder="Contraseña" />
-                    <p><a href="#">¿Ha olvidado su contraseña?</a></p>
-                </div>
-                <div class="form-item">
-                    <p class="">¿No tienes cuenta? <a onclick="cambiar()">Registrate</a></p>
-                    <input type="submit" name="btn" id="btn" class="login-button" value="Iniciar sesión">
-                </div>
-            </form>
+        <div class="logo">
+            <img src="../../public/images/Logo.svg" alt="">
         </div>
+        <h2>Iniciar sesión</h2>
+        <form action="../../public/procesarLogin.php" method="post" name="login" id="login">
+            <div class="form-item">
+                <p class="formLabel" id="labelDni">DNI:</p>
+                <input type="text" name="dni" id="dni" maxlength="9" class="form-style" placeholder="12345678X" />
+            </div>
+            <div class="form-item">
+                <p class="formLabel" id="labelPass">Contraseña:</p>
+                <input type="password" name="password" id="password" class="form-style" placeholder="Contraseña" />
+                <p><a href="#">¿Ha olvidado su contraseña?</a></p>
+            </div>
+            <div class="form-item">
+                <p class="">¿No tienes cuenta? <a onclick="cambiar()">Registrate</a></p>
+                <input type="submit" name="btn" id="btn" class="login-button" value="Iniciar sesión">
+            </div>
+        </form>
+    </div>
     </article>
 </body>
 

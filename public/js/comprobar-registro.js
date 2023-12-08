@@ -14,7 +14,7 @@ function validarDniR(e) {
 
     if (dniValue === "") {
         dniInput.classList.add("error");
-        labelDni.textContent = "No debe dejar el campo DNI vacío:";
+        labelDni.textContent = "Rellene el DNI";
         setTimeout(function () {
             labelDni.classList.add("bote");
         }, 1);
@@ -287,6 +287,44 @@ function ValidarPaisR(e) {
     }
 }
 
+function ValidarFechaR(e) {
+    let campo = formSignin.fNac;
+    let label = document.getElementById("fNac");
+
+    label.textContent = "Fecha de nacimiento:"
+    campo.classList.remove("error");
+    campo.classList.remove("correct");
+    label.classList.remove("bote");
+
+    if (campo.value === "") {
+        campo.classList.add("error");
+        label.textContent = "La fecha es inválida";
+        setTimeout(function () {
+            label.classList.add("bote");
+        }, 1);
+        e.preventDefault();
+        return;
+    }
+
+    let fechaInsertada = new Date(campo.value);
+    let fechaActual = new Date();
+    let diferencia = fechaActual-fechaInsertada;
+    let edad = Math.floor(diferencia / (365.25 * 24 * 60 * 60 * 1000));
+
+    if (edad<18){
+        campo.classList.add("error");
+        label.textContent = "No puedes ser menor";
+        setTimeout(function () {
+            label.classList.add("bote");
+        }, 1);
+        e.preventDefault();
+        return;
+    }
+
+    campo.classList.add("correct");
+
+}
+
 function validarR(e) {
     validarDniR(e);
     ValidarNombreR(e);
@@ -298,6 +336,7 @@ function validarR(e) {
     ValidarCpR(e);
     ValidarProvinciaR(e);
     ValidarPaisR(e);
+    ValidarFechaR(e);
 }
 
 formSignin.addEventListener("submit", validarR);

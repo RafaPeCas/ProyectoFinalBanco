@@ -5,11 +5,11 @@
             <img src="../../public/images/Logo.svg" alt="">
         </div>
         <h2>Crear cuenta</h2>
-        <form action="" method="post" name="signin" id="signin">
+        <form action="../../public/procesarRegistro.php" method="post" name="signin" id="signin">
 
             <div class="form-item">
                 <p class="formLabel" id="nombre">Nombre:</p>
-                <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael"/>
+                <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael" />
             </div>
 
             <div class="grupo-form">
@@ -23,10 +23,17 @@
                 </div>
             </div>
 
-            <div class="form-item">
-                <p class="formLabel" id="dniRegistro">DNI:</p>
-                <input type="text" name="dniRegistro" id="dniRegistro" maxlength="9" class="form-style" placeholder="12345678X" />
+            <div class="grupo-form">
+                <div class="form-item">
+                    <p class="formLabel" id="dniRegistro">DNI:</p>
+                    <input type="text" name="dniRegistro" id="dniRegistro" maxlength="9" class="form-style" placeholder="12345678X" />
+                </div>
+                <div class="form-item">
+                    <p class="formLabel" id="fNac">Fecha de nacimiento:</p>
+                    <input type="date" name="fNac" id="fNac" class="form-style"/>
+                </div>
             </div>
+
 
             <div class="form-item">
                 <p class="formLabel" id="email">Email:</p>
@@ -45,7 +52,7 @@
                 </div>
                 <div class="form-item">
                     <p class="formLabel" id="cp">Código postal:</p>
-                    <input type="number" name="cp" id="cp" class="form-style" placeholder="42015" maxlength="5"/>
+                    <input type="number" name="cp" id="cp" class="form-style" placeholder="42015" maxlength="5" />
                 </div>
             </div>
 
