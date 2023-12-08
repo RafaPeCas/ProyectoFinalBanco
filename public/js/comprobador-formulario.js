@@ -8,42 +8,66 @@ let formulario = document.getElementsByName('login')[0],
 
 
 function validarDni(e) {
-    if (formulario.dni.value == 0) {
-        alert("Completa el campo DNI")
-        document.login.dni.focus();
+    let dniInput = formulario.dni;
+    let dniValue = dniInput.value.trim();
+    let labelDni = document.getElementById("labelDni");
+
+    labelDni.textContent = "DNI:"
+    dniInput.classList.remove("error");
+    dniInput.classList.remove("correct");
+
+    if (dniValue === "") {
+        dniInput.classList.add("error");
+        labelDni.textContent = "No debe dejar el campo DNI vacío:"
+        dniInput.focus();
         e.preventDefault();
-    } else if (formulario.dni.value > 9) {
-        alert("El DNI es demasiado largo")
-        e.preventDefault();
-    } else {
-
-        let dniRegex = /^(\d{8}|\d{7}[-\s]\d{1})[A-HJ-NP-TV-Za-hj-np-tv-z]$/;
-        let dni = formulario.dni.value;
-        if (!dniRegex.test(formulario.dni.value)) {
-            alert("formato incorrecto");
-            e.preventDefault();
-        } else {
-
-            let dniNumero = dni.slice(0, -1);
-            let letraControlUsuario = dni.slice(-1).toUpperCase();
-
-            let letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
-            let letraControlCalculada = letras[dniNumero % 23];
-
-            if (letraControlUsuario != letraControlCalculada) {
-                alert("Dni incorrecto");
-                e.preventDefault();
-            }
-        }
+        return;
     }
 
+    let dniMaxLength = 9;
+    if (dniValue.length > dniMaxLength) {
+        dniInput.classList.add("error");
+        labelDni.textContent = "El campo DNI no debe contener más de 9 carácteres"
+        e.preventDefault();
+        return;
+    }
+
+    let dniRegex = /^(\d{8}|\d{7}[-\s]\d{1})[A-HJ-NP-TV-Za-hj-np-tv-z]$/;
+    if (!dniRegex.test(dniValue)) {
+        dniInput.classList.add("error");
+        labelDni.textContent = "Formato de DNI inválido"
+        e.preventDefault();
+        return;
+    }
+
+    let dniNumero = dniValue.slice(0, -1);
+    let letraControlUsuario = dniValue.slice(-1).toUpperCase();
+
+    let letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+    let letraControlCalculada = letras[dniNumero % 23];
+
+    if (letraControlUsuario !== letraControlCalculada) {
+        dniInput.classList.add("error");
+        labelDni.textContent = "DNI incorrecto"
+        e.preventDefault();
+        return;
+    }
+    dniInput.classList.add("correct");
 }
 
-function validarPass(e){
+function validarPass(e) {
+    let passwordInput = formulario.password;
+    let labelPass = document.getElementById("labelPass");
+
+    labelPass.textContent = "Contraseña";
+    passwordInput.classList.remove("error");
+
     if (formulario.password.value == 0) {
-        alert("Contraseña inválida")
+        passwordInput.classList.add("error");
+        labelPass.textContent = "Contraseña incorrecta"
         e.preventDefault();
-    } 
+        return
+    }
 }
 
 function validar(e) {

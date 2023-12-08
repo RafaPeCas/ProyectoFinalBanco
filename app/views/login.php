@@ -18,11 +18,11 @@
             </div>
             <form action="" method="post" name="login">
                 <div class="form-item">
-                    <p class="formLabel">DNI:</p>
+                    <p class="formLabel" id="labelDni">DNI:</p>
                     <input type="text" name="dni" id="dni" maxlength="9" class="form-style" placeholder="12345678X"/>
                 </div>
                 <div class="form-item">
-                    <p class="formLabel">Contraseña:</p>
+                    <p class="formLabel" id="labelPass">Contraseña:</p>
                     <input type="password" name="password" id="password" class="form-style" placeholder="Contraseña"/>
                     <p><a href="#">¿Ha olvidado su contraseña?</a></p>
                 </div>
