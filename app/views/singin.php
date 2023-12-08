@@ -12,7 +12,7 @@
                 <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael" required/>
             </div>
 
-            <div class="grupo-form" style="display: flex; justify-content: space-between; width:100%">
+            <div class="grupo-form">
                 <div class="form-item">
                     <p class="formLabel" id="apellido1">Apellido 1:</p>
                     <input type="text" name="apellido1" id="apellido1" class="form-style" placeholder="Pedrosa" />
@@ -38,7 +38,7 @@
                 <input type="email" name="direccion" id="direccion" class="form-style" placeholder="C/ calloria número 3" />
             </div>
 
-            <div class="grupo-form" style="display: flex; justify-content: space-between; width:100%">
+            <div class="grupo-form">
                 <div class="form-item">
                     <p class="formLabel" id="localidad">Localidad:</p>
                     <input type="text" name="localidad" id="localidad" class="form-style" placeholder="Sevilla" />

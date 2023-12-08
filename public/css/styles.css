@@ -302,6 +302,7 @@
   font-size: 0.9em;
   color: #333;
   margin-bottom: 5px;
+  margin-top: 8px;
 }
 
 .form-style {
@@ -325,7 +326,7 @@
   background-color: #014495;
   border: none;
   border-radius: 5px;
-  padding-top: 15vh;
+  padding-top: 5vh;
   font-size: 1.5em;
 }
 
@@ -381,16 +382,16 @@
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .login {
-    padding-top: 5vh;
-  }
+.grupo-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
-@media only screen and (min-width: 601px) and (max-width: 1023px) {
-  .login {
-    padding-top: 5vh;
-  }
-}
+
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
