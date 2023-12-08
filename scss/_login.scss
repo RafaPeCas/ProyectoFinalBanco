@@ -28,7 +28,7 @@
 }
 
 .formLabel {
-    font-size: 14px;
+    font-size: 0.9em;
     color: #333;
     margin-bottom: 5px;
 }
@@ -45,20 +45,20 @@
     color: $azul-claro;
 }
 
-.form-item a:hover{
+.form-item a:hover {
     text-decoration: underline;
 }
 
 .login {
     background-color: $azul-oscuro;
-    padding: 10px 15px;
+
     border: none;
     border-radius: 5px;
     padding-top: 15vh;
     font-size: 1.5em;
 }
 
-.login-button{
+.login-button {
     background-color: $azul-claro;
     color: white;
     height: 50px;
@@ -68,7 +68,54 @@
     font-size: 1em;
 }
 
-.login-button:hover{
+.login-button:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
+
+.error {
+    border: 1px solid red;
+    background-color: #FFD6D6;
+}
+
+.correct {
+    border: 1px solid rgb(26, 113, 0);
+    background-color: #a1ff9b;
+}
+
+.bote {
+    animation: flotar 0.5s linear;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translate(0px);
+        color: red;
+    }
+
+    50% {
+        transform: translateY(-5px);
+        color: red;
+    }
+
+    100% {
+        transform: translate(0px);
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .login {
+        padding-top: 5vh;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+    .login {
+        padding-top: 5vh;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {}

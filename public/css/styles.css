@@ -299,7 +299,7 @@
 }
 
 .formLabel {
-  font-size: 14px;
+  font-size: 0.9em;
   color: #333;
   margin-bottom: 5px;
 }
@@ -323,7 +323,6 @@
 
 .login {
   background-color: #014495;
-  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   padding-top: 15vh;
@@ -346,6 +345,48 @@
   cursor: pointer;
 }
 
+.error {
+  border: 1px solid red;
+  background-color: #FFD6D6;
+}
+
+.correct {
+  border: 1px solid rgb(26, 113, 0);
+  background-color: #a1ff9b;
+}
+
+.bote {
+  -webkit-animation: flotar 0.5s linear;
+          animation: flotar 0.5s linear;
+}
+
+@keyframes flotar {
+  0% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+    color: red;
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    color: red;
+  }
+  100% {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+    color: black;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .login {
+    padding-top: 5vh;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+  .login {
+    padding-top: 5vh;
+  }
+}
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
