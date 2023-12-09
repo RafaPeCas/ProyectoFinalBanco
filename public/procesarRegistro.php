@@ -14,13 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'cp' => $_POST['cp'],
         'provincia' => $_POST['provincia'],
         'pais' => $_POST['pais'],
+        'pass' => rand(1000, 9999),
     );
 
     $controlador = new UsuarioController();
     $resultado = $controlador->registrarUsuario($datosUsuario);
 
     if ($resultado) {
-        echo "Registro exitoso";
+        header("Location: ../app/views/welcome.php");
     } else {
         echo "Error al registrar el usuario";
     }

@@ -13,7 +13,7 @@ class UsuarioModel
     {
         $nombre = $datosUsuario["nombre"];
         $apellidos = $datosUsuario["apellido1"] . " " . $datosUsuario["apellido2"];
-        $dni = $datosUsuario["dniRegistro"];
+        $dni = strtoupper($datosUsuario["dniRegistro"]);
         $fecha_nacimiento = $datosUsuario["fNac"];
         $email = $datosUsuario["email"];
         $direccion = $datosUsuario["direccion"];
@@ -21,7 +21,8 @@ class UsuarioModel
         $ciudad = $datosUsuario["localidad"];
         $provincia = $datosUsuario["provincia"];
         $pais = $datosUsuario["pais"];
-        $pass = rand(1000, 9999);
+        $pass = $datosUsuario["pass"];
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
         $iban = $this->generarIban();
         $fecha_actual = date("Y-m-d H:i:s");
 
@@ -64,10 +65,9 @@ class UsuarioModel
         $stmt->execute();
         $resultado = $stmt->get_result();
 
-        var_dump($resultado);
-
         if ($resultado->num_rows > 0) {
-            $usuario = $resultado->fetch_assoc();
+            $usuario = $resultado->fetch_assoc(); 
+            $usuario["passsigin"]=$password;
             if (password_verify($password, $usuario['pass'])) {
                 return $usuario;
             }

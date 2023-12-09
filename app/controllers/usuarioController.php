@@ -11,33 +11,49 @@ class UsuarioController
         $this->modelo = new UsuarioModel(new mysqli("localhost", "root", "", "bancoriadb"));
     }
 
-    public function registrarUsuario($datosUsuario)
-    {
-        try {
-
-            return $this->modelo->registrarUsuario($datosUsuario);
-        } catch (Exception $e) {
-
-            echo "Error al registrar usuario: " . $e->getMessage();
-            return false;
-        }
-    }
-
     public function iniciarSesion($dni, $password)
     {
         try {
             $usuario = $this->modelo->verificarCredenciales($dni, $password);
 
             if ($usuario) {
-                session_start();
-                $_SESSION['usuario'] = $usuario;
-
-                header("Location: inicio.php");
+                $this->iniciarSesionUsuario($usuario);
+                header("Location: ../app/views/home.php");
                 exit();
             }
         } catch (Exception $e) {
-
             echo "Error al iniciar sesión: " . $e->getMessage();
         }
     }
+
+    public function registrarUsuario($datosUsuario)
+    {
+        try {
+            $registroExitoso = $this->modelo->registrarUsuario($datosUsuario);
+
+            if ($registroExitoso) {
+                $usuario = $this->modelo->verificarCredenciales($datosUsuario['dniRegistro'], $datosUsuario['pass']);
+                
+                if ($usuario) {
+                    $this->iniciarSesionUsuario($usuario);
+                    header("Location: ../app/views/welcome.php");
+                    exit();
+                }
+            } else {
+                echo "Error al registrar usuario.";
+                return false;
+            }
+        } catch (Exception $e) {
+            echo "Error al registrar usuario: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    private function iniciarSesionUsuario($usuario)
+    {
+        session_start();
+        $_SESSION['usuario'] = $usuario;
+
+    }
 }
+

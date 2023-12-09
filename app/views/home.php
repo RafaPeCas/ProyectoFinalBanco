@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: login.php");
+    header("Location: login.php?form=login");
     exit();
 }
 
@@ -16,7 +16,7 @@ $usuario = $_SESSION['usuario'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bancoria</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="shortcut icon" href="images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/app.js"></script>
 </head>
@@ -25,7 +25,8 @@ $usuario = $_SESSION['usuario'];
     <h1>BANCORIA</h1>
     <p>Invierte en tranquilidad</p>
     <img src="images/Logo.svg" alt="">
-    <h1>Pero que pasa guapisima, ni dos besos ni nada?</h1>
+    <h1>Home</h1>
+    <a href="../../public/index.php">Inicio</a>
 </body>
 
 </html>
