@@ -51,7 +51,6 @@
 }
 
 .login {
-    background-color: $azul-oscuro;
     border: none;
     border-radius: 5px;
     padding-top: 5vh;
@@ -108,21 +107,15 @@
     display: none;
 }
 
-.grupo-form{
+.grupo-form {
     display: flex;
-    justify-content: space-between; 
-    width:100%;
+    justify-content: space-between;
+    width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {}
 
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1023px) {
-
-}
+@media only screen and (min-width: 601px) and (max-width: 1023px) {}
 
 
-@media only screen and (min-width: 1024px) {
-
-}
+@media only screen and (min-width: 1024px) {}

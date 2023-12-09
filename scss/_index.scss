@@ -21,20 +21,18 @@
 .inicio img {
     width: 30%;
     margin: 20px;
-    animation: flotar infinite 3s linear;
+    animation: levitar infinite 10s linear;
 }
 
-@keyframes flotar {
-    0% {
-        transform: translate(0px);
+@keyframes levitar {
+    0%{
+        transform: scale(1);
     }
-
-    50% {
-        transform: translateY(-18px);
+    50%{
+        transform: scale(1.2);
     }
-
-    100% {
-        transform: translate(0px);
+    95%{
+        transform: scale(1);
     }
 }
 
