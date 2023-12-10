@@ -1,3 +1,9 @@
+<?php
+if (isset($_SESSION['usuario'])) {
+    session_destroy();
+}
+?>
+
 <article class="login-form ocultar" id="formulario-2">
     <div id="formWrapper">
         <h1>BANCORIA</h1>

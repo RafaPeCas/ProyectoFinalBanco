@@ -7,7 +7,7 @@
             <ul class="nav-links">
                 <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Transferencias</a></li>
+                <li><a href="../../public/index.php">log out</a></li>
                 <li>
                     <a href="#" class="desktop-item">Dropdown Menu</a>
                     <input type="checkbox" id="showDrop">

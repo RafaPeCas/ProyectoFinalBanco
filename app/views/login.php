@@ -56,7 +56,7 @@
         </article>
         <?php
 
-        include("singin.php");
+        include("signin.php");
 
         ?>
 

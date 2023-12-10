@@ -28,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($resultadoCuenta) {
             header("Location: ../app/views/welcome.php");
         } else {
-            session_destroy();
             header("Location: ../app/views/error.php");
         }
     } else {
