@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bancoria</title>
     <link rel="stylesheet" href="../../public/css/styles.css">
-    <link rel="shortcut icon" href="images/Favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/app.js"></script>
 </head>
 <body>

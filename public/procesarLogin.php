@@ -12,6 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../app/views/home.php");
         exit();
     } else {
-        echo "Error: Credenciales inválidas";
+        header("Location: ../app/views/error.php");
     }
 }
