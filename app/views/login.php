@@ -54,13 +54,14 @@
             </form>
         </div>
         </article>
+        <?php
+
+        include("singin.php");
+
+        ?>
+
     </main>
 </body>
 
-<?php
-
-include("singin.php");
-
-?>
 
 </html>

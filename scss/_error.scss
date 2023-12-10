@@ -9,7 +9,6 @@
 .errorBg {
     font-family: $fuente-principal;
     margin: 0;
-    @include gradient-background;
 
     div {
         margin-top: 5vh;

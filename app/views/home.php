@@ -44,5 +44,5 @@ $usuario = $_SESSION['usuario'];
 </html>
 
 <?php
-session_destroy();
+// session_destroy();
 ?>
