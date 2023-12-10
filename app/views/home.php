@@ -22,11 +22,23 @@ $usuario = $_SESSION['usuario'];
 </head>
 
 <body>
-    <h1>BANCORIA</h1>
-    <p>Invierte en tranquilidad</p>
-    <img src="images/Logo.svg" alt="">
-    <h1>Home</h1>
-    <a href="../../public/index.php">Inicio</a>
+    
+    <?php
+    include_once("header.php");
+    ?>
+
+    <main>
+        <h1>BANCORIA</h1>
+        <p>Invierte en tranquilidad</p>
+        <img src="images/Logo.svg" alt="">
+        <h1>Home</h1>
+        <a href="../../public/index.php">Inicio</a>
+    </main>
+
+    <?php
+    include_once("footer.php");
+    ?>
+
 </body>
 
 </html>

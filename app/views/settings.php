@@ -9,8 +9,12 @@
     <script defer src="../../public/js/app.js"></script>
 </head>
 <body>
+    
+    <main>
     <h1>BANCORIA</h1>
     <p>Invierte en tranquilidad</p>
     <img src="images/Logo.svg" alt="">
+    </main>
+
 </body>
 </html>
