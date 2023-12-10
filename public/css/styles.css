@@ -437,7 +437,11 @@
   width: 30%;
 }
 
-.errorBg div h1, h2 {
+.errorBg div h1 {
+  font-size: 2vw;
+}
+
+.errorBg div h2 {
   font-size: 2vw;
 }
 

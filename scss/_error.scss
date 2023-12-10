@@ -6,18 +6,25 @@
 
 }
 
-.errorBg div{
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+.errorBg {
+    font-family: $fuente-principal;
+    margin: 0;
+    @include gradient-background;
 
-.errorBg div img{
-    width: 30%;
-}
+    div {
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-.errorBg div h1, h2{
-font-size: 2vw;
+        img {
+            width: 30%;
+        }
+
+        h1,
+        h2 {
+            font-size: 2vw;
+        }
+    }
 }
