@@ -36,8 +36,8 @@
 .inicio img {
   width: 30%;
   margin: 20px;
-  -webkit-animation: levitar infinite 10s linear;
-          animation: levitar infinite 10s linear;
+  -webkit-animation: levitar infinite 5s linear;
+          animation: levitar infinite 5s linear;
 }
 
 @-webkit-keyframes levitar {
@@ -46,8 +46,8 @@
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   95% {
     -webkit-transform: scale(1);
@@ -61,8 +61,8 @@
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   95% {
     -webkit-transform: scale(1);

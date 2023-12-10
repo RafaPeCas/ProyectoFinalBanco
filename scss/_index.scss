@@ -21,7 +21,7 @@
 .inicio img {
     width: 30%;
     margin: 20px;
-    animation: levitar infinite 10s linear;
+    animation: levitar infinite 5s linear;
 }
 
 @keyframes levitar {
@@ -29,7 +29,7 @@
         transform: scale(1);
     }
     50%{
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     95%{
         transform: scale(1);
