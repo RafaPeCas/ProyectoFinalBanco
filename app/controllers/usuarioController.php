@@ -33,10 +33,9 @@ class UsuarioController
 
             if ($registroExitoso) {
                 $usuario = $this->modelo->verificarCredenciales($datosUsuario['dniRegistro'], $datosUsuario['pass']);
-                
                 if ($usuario) {
                     $this->iniciarSesionUsuario($usuario);
-                    header("Location: ../app/views/welcome.php");
+                    return true;
                     exit();
                 }
             } else {
@@ -53,22 +52,18 @@ class UsuarioController
     {
         session_start();
         $_SESSION['usuario'] = $usuario;
-
     }
 
-    public function recuperarPass($dni, $email){
-        //WIP
-        try{
-            $verificacionExitosa = $this->modelo->verificarCuenta($dni, $email);
+    // public function recuperarPass($dni, $email){
+    //     //WIP
+    //     try{
+    //         $verificacionExitosa = $this->modelo->verificarCuenta($dni, $email);
 
-            if ($verificacionExitosa){
-
-            }
-
-        }catch (Exception $e) {
-            echo "Cuenta inexistente: " . $e->getMessage();
-            return false;
-        }
-    }
+    //         if ($verificacionExitosa){
+    //         }
+    //     }catch (Exception $e) {
+    //         echo "Cuenta inexistente: " . $e->getMessage();
+    //         return false;
+    //     }
+    // }
 }
-

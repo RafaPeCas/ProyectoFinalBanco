@@ -1,5 +1,6 @@
 <?php
 require_once '../app/controllers/usuarioController.php';
+require_once '../app/controllers/cuentaController.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datosUsuario = array(
@@ -17,13 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'pass' => rand(1000, 9999),
     );
 
-    $controlador = new UsuarioController();
-    $resultado = $controlador->registrarUsuario($datosUsuario);
+    $controladorUsuario = new UsuarioController();
+    $resultado = $controladorUsuario->registrarUsuario($datosUsuario);
 
     if ($resultado) {
-        header("Location: ../app/views/welcome.php");
+
+        $controladorCuenta = new CuentaController();
+        $resultadoCuenta = $controladorCuenta->registrarCuenta($_SESSION["usuario"]["id_usuario"]);
+        if ($resultadoCuenta) {
+            header("Location: ../app/views/welcome.php");
+        } else {
+            session_destroy();
+            header("Location: ../app/views/error.php");
+        }
     } else {
         header("Location: ../app/views/login.php?error=true&form=registro");
     }
 }
-?>
