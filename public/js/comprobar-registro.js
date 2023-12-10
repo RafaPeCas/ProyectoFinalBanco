@@ -327,10 +327,10 @@ function ValidarFechaR(e) {
 
 function validarR(e) {
     validarDniR(e);
+    ValidarEmailR(e);
     ValidarNombreR(e);
     ValidarApellido1(e);
     ValidarApellido2(e);
-    ValidarEmailR(e);
     ValidarDireccionR(e);
     ValidarLocalidadR(e);
     ValidarCpR(e);
@@ -340,3 +340,4 @@ function validarR(e) {
 }
 
 formSignin.addEventListener("submit", validarR);
+

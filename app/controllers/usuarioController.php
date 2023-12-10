@@ -55,5 +55,20 @@ class UsuarioController
         $_SESSION['usuario'] = $usuario;
 
     }
+
+    public function recuperarPass($dni, $email){
+        //WIP
+        try{
+            $verificacionExitosa = $this->modelo->verificarCuenta($dni, $email);
+
+            if ($verificacionExitosa){
+
+            }
+
+        }catch (Exception $e) {
+            echo "Cuenta inexistente: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 

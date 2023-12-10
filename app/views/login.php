@@ -44,10 +44,10 @@
             <div class="form-item">
                 <p class="formLabel" id="labelPass">Contraseña:</p>
                 <input type="password" name="password" id="password" class="form-style" placeholder="Contraseña" />
-                <p><a href="#">¿Ha olvidado su contraseña?</a></p>
+                <p><a href="forgottenPassword.php">¿Ha olvidado su contraseña?</a></p>
             </div>
             <div class="form-item">
-                <p class="">¿No tienes cuenta? <a href="?error=false&form=registro" onclick="cambiar()">Registrate</a></p>
+                <p>¿No tienes cuenta? <a href="?error=false&form=registro" onclick="cambiar()">Registrate</a></p>
                 <input type="submit" name="btn" id="btn" class="login-button" value="Iniciar sesión">
             </div>
         </form>

@@ -30,3 +30,7 @@ $usuario = $_SESSION['usuario'];
 </body>
 
 </html>
+
+<?php
+session_destroy();
+?>

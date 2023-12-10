@@ -66,12 +66,30 @@ class UsuarioModel
                 $i--;
             }
         }
+
         for ($i = 0; $i < 4; $i++) {
             $posicion = strpos($abc, $nombret[$i]);
             $iban .= decbin($posicion);
         }
 
+        while($this->verificarIbanExistente($iban)){
+            $iban .= mt_rand(0 , 1);
+        }
+
         return $iban;
+    }
+
+    private function verificarIbanExistente($iban)
+    {
+        $query = "SELECT COUNT(*) as count FROM usuarios WHERE IBAN = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("s", $iban);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $count = $resultado->fetch_assoc()['count'];
+    
+
+        return $count > 0;
     }
 
     public function verificarCredenciales($dni, $password)
@@ -92,4 +110,21 @@ class UsuarioModel
 
         return null;
     }
+
+    public function verificarCuenta($dni, $email)
+    //WIP
+    {
+        $query = "SELECT pass FROM usuarios WHERE DNI = ? AND email = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("ss", $dni, $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            return true;
+        }
+
+        return null;
+    }
+
 }

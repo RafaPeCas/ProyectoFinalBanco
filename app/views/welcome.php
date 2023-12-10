@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php?form=login");
+    exit();
+}
+
+$usuario = $_SESSION['usuario'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +24,12 @@
     <p>Invierte en tranquilidad</p>
     <img src="images/Logo.svg" alt="">
     <?php
-    session_start();
     echo "<h1>Hola ". $_SESSION["usuario"]["nombre"]. " tu contraseña es " . $_SESSION["usuario"]["passsigin"] ."</h1>"
     ?>
     <a href="../../public/index.php">Inicio</a>
 </body>
 </html>
+
+<?php
+session_destroy();
+?>
