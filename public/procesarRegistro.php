@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($resultado) {
         header("Location: ../app/views/welcome.php");
     } else {
-        header("Location: ../app/views/error.php");
+        header("Location: ../app/views/login.php?error=true&form=registro");
     }
 }
 ?>

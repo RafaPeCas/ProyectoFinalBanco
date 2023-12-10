@@ -18,6 +18,13 @@ function cambiar(){
     } else{
         document.login.dni.focus();
     }
+
+    let mensajeError = document.getElementById("mensajeError");
+
+    if (mensajeError){
+        mensajeError.remove();
+    }
+
 }
 
 let formulario = document.getElementsByName('login')[0],

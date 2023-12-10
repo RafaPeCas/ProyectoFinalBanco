@@ -14,6 +14,7 @@
 <body class="login">
     <?php
     $form = isset($_GET['form']) ? $_GET['form'] : '';
+    $error = isset($_GET['error']) ? $_GET['error'] : '';
 
     if ($form === 'login') {
         echo "<article class='login-form' id='formulario-1'>";
@@ -28,6 +29,13 @@
             <img src="../../public/images/Logo.svg" alt="">
         </div>
         <h2>Iniciar sesión</h2>
+        <div class="form-item">
+            <?php
+            if ($error === "true") {
+                echo "<p id='mensajeError' class='bote error'> Contraseña o usuario incorrecto </p>";
+            }
+            ?>
+        </div>
         <form action="../../public/procesarLogin.php" method="post" name="login" id="login">
             <div class="form-item">
                 <p class="formLabel" id="labelDni">DNI:</p>
@@ -39,7 +47,7 @@
                 <p><a href="#">¿Ha olvidado su contraseña?</a></p>
             </div>
             <div class="form-item">
-                <p class="">¿No tienes cuenta? <a onclick="cambiar()">Registrate</a></p>
+                <p class="">¿No tienes cuenta? <a href="?error=false&form=registro" onclick="cambiar()">Registrate</a></p>
                 <input type="submit" name="btn" id="btn" class="login-button" value="Iniciar sesión">
             </div>
         </form>

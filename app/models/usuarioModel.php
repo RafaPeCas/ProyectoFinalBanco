@@ -11,9 +11,15 @@ class UsuarioModel
 
     public function registrarUsuario($datosUsuario)
     {
+
+        $dni = strtoupper($datosUsuario["dniRegistro"]);
+
+        if ($this->existeUsuarioPorDNI($dni)) {
+            return false; 
+        }
+
         $nombre = $datosUsuario["nombre"];
         $apellidos = $datosUsuario["apellido1"] . " " . $datosUsuario["apellido2"];
-        $dni = strtoupper($datosUsuario["dniRegistro"]);
         $fecha_nacimiento = $datosUsuario["fNac"];
         $email = $datosUsuario["email"];
         $direccion = $datosUsuario["direccion"];
@@ -34,6 +40,17 @@ class UsuarioModel
         $stmt->close();
 
         return $resultado;
+    }
+
+    private function existeUsuarioPorDNI($dni)
+    {
+        $query = "SELECT DNI FROM usuarios WHERE DNI = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("s", $dni);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        return $resultado->num_rows > 0;
     }
 
     public function generarIban()
@@ -66,8 +83,8 @@ class UsuarioModel
         $resultado = $stmt->get_result();
 
         if ($resultado->num_rows > 0) {
-            $usuario = $resultado->fetch_assoc(); 
-            $usuario["passsigin"]=$password;
+            $usuario = $resultado->fetch_assoc();
+            $usuario["passsigin"] = $password;
             if (password_verify($password, $usuario['pass'])) {
                 return $usuario;
             }

@@ -8,6 +8,14 @@
         <form action="../../public/procesarRegistro.php" method="post" name="signin" id="signin">
 
             <div class="form-item">
+                <?php
+                if ($error === "true") {
+                    echo "<p class='bote error'> Ese DNI ya ha sido registrado </p>";
+                }
+                ?>
+            </div>
+
+            <div class="form-item">
                 <p class="formLabel" id="nombre">Nombre:</p>
                 <input type="text" name="nombre" id="nombre" class="form-style" placeholder="Rafael" />
             </div>
@@ -30,7 +38,7 @@
                 </div>
                 <div class="form-item">
                     <p class="formLabel" id="fNac">Fecha de nacimiento:</p>
-                    <input type="date" name="fNac" id="fNac" class="form-style"/>
+                    <input type="date" name="fNac" id="fNac" class="form-style" />
                 </div>
             </div>
 
@@ -68,7 +76,7 @@
             </div>
 
             <div class="form-item">
-                <p class="">¿Ya tienes cuenta? <a onclick="cambiar()">Iniciar sesión</a></p>
+                <p class="">¿Ya tienes cuenta? <a href="?error=false&form=login" onclick="cambiar()">Iniciar sesión</a></p>
                 <input type="submit" name="btnRegistro" id="btnRegistro" class="login-button" value="Registrarse">
             </div>
         </form>

@@ -12,6 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../app/views/home.php");
         exit();
     } else {
-        header("Location: ../app/views/error.php");
+        header("Location: ../app/views/login.php?error=true&form=login");
     }
 }
