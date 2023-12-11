@@ -1,4 +1,3 @@
-<header>
 <nav>
   <img id="logo" src="../../public/images/LogoPajaro.png" alt="Logo de Mi Banco">
   <ul id="nav-list">
@@ -9,4 +8,3 @@
   </ul>
   <button id="mobile-menu-btn">&#9776; Menú</button>
 </nav>
-</header>

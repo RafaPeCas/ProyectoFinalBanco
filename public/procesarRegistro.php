@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $controladorCuenta = new CuentaController();
         $resultadoCuenta = $controladorCuenta->registrarCuenta($_SESSION["usuario"]["id_usuario"]);
         if ($resultadoCuenta) {
-            header("Location: ../app/views/welcome.php");
+            header("Location: ../app/views/welcome.php?from=signin");
         } else {
             header("Location: ../app/views/error.php");
         }

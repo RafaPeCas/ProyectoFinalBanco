@@ -6,7 +6,8 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-$usuario = $_SESSION['usuario'];
+$from = isset($_GET['from']) ? $_GET['from'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -22,17 +23,24 @@ $usuario = $_SESSION['usuario'];
 </head>
 
 <body>
-<?php
-    include_once("header.php");
-    ?>
-    <main>
-        <h1>BANCORIA</h1>
-        <p>Invierte en tranquilidad</p>
-        <img src="images/Logo.svg" alt="">
+    <header>
         <?php
-        echo "<h1>Hola " . $_SESSION["usuario"]["nombre"] . " tu contraseña es " . $_SESSION["usuario"]["passsigin"] . "</h1>"
+        include_once("header.php");
         ?>
-        <a href="../../public/index.php">Inicio</a>
+        <section id="banner">
+            <video autoplay muted loop id="video-bg">
+                <source src="../../public/images/banner.mp4" type="video/mp4">
+            </video>
+        </section>
+    </header>
+    <main>
+        <?php
+        if ($from === 'login') {
+            include("welcomeLogin.php");
+        } elseif ($from === 'signin') {
+            include("welcomeSignin.php");
+        }
+        ?>
     </main>
     <?php
     include_once("footer.php");

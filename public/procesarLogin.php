@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inicioSesionExitoso = $controlador->iniciarSesion($dni, $password);
 
     if ($inicioSesionExitoso) {
-        header("Location: ../app/views/home.php");
+        header("Location: ../app/views/welcome.php?from=login");
         exit();
     } else {
         header("Location: ../app/views/login.php?error=true&form=login");
