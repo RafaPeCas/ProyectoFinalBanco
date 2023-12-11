@@ -1,10 +1,19 @@
 nav {
-  background-color: $azul-oscuro;
+  z-index: 50;
+  width: 100%;
+  position: fixed;
+  background-color: transparent;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 5px 5px 50px 0px black;
+  transition: background-color 0.5s;
+  backdrop-filter: blur(20px);
+
+  &.navbar-scrolled {
+    background-color: $azul-oscuro;
+    box-shadow: 5px 5px 50px 0px black;
+  }
 
   #logo {
     width: 50px;
@@ -61,8 +70,8 @@ nav {
       top: 60px;
       left: 0;
       width: 100%;
-      background-color: $azul-oscuro;
       padding: 10px 0 0 0;
+      background-color: $azul-oscuro;
 
       li {
         margin: 0;
@@ -86,4 +95,8 @@ nav {
       display: block;
     }
   }
+}
+
+.navbar-hidden {
+  top: -60px;
 }

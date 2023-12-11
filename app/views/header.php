@@ -1,4 +1,4 @@
-<nav>
+<nav id="navbar">
   <img id="logo" src="../../public/images/LogoPajaro.png" alt="Logo de Mi Banco">
   <ul id="nav-list">
     <li><a href="#">Inicio</a></li>
