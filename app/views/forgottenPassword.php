@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,4 +40,6 @@
     </article>
 </body>
 
-</html>
+Función abandonada por falta de tiempo
+
+</html> -->

@@ -66,4 +66,6 @@ class UsuarioController
     //         return false;
     //     }
     // }
+
+    // Función retirada por falta de tiempo
 }

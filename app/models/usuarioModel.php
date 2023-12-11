@@ -87,4 +87,5 @@ class UsuarioModel
     //     return null;
     // }
 
+    // Función retirada por falta de tiempo
 }

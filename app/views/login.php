@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION['usuario'])) {
+    session_destroy();
+    //REVISAR SESION USUARIO
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +52,7 @@
                 <div class="form-item">
                     <p class="formLabel" id="labelPass">Contraseña:</p>
                     <input type="password" name="password" id="password" class="form-style" placeholder="Contraseña" />
-                    <p><a href="forgottenPassword.php">¿Ha olvidado su contraseña?</a></p>
+                    <!-- <p><a href="forgottenPassword.php">¿Ha olvidado su contraseña?</a></p> -->
                 </div>
                 <div class="form-item">
                     <p>¿No tienes cuenta? <a href="?error=false&form=registro" onclick="cambiar()">Registrate</a></p>
