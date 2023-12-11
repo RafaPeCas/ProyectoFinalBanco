@@ -20,6 +20,7 @@ $from = isset($_GET['from']) ? $_GET['from'] : '';
     <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/app.js"></script>
+    <script defer src="../../public/js/welcome.js"></script>
 </head>
 
 <body>
@@ -31,16 +32,22 @@ $from = isset($_GET['from']) ? $_GET['from'] : '';
             <video autoplay muted loop id="video-bg">
                 <source src="../../public/images/banner.mp4" type="video/mp4">
             </video>
+            <div class="bannerContent">
+                <img src="../../public/images/Logo.svg" alt="">
+                <h1>Bancoria</h1>
+            </div>
         </section>
     </header>
     <main>
-        <?php
-        if ($from === 'login') {
-            include("welcomeLogin.php");
-        } elseif ($from === 'signin') {
-            include("welcomeSignin.php");
-        }
-        ?>
+        <article id="welcome">
+            <?php
+            if ($from === 'login') {
+                include("welcomeLogin.php");
+            } elseif ($from === 'signin') {
+                include("welcomeSignin.php");
+            }
+            ?>
+        </article>
     </main>
     <?php
     include_once("footer.php");

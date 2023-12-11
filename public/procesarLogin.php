@@ -9,8 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inicioSesionExitoso = $controlador->iniciarSesion($dni, $password);
 
     if ($inicioSesionExitoso) {
-        header("Location: ../app/views/welcome.php?from=login");
-        exit();
+        $controladorCuenta = new CuentaController();
+        $resultadoCuenta = $controladorCuenta->iniciarSesion($_SESSION["usuario"]["id_usuario"]);
+        if ($resultadoCuenta) {
+            header("Location: ../app/views/welcome.php?from=signin");
+        } else {
+            header("Location: ../app/views/error.php");
+        }
     } else {
         header("Location: ../app/views/login.php?error=true&form=login");
     }

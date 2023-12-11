@@ -18,8 +18,7 @@ class UsuarioController
 
             if ($usuario) {
                 $this->iniciarSesionUsuario($usuario);
-                header("Location: ../app/views/home.php");
-                exit();
+                return true;
             }
         } catch (Exception $e) {
             echo "Error al iniciar sesión: " . $e->getMessage();
