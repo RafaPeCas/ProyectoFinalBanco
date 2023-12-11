@@ -633,18 +633,112 @@ nav #mobile-menu-btn:hover {
   }
 }
 
-#welcome {
+.welcomeWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: rgb(224, 224, 224);
+  margin-top: 50px;
 }
 
+#welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  height: 250px;
+  overflow: hidden;
+}
+#welcome h1 {
+  font-family: "drescher-grotesk", sans-serif;
+  font-size: 1.8em;
+  margin: 0;
+  text-align: center;
+}
+#welcome #userPicture img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  padding: 112px 20px 112px 20px;
+}
+#welcome p {
+  text-wrap: balance;
+}
+
+#info {
+  padding: 15px;
+}
+#info .saluditoTemporal {
+  margin: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calendarIcon {
+  width: 30px;
+}
+
+#moneyConverter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#moneyConverter p {
+  border: black solid 1px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+#moneyConverter p:hover {
+  background-color: #0fc9f2;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-box-shadow: 5px 5px 5px #0fc9f2;
+          box-shadow: 5px 5px 5px #0fc9f2;
+}
+
+#userMoney {
+  text-align: end;
+  font-size: 1.6em;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+@media only screen and (max-width: 659px) {
+  .calendarIcon {
+    display: none;
+  }
+}
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
@@ -695,4 +789,8 @@ a {
 
 .logo img {
   width: 200px;
+}
+
+.ocultar {
+  display: none;
 }

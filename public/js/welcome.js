@@ -18,6 +18,7 @@ function obtenerFechaHoraActual() {
 
     return fechaHoraFormateada;
 }
+
 function actualizarFechaHoraEnDOM() {
     let datetimeElement = document.getElementById("datetime");
     let fechaHoraActual = obtenerFechaHoraActual();
@@ -27,3 +28,31 @@ function actualizarFechaHoraEnDOM() {
 setInterval(actualizarFechaHoraEnDOM, 1000);
 
 actualizarFechaHoraEnDOM();
+
+function exchangeCurrency(currency) {
+    let amountLbl = document.getElementById("amountLbl");
+    let amount = document.getElementById("amount");
+    let lbl = document.getElementById("currency");
+    lbl.textContent = " " + currency;
+
+    switch (currency) {
+        case '₽':
+            amountLbl.textContent = (95 * amount.innerHTML / 100).toFixed(2);
+            break;
+        case '€':
+            amountLbl.textContent = (1 * amount.innerHTML / 100).toFixed(2);
+            break;
+        case '$':
+            amountLbl.textContent = (1.1 * amount.innerHTML / 100).toFixed(2);
+            break;
+        case '¥':
+            amountLbl.textContent = (160 * amount.innerHTML / 100).toFixed(2);
+            break;
+        case '£':
+            amountLbl.textContent = (0.9 * amount.innerHTML / 100).toFixed(2);
+            break;
+        default:
+
+    }
+
+}

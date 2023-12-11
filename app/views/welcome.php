@@ -39,15 +39,22 @@ $from = isset($_GET['from']) ? $_GET['from'] : '';
         </section>
     </header>
     <main>
-        <article id="welcome">
-            <?php
-            if ($from === 'login') {
-                include("welcomeLogin.php");
-            } elseif ($from === 'signin') {
-                include("welcomeSignin.php");
-            }
-            ?>
+        <?php
+        if ($from === 'login') {
+            include("welcomeLogin.php");
+        } elseif ($from === 'signin') {
+            include("welcomeSignin.php");
+        }
+        ?>
+        <article class="meteSaca">
+            <section>
+                <h1>Meter baro</h1>
+            </section>
+            <section>
+                <h1>Sacar baro</h1>
+            </section>
         </article>
+
     </main>
     <?php
     include_once("footer.php");

@@ -1,4 +1,4 @@
-<article>
+<article id="welcome">
     <section id="card 1">
         <section id="userPicture">
             <img src="../../public/images/mauroResized.jpeg" alt="">
