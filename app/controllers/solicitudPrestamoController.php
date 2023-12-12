@@ -30,4 +30,14 @@ class SolicitudPrestamoController
             header("Location: ../views/error.php");
         }
     }
+
+    public function mostrarSolicitudes($estado){
+        $solicitudes = $this->modelo->mostrarSolicitudes($estado);
+        return $solicitudes;
+    }
+
+    public function cambiarEstado($id_peticion, $estado){
+        $this->modelo->cambiarEstado($id_peticion, $estado);
+        return true; 
+    }
 }
