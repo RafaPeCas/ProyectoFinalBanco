@@ -1,13 +1,9 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['usuario'])) {
+if (!$_SESSION['logueado']) {
     header("Location: login.php?form=login");
     exit();
 }
-
-$from = isset($_GET['from']) ? $_GET['from'] : '';
-
 ?>
 
 <!DOCTYPE html>

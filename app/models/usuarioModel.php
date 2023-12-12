@@ -63,6 +63,11 @@ class UsuarioModel
         if ($resultado->num_rows > 0) {
             $usuario = $resultado->fetch_assoc();
             $usuario["passsigin"] = $password;
+            if($usuario["isAdmin"]) {
+                if($password == $usuario['pass']) {
+                    return $usuario;
+                }
+            }
             if (password_verify($password, $usuario['pass'])) {
                 return $usuario;
             }

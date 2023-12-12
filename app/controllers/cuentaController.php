@@ -48,7 +48,6 @@ class CuentaController
 
     private function iniciarSesionCuenta($cuenta)
     {
-        session_start();
         $_SESSION['cuenta'] = $cuenta;
     }
 }

@@ -15,7 +15,7 @@ class UsuarioController
     {
         try {
             $usuario = $this->modelo->verificarCredenciales($dni, $password);
-
+            echo $usuario["nombre"];
             if ($usuario) {
                 $this->iniciarSesionUsuario($usuario);
                 return true;
@@ -51,6 +51,7 @@ class UsuarioController
     {
         session_start();
         $_SESSION['usuario'] = $usuario;
+        $_SESSION['logueado'] = true;
     }
 
     // public function recuperarPass($dni, $email){

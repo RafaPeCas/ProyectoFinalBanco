@@ -1,6 +1,8 @@
 <?php
-if (isset($_SESSION['usuario'])) {
-    session_destroy();
+session_start();
+if (isset($_SESSION['logueado'])) {
+    $_SESSION['logueado']=false;
+    session_destroy(); 
 }
 ?>
 

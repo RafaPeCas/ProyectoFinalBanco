@@ -1,10 +1,3 @@
-<?php
-if (isset($_SESSION['usuario'])) {
-    session_destroy();
-    //REVISAR SESION USUARIO
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
