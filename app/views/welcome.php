@@ -38,23 +38,47 @@ $from = isset($_GET['from']) ? $_GET['from'] : '';
             </div>
         </section>
     </header>
-    <main>
-        <?php
-        if ($from === 'login') {
-            include("welcomeLogin.php");
-        } elseif ($from === 'signin') {
-            include("welcomeSignin.php");
-        }
-        ?>
-        <article class="meteSaca">
-            <section>
-                <h1>Meter baro</h1>
+    <main id="welcomeMain">
+        <p id="amount" class="ocultar">
+            <?php
+            echo  hexdec($_SESSION["cuenta"]["saldo"]);
+            ?>
+        </p>
+        <p id="favorito" class="ocultar">
+            <?php
+            echo  $_SESSION["cuenta"]["favorito"];
+            ?>
+        </p>
+        <article class="welcomeWrapper">
+            <section id="welcome">
+                <div id="userPicture">
+                    <img src="../../public/images/mauroResized.jpeg" alt="">
+                </div>
+                <section id="info">
+                    <div id="saludito">
+                        <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"] . "  " . $_SESSION["usuario"]["passsigin"] ?> </h1>
+                    </div>
+                    <section class="saluditoTemporal">
+                        <img class="calendarIcon" src="../../public/images/date-icon.svg" alt="">
+                        <div id="datetime"></div>
+                    </section>
+                </section>
             </section>
-            <section>
-                <h1>Sacar baro</h1>
+
+            <section id="userMoney">
+                <h2>Saldo: <span id="amountLbl"><?php echo number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') ?></span><span id="currency"> €</span></h2>
+            </section>
+            <section id="moneyConverter">
+                <p id="rublos" onmouseover="exchangeCurrency('₽')" onclick="favoritar(this)" onmouseleave="porDefecto()">₽</p>
+                <p id="euros" onmouseover="exchangeCurrency('€')" onclick="favoritar(this)" onmouseleave="porDefecto()">€</p>
+                <p id="dolares" onmouseover="exchangeCurrency('$')" onclick="favoritar(this)" onmouseleave="porDefecto()">$</p>
+                <p id="yenes" onmouseover="exchangeCurrency('¥')" onclick="favoritar(this)" onmouseleave="porDefecto()">¥</p>
+                <p id="libras" onmouseover="exchangeCurrency('£')" onclick="favoritar(this)" onmouseleave="porDefecto()">£</p>
             </section>
         </article>
+        <article id="prestamos">
 
+        </article>
     </main>
     <?php
     include_once("footer.php");

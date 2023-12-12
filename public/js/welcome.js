@@ -1,3 +1,5 @@
+"use strict"
+
 function obtenerFechaHoraActual() {
     let diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     let meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
@@ -29,6 +31,11 @@ setInterval(actualizarFechaHoraEnDOM, 1000);
 
 actualizarFechaHoraEnDOM();
 
+let favorito = document.getElementById("favorito");
+
+let fav = favorito.innerHTML;
+porDefecto();
+
 function exchangeCurrency(currency) {
     let amountLbl = document.getElementById("amountLbl");
     let amount = document.getElementById("amount");
@@ -54,5 +61,16 @@ function exchangeCurrency(currency) {
         default:
 
     }
+}
 
+function favoritar(elemento) {
+    let amount = document.getElementById("amount");
+    fav = document.getElementById("currency").innerHTML
+
+    window.location.href = "../../public/prestamosController.php?fav="+fav+"&dineros="+amount;
+
+}
+
+function porDefecto() {
+    exchangeCurrency(fav);
 }

@@ -727,6 +727,10 @@ nav #mobile-menu-btn:hover {
           box-shadow: 5px 5px 5px #0fc9f2;
 }
 
+.favorito {
+  background-color: #0fc9f2;
+}
+
 #userMoney {
   text-align: end;
   font-size: 1.6em;
@@ -735,8 +739,18 @@ nav #mobile-menu-btn:hover {
 }
 
 @media only screen and (max-width: 659px) {
+  #welcomeMain {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
   .calendarIcon {
     display: none;
+  }
+}
+@media only screen and (min-width: 660px) {
+  #welcomeMain {
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
 @font-face {

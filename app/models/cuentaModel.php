@@ -13,7 +13,7 @@ class CuentaModel
     public function registrarCuenta($id_usuario)
     {
         $iban = $this->generarIban();
-        $saldo = $this->moneyToHexa(0);
+        $saldo = $this->moneyToHexa(150);
 
 
         $query = "INSERT INTO cuenta_bancaria (id_usuario, iban, saldo) VALUES (?, ?, ?)";

@@ -18,7 +18,7 @@ class CuentaController
 
             if ($cuenta) {
                 $this->iniciarSesionCuenta($cuenta);
-                header("Location: ../app/views/welcome.php?=login");
+                header("Location: ../app/views/welcome.php");
                 exit();
             }
         } catch (Exception $e) {

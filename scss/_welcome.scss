@@ -62,7 +62,9 @@
             background-color: white;
         }
     }
+}
 
+#welcomeMain {
 
 }
 
@@ -74,6 +76,7 @@
     background-color: rgb(224, 224, 224);
     margin-top: 50px;
 }
+
 
 #welcome {
     display: flex;
@@ -140,6 +143,10 @@
     }
 }
 
+.favorito{
+    background-color: $azul-claro;
+}
+
 #userMoney {
     text-align: end;
     font-size: 1.6em;
@@ -148,7 +155,19 @@
 }
 
 @media only screen and (max-width: 659px) {
+    #welcomeMain {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
     .calendarIcon {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 660px) {
+    #welcomeMain {
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
