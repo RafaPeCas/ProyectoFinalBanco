@@ -1,5 +1,5 @@
 <?php
-require_once '../app/controllers/solicitudPrestamoController.php';
+require_once '../controllers/solicitudPrestamoController.php';
 
 session_start();
 

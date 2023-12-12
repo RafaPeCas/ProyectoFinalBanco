@@ -1,6 +1,6 @@
 <?php
-require_once '../app/controllers/usuarioController.php';
-require_once '../app/controllers/cuentaController.php';
+require_once '../controllers/usuarioController.php';
+require_once '../controllers/cuentaController.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datosUsuario = array(
@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $controladorCuenta = new CuentaController();
         $resultadoCuenta = $controladorCuenta->registrarCuenta($_SESSION["usuario"]["id_usuario"]);
         if ($resultadoCuenta) {
-            header("Location: ../app/views/welcome.php");
+            header("Location: ../views/welcome.php");
         } else {
-            header("Location: ../app/views/error.php");
+            header("Location: ../views/error.php");
         }
     } else {
-        header("Location: ../app/views/login.php?error=true&form=registro");
+        header("Location: ../views/login.php?error=true&form=registro");
     }
 }

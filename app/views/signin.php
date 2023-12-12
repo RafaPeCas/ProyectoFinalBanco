@@ -11,7 +11,7 @@ if (isset($_SESSION['usuario'])) {
             <img src="../../public/images/Logo.svg" alt="">
         </div>
         <h2>Crear cuenta</h2>
-        <form action="../../public/procesarRegistro.php" method="post" name="signin" id="signin">
+        <form action="../routes/procesarRegistro.php" method="post" name="signin" id="signin">
 
             <div class="form-item">
                 <?php

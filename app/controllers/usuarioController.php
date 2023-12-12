@@ -1,6 +1,6 @@
 <?php
 
-require_once('../app/models/usuarioModel.php');
+require_once('../models/usuarioModel.php');
 
 class UsuarioController
 {
@@ -15,7 +15,6 @@ class UsuarioController
     {
         try {
             $usuario = $this->modelo->verificarCredenciales($dni, $password);
-            echo $usuario["nombre"];
             if ($usuario) {
                 $this->iniciarSesionUsuario($usuario);
                 return true;

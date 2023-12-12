@@ -21,7 +21,7 @@
             <h2>Recuperar contraseña</h2>
             <div class="form-item">
             </div>
-            <form action="../../public/procesarPass.php" method="post" name="signin" id="signin">
+            <form action="../routes/procesarPass.php" method="post" name="signin" id="signin">
                 <div class="form-item">
                     <p class="formLabel" id="dniRegistro">DNI:</p>
                     <input type="text" name="dniRegistro" id="dniRegistro" maxlength="9" class="form-style" placeholder="12345678X" />

@@ -9,9 +9,12 @@ if (!$_SESSION['logueado']) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solicitud de Préstamo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancoria</title>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
+    <script defer src="../../public/js/error.js"></script>
 </head>
 <body>
 
@@ -19,14 +22,13 @@ if (!$_SESSION['logueado']) {
 
     <?php
     echo $_SESSION["cuenta"]["saldo"];
-    echo password_hash("admin", PASSWORD_DEFAULT);
     if (isset($_GET["error"])){
         echo "<h1>ERROR AL PEDIR EL PRESTAMO ya hay una solicitud pendiente</h1>";
       
     }
     ?>
 
-  <form action="../../public/procesarSolicitudPrestamo.php" method="post">
+  <form action="../routes/procesarSolicitudPrestamo.php" method="post">
 
     <label for="motivo">Motivo del Préstamo:</label>
     <input type="text" id="motivo" name="motivo" required>

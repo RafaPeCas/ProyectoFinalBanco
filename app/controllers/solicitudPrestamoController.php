@@ -1,6 +1,6 @@
 <?php
 
-require_once('../app/models/solicitudPrestamoModel.php');
+require_once('../models/solicitudPrestamoModel.php');
 
 class SolicitudPrestamoController
 {
@@ -15,19 +15,19 @@ class SolicitudPrestamoController
     {
         try {
             if(!$this->modelo->haySolicitudPendiente()) {
-                header("Location: ../app/views/prestamos.php?error=true");
+                header("Location: ../views/prestamos.php?error=true");
                 exit();
             }
 
             $registroSolicitud = $this->modelo->solicitarPrestamo($datosPrestamo);
             if ($registroSolicitud) {
-                header("Location: ../app/views/welcome.php");
+                header("Location: ../views/welcome.php");
             } else {
-                header("Location: ../app/views/error.php");
+                header("Location: ../views/error.php");
             }
         } catch (Exception $e) {
 
-            header("Location: ../app/views/error.php");
+            header("Location: ../views/error.php");
         }
     }
 }

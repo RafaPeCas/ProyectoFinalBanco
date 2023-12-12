@@ -1,6 +1,6 @@
 <?php
 
-require_once('../app/models/cuentaModel.php');
+require_once('../models/cuentaModel.php');
 
 class CuentaController
 {
@@ -18,8 +18,7 @@ class CuentaController
 
             if ($cuenta) {
                 $this->iniciarSesionCuenta($cuenta);
-                header("Location: ../app/views/welcome.php");
-                exit();
+                return true;
             }
         } catch (Exception $e) {
             echo "Error al iniciar sesión: " . $e->getMessage();

@@ -37,7 +37,7 @@
                 }
                 ?>
             </div>
-            <form action="../../public/procesarLogin.php" method="post" name="login" id="login">
+            <form action="../routes/procesarLogin.php" method="post" name="login" id="login">
                 <div class="form-item">
                     <p class="formLabel" id="labelDni">DNI:</p>
                     <input type="text" name="dni" id="dni" maxlength="9" class="form-style" placeholder="12345678X" />
