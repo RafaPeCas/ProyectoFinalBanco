@@ -888,6 +888,7 @@ nav #mobile-menu-btn:hover {
   width: 500px;
   -webkit-box-shadow: 15px 15px 15px black;
           box-shadow: 15px 15px 15px black;
+  border-radius: 15px 0 15px 0;
 }
 #formAceptarWrapper div {
   margin-top: 25px;
@@ -900,12 +901,16 @@ nav #mobile-menu-btn:hover {
     margin-right: 0%;
   }
 }
+#formAceptarWrapper input {
+  font-size: 1em;
+  border-radius: 15px;
+}
 #formAceptarWrapper button {
   border: none;
   background-color: #0fc9f2;
   cursor: pointer;
   padding: 10px;
-  width: 100%;
+  width: 200px;
 }
 #formAceptarWrapper button:hover {
   background-color: #0ba3c3;
@@ -953,6 +958,16 @@ nav #mobile-menu-btn:hover {
   font-size: 1.5em;
   padding: 5px;
 }
+@media (max-width: 600px) {
+  #prestamosMain .formPrestamoWrapper {
+    width: 350px;
+  }
+}
+@media (min-width: 601px) {
+  #prestamosMain .formPrestamoWrapper {
+    width: 500px;
+  }
+}
 #prestamosMain .formPrestamoWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -967,16 +982,25 @@ nav #mobile-menu-btn:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #0fc9f2;
-  padding: 50px;
+  background-color: #012d62;
   margin-top: 10vh;
-  width: 500px;
+  margin-bottom: 5vh;
   -webkit-box-shadow: 15px 15px 15px black;
           box-shadow: 15px 15px 15px black;
+  color: white;
+  border-radius: 15px 0px 15px 0px;
+}
+#prestamosMain .formPrestamoWrapper .saldoActual {
+  text-align: center;
+  width: 100%;
+}
+#prestamosMain .formPrestamoWrapper .hasta {
+  text-align: center;
+  width: 100%;
+  border-bottom: 2px rgb(255, 255, 255) solid;
 }
 #prestamosMain form {
-  background-color: #0ba3c3;
-  padding: 25px;
+  padding: 50px 0px 50px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -987,6 +1011,7 @@ nav #mobile-menu-btn:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 80%;
 }
 #prestamosMain form .form-item {
   display: -webkit-box;
@@ -1003,17 +1028,21 @@ nav #mobile-menu-btn:hover {
 #prestamosMain form input {
   border: black solid 1px;
   padding: 5px;
+  border-radius: 15px;
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   #prestamosMain form .form-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  #prestamosMain form input {
+    width: 100%;
+  }
 }
 #prestamosMain form .btnEnviar:hover {
-  background-color: #012d62;
+  background-color: #0fc9f2;
   cursor: pointer;
   color: white;
 }
@@ -1072,4 +1101,14 @@ a {
 
 .ocultar {
   display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
