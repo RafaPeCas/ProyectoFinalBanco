@@ -109,6 +109,10 @@ nav #mobile-menu-btn:hover {
   top: -60px;
 }
 
+.headerSinBanner {
+  margin-bottom: 70px;
+}
+
 .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -753,6 +757,164 @@ nav #mobile-menu-btn:hover {
     margin-right: 20%;
   }
 }
+#adminMain {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.contenedorFormulario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #012d62;
+  color: white;
+}
+.contenedorFormulario #formularioEstado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+.contenedorFormulario #formularioEstado button {
+  border: none;
+  background-color: #0fc9f2;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border-left: 1px black solid;
+}
+.contenedorFormulario #formularioEstado button:hover {
+  background-color: #0ba3c3;
+}
+.contenedorFormulario .seleccionado {
+  background-color: #0ba3c3 !important;
+}
+
+#contenedorTabla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+#contenedorTabla #tablaPeticiones {
+  width: 100%;
+  border-collapse: collapse;
+}
+#contenedorTabla #tablaPeticiones th,
+#contenedorTabla #tablaPeticiones td {
+  padding: 10px;
+  border: 1px solid #0ba3c3;
+  width: auto;
+}
+#contenedorTabla #tablaPeticiones th {
+  background-color: #0ba3c3;
+}
+#contenedorTabla #tablaPeticiones tbody tr:nth-child(odd) {
+  background-color: #0fc9f2;
+}
+#contenedorTabla #tablaPeticiones tbody tr:nth-child(even) {
+  background-color: #0ba3c3;
+}
+#contenedorTabla #tablaPeticiones tbody tr td {
+  border: none;
+  border-bottom: 1px solid #0ba3c3;
+  width: auto;
+}
+#contenedorTabla #tablaPeticiones tbody tr:last-child td {
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  #contenedorTabla {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
+
+#formAceptarWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10vh;
+  background-color: #012d62;
+  padding: 25px;
+  color: white;
+}
+#formAceptarWrapper div {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  #formAceptarWrapper {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
+#formAceptarWrapper button {
+  border: none;
+  background-color: #0fc9f2;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+}
+#formAceptarWrapper button:hover {
+  background-color: #0ba3c3;
+}
+
+.registroVacio {
+  background-color: #0ba3c3;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 25px;
+}
+
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);

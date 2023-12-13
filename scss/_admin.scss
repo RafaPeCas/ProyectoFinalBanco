@@ -1,0 +1,139 @@
+#adminMain {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.contenedorFormulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $azul-oscuro3;
+    color: white;
+
+    #formularioEstado {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        button {
+            border: none;
+            background-color: $azul-claro;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border-left: 1px black solid;
+
+            &:hover {
+                background-color: $azul-claro3;
+            }
+        }
+    }
+
+    .seleccionado {
+        background-color: $azul-claro3 !important;
+    }
+
+}
+
+#contenedorTabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    #tablaPeticiones {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid $azul-claro3;
+            width: auto;
+        }
+
+        th {
+            background-color: $azul-claro3;
+        }
+
+        tbody {
+            tr {
+                &:nth-child(odd) {
+                    background-color: $azul-claro;
+                }
+
+                &:nth-child(even) {
+                    background-color: $azul-claro3;
+                }
+
+                td {
+                    border: none;
+                    border-bottom: 1px solid $azul-claro3;
+                    width: auto;
+                }
+
+                &:last-child td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        overflow-x: scroll;
+    }
+}
+
+#formAceptarWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10vh;
+    background-color: $azul-oscuro3;
+    padding: 25px;
+    color: white;
+
+    div {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    button {
+        border: none;
+        background-color: $azul-claro;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+
+        &:hover {
+            background-color: $azul-claro3;
+        }
+    }
+
+}
+
+.registroVacio{
+    background-color: $azul-claro3;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 25px;
+}

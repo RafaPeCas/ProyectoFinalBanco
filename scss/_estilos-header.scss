@@ -102,3 +102,7 @@ nav {
 .navbar-hidden {
   top: -60px;
 }
+
+.headerSinBanner{
+  margin-bottom: $navbarHeigth+$navbarPadding*2;
+}
