@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/admin.js"></script>
     <script defer src="../../public/js/app.js"></script>
+    <script defer src="../../public/js/comprobar-formulario-aceptar-prestamo.js"></script>
 </head>
 
 <body>
@@ -90,14 +91,14 @@
                 <section id="formAceptarWrapper">
                     <h1>Aceptar préstamo</h1>
 
-                    <form action="../routes/procesarAceptarSolicitud.php" method="post">
+                    <form action="../routes/procesarAceptarSolicitud.php" name="prestamo" method="post">
                         <div class="form-item">
-                            <label for="mensualidad">Mensualidad:</label>
-                            <input type="number" name="mensualidad" required>
+                            <label for="mensualidad" id="mensualidad">Mensualidad:</label>
+                            <input type="decimal" id="mensualidad" name="mensualidad">
                         </div>
                         <div class="form-item">
-                            <label for="tiempo">Tiempo (en dias):</label>
-                            <input type="number" name="tiempo" required>
+                            <label for="tiempo" id="tiempo">Tiempo (en dias):</label>
+                            <input type="number" id="tiempo" name="tiempo" >
                             <input type='hidden' name='id_peticion' id='id_peticion' value=''>
                             <input type='hidden' name='cantidad' id='cantidad' value=''>
                         </div>

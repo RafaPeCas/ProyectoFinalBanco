@@ -9,6 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $controlador->cambiarEstado($_POST["id_peticion"], "aceptada");
 
     $controladorPrestamo = new PrestamoController();
-    $controladorPrestamo->solicitarPrestamo($_SESSION["cuenta"]["id_cuenta"], $_POST["cantidad"], $_POST["mensualidad"], $_POST["tiempo"]);
+    $controladorPrestamo->solicitarPrestamo($_SESSION["cuenta"]["id_cuenta"], $_POST["cantidad"]*100, $_POST["mensualidad"], $_POST["tiempo"]);
     header ("Location: ../views/admin.php");
 }

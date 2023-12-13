@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let logo = document.getElementById("logo");
 
     function checkHeaderClass() {
-        console.log(header.classList.contains('headerSinBanner'));
 
         if (header.classList.contains('headerSinBanner')) {
             handleScrolledNavbar();

@@ -16,6 +16,7 @@ if (!$_SESSION['logueado']) {
   <link rel="stylesheet" href="../../public/css/styles.css">
   <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
   <script defer src="../../public/js/app.js"></script>
+  <script defer src="../../public/js/comprobar-formulario-prestamo.js"></script>
 </head>
 
 <body>
@@ -23,6 +24,7 @@ if (!$_SESSION['logueado']) {
   echo "<header class='headerSinBanner'>";
   include_once("header.php");
   echo "</header><main id='prestamosMain'><h1 class='enunciado'>Solicitar préstamo</h1>";
+  echo "<p hidden id='dineroJS'>" . hexdec($_SESSION["cuenta"]["saldo"]) . "</p>";
 
   if (isset($_GET["error"])) {
     echo "<h1 class='error'>ERROR AL PEDIR EL PRESTAMO, ya hay una solicitud pendiente</h1>";
@@ -36,15 +38,15 @@ if (!$_SESSION['logueado']) {
     <section class="formPrestamoWrapper">
       <?php
       echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2>";
-      echo "<p>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p>";
+      echo "<p id='cantidadMax'>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p>";
       ?>
-      <form action="../routes/procesarSolicitudPrestamo.php" method="post">
+      <form action="../routes/procesarSolicitudPrestamo.php" name="prestamo" method="post">
         <div class="form-item">
-          <label for="motivo">Motivo del Préstamo:</label>
+          <label for="motivo" id="motivo">Motivo del Préstamo:</label>
           <input type="text" id="motivo" name="motivo">
         </div>
         <div class="form-item">
-          <label for="cantidad">Cantidad del Préstamo:</label>
+          <label for="cantidad" id="cantidad">Cantidad del Préstamo:</label>
           <input type="double" id="cantidad" name="cantidad" min="1" step="1">
         </div>
 

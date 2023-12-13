@@ -17,7 +17,7 @@ class PrestamosModel
         $query = "INSERT INTO prestamos (id_cuenta, Cantidad, fecha_solicitud, mensualidad, tiempo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conexion->prepare($query);
 
-        $stmt->bind_param("isssi", $idCuenta, str_pad(dechex($cantidad*100), 2, '0', STR_PAD_LEFT), $fechaSolicitud, $mensualidad, $tiempo);
+        $stmt->bind_param("isssi", $idCuenta, str_pad(dechex($cantidad*100), 2, '0', STR_PAD_LEFT), $fechaSolicitud, str_pad(dechex($mensualidad*100), 2, '0', STR_PAD_LEFT), $tiempo);
 
         $resultado = $stmt->execute();
 
