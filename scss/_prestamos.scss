@@ -15,6 +15,18 @@
 
 #prestamosMain {
 
+    .error {
+        text-align: center;
+        font-size: 1.5em;
+        padding: 5px;
+    }
+
+    .correct{
+        text-align: center;
+        font-size: 1.5em;
+        padding: 5px;
+
+    }
 
     .formPrestamoWrapper {
         display: flex;
@@ -24,14 +36,13 @@
         background-color: $azul-claro;
         padding: 50px;
         margin-top: 10vh;
-        border-radius: 15px;
         width: 500px;
+        box-shadow: 15px 15px 15px black;
     }
 
     form {
         background-color: $azul-claro3;
         padding: 25px;
-        border-radius: 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,7 +56,6 @@
         }
 
         input {
-            border-radius: 15px;
             border: black solid 1px;
             padding: 5px;
         }

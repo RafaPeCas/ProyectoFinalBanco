@@ -21,7 +21,7 @@ class SolicitudPrestamoController
 
             $registroSolicitud = $this->modelo->solicitarPrestamo($datosPrestamo);
             if ($registroSolicitud) {
-                header("Location: ../views/welcome.php");
+                header("Location: ../views/prestamos.php?acierto=true");
             } else {
                 header("Location: ../views/error.php");
             }

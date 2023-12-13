@@ -52,8 +52,8 @@
                         <th>Estado</th>
                         <th>Motivo</th>";
                 if ($pedidita === "pendiente") {
-                    echo "<th>Aprobar</th>
-                            <th>Rechazar</th>";
+                    echo "<th></th>
+                        <th></th>";
                 }
                 echo "</tr></thead><tbody>";
 
@@ -61,7 +61,7 @@
                     echo "<tr>";
                     echo "<td>" . $fila['id_peticion'] . "</td>";
                     echo "<td>" . $fila['id_cuenta'] . "</td>";
-                    echo "<td>" . hexdec($fila['Cantidad']) . "$</td>";
+                    echo "<td>" . number_format(hexdec($fila['Cantidad']) / 100, 2, '.', '.') . "€</td>";
                     echo "<td>" . $fila['fecha_solicitud'] . "</td>";
                     echo "<td>" . $fila['estado'] . "</td>";
                     echo "<td>" . $fila['motivo'] . "</td>";

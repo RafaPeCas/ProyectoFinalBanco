@@ -843,6 +843,19 @@ nav #mobile-menu-btn:hover {
   border-bottom: 1px solid #0ba3c3;
   width: auto;
 }
+#contenedorTabla #tablaPeticiones tbody tr td button {
+  padding: 8px;
+  color: white;
+  border: none;
+  background-color: #012d62;
+  border-radius: 5px 0 5px 0;
+  -webkit-box-shadow: 2px 2px 2px black;
+          box-shadow: 2px 2px 2px black;
+}
+#contenedorTabla #tablaPeticiones tbody tr td button:hover {
+  background-color: #014495;
+  cursor: pointer;
+}
 #contenedorTabla #tablaPeticiones tbody tr:last-child td {
   border-bottom: none;
 }
@@ -873,6 +886,8 @@ nav #mobile-menu-btn:hover {
   padding: 25px;
   color: white;
   width: 500px;
+  -webkit-box-shadow: 15px 15px 15px black;
+          box-shadow: 15px 15px 15px black;
 }
 #formAceptarWrapper div {
   margin-top: 25px;
@@ -928,6 +943,16 @@ nav #mobile-menu-btn:hover {
           align-items: center;
 }
 
+#prestamosMain .error {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 5px;
+}
+#prestamosMain .correct {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 5px;
+}
 #prestamosMain .formPrestamoWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -945,13 +970,13 @@ nav #mobile-menu-btn:hover {
   background-color: #0fc9f2;
   padding: 50px;
   margin-top: 10vh;
-  border-radius: 15px;
   width: 500px;
+  -webkit-box-shadow: 15px 15px 15px black;
+          box-shadow: 15px 15px 15px black;
 }
 #prestamosMain form {
   background-color: #0ba3c3;
   padding: 25px;
-  border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -976,7 +1001,6 @@ nav #mobile-menu-btn:hover {
   font-weight: bold;
 }
 #prestamosMain form input {
-  border-radius: 15px;
   border: black solid 1px;
   padding: 5px;
 }

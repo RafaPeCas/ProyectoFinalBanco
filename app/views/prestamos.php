@@ -25,14 +25,17 @@ if (!$_SESSION['logueado']) {
   echo "</header><main id='prestamosMain'><h1 class='enunciado'>Solicitar préstamo</h1>";
 
   if (isset($_GET["error"])) {
-    echo "<h1>ERROR AL PEDIR EL PRESTAMO, ya hay una solicitud pendiente</h1>";
+    echo "<h1 class='error'>ERROR AL PEDIR EL PRESTAMO, ya hay una solicitud pendiente</h1>";
+  }
+  if (isset($_GET["acierto"])) {
+    echo "<h1 class='correct'>Prestamo solicitado correctamente, esperando la confirmación de un administrador</h1>";
   }
   ?>
 
   <section class="centrar">
     <section class="formPrestamoWrapper">
       <?php
-      echo "<h2> Saldo actual:" . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"])) / 100, 2, '.', '.') . "€</h2>";
+      echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2>";
       echo "<p>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p>";
       ?>
       <form action="../routes/procesarSolicitudPrestamo.php" method="post">
@@ -42,7 +45,7 @@ if (!$_SESSION['logueado']) {
         </div>
         <div class="form-item">
           <label for="cantidad">Cantidad del Préstamo:</label>
-          <input type="number" id="cantidad" name="cantidad" min="1" step="1">
+          <input type="double" id="cantidad" name="cantidad" min="1" step="1">
         </div>
 
         <input type="submit" value="Enviar Solicitud" class="btnEnviar">

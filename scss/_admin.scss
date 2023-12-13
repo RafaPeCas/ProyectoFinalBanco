@@ -73,6 +73,19 @@
                     border: none;
                     border-bottom: 1px solid $azul-claro3;
                     width: auto;
+                    button{
+                        padding: 8px;
+                        color: white;
+                        border: none;
+                        background-color: $azul-oscuro3;
+                        border-radius: 5px 0 5px 0;
+                        box-shadow: 2px 2px 2px black;
+                        &:hover{
+                            background-color: $azul-oscuro;
+                            cursor: pointer;
+                           
+                        }
+                    }
                 }
 
                 &:last-child td {
@@ -99,6 +112,7 @@
     padding: 25px;
     color: white;
     width: 500px;
+    box-shadow: 15px 15px 15px black;
 
     div {
         margin-top: 25px;
