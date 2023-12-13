@@ -1,0 +1,70 @@
+.enunciado {
+    background-color: $azul-oscuro3;
+    margin: 0;
+    text-align: center;
+    padding: 19px;
+    color: white;
+}
+
+.centrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#prestamosMain {
+
+
+    .formPrestamoWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $azul-claro;
+        padding: 50px;
+        margin-top: 10vh;
+        border-radius: 15px;
+        width: 500px;
+    }
+
+    form {
+        background-color: $azul-claro3;
+        padding: 25px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .form-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        input {
+            border-radius: 15px;
+            border: black solid 1px;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .form-item {
+                flex-direction: column;
+            }
+        }
+
+        .btnEnviar {
+            &:hover {
+                background-color: $azul-oscuro3;
+                cursor: pointer;
+                color: white;
+            }
+        }
+    }
+
+
+
+}

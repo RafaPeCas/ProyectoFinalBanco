@@ -15,7 +15,7 @@ class SolicitudPrestamosModel
         $fecha_solicitud = date("Y-m-d H:i:s");
         $query = "INSERT INTO peticion_prestamos (id_cuenta, cantidad, fecha_solicitud, estado, motivo) VALUES (?, ?, ?, ?, ?);";
         $stmt = $this->conexion->prepare($query);
-        $stmt->bind_param("issss", $_SESSION["cuenta"]["id_cuenta"], str_pad(dechex($datosPrestamo["cantidad"]), 2, '0', STR_PAD_LEFT), $fecha_solicitud, $estado, $datosPrestamo["motivo"]);
+        $stmt->bind_param("issss", $_SESSION["cuenta"]["id_cuenta"], str_pad(dechex($datosPrestamo["cantidad"]*100), 2, '0', STR_PAD_LEFT), $fecha_solicitud, $estado, $datosPrestamo["motivo"]);
         $stmt->execute();
 
         return true;

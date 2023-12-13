@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/admin.js"></script>
+    <script defer src="../../public/js/app.js"></script>
 </head>
 
 <body>
@@ -85,24 +86,27 @@
             ?>
         </section>
         <section class="ocultar" id="aceptarPrestamo">
-            <section id="formAceptarWrapper">
-                <h1>Aceptar préstamo</h1>
+            <div class="centrar">
+                <section id="formAceptarWrapper">
+                    <h1>Aceptar préstamo</h1>
 
-                <form action="../routes/procesarAceptarSolicitud.php" method="post">
-                    <div class="form-item">
-                        <label for="mensualidad">Mensualidad:</label>
-                        <input type="number" name="mensualidad" required>
-                    </div>
-                    <div class="form-item">
-                        <label for="tiempo">Tiempo (en dias):</label>
-                        <input type="number" name="tiempo" required>
-                        <input type='hidden' name='id_peticion' id='id_peticion' value=''>
-                        <input type='hidden' name='cantidad' id='cantidad' value=''>
-                    </div>
+                    <form action="../routes/procesarAceptarSolicitud.php" method="post">
+                        <div class="form-item">
+                            <label for="mensualidad">Mensualidad:</label>
+                            <input type="number" name="mensualidad" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="tiempo">Tiempo (en dias):</label>
+                            <input type="number" name="tiempo" required>
+                            <input type='hidden' name='id_peticion' id='id_peticion' value=''>
+                            <input type='hidden' name='cantidad' id='cantidad' value=''>
+                        </div>
 
-                    <button class="boton" type="submit">Aprobar préstamo</button>
-                </form>
-            </section>
+                        <button class="boton" type="submit">Aprobar préstamo</button>
+                    </form>
+                </section>
+            </div>
+
         </section>
     </main>
 </body>

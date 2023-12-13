@@ -1,24 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let header = document.querySelector("header");
     let mobileMenuBtn = document.getElementById("mobile-menu-btn");
     let navList = document.getElementById("nav-list");
     let navbar = document.getElementById("navbar");
     let logo = document.getElementById("logo");
 
-    mobileMenuBtn.addEventListener("click", function () {
-        navList.style.display = (navList.style.display === "flex") ? "none" : "flex";
-    });
+    function checkHeaderClass() {
+        console.log(header.classList.contains('headerSinBanner'));
 
-    window.addEventListener("resize", function () {
-        if (window.innerWidth > 768) {
-            navList.style.display = "flex";
+        if (header.classList.contains('headerSinBanner')) {
+            handleScrolledNavbar();
         } else {
-            navList.style.display = "none";
+            window.addEventListener("resize", handleResize);
+
+            window.addEventListener("scroll", handleScroll);
         }
-    });
+    }
 
-    let prevScrollPos = window.scrollY;
+    function toggleMobileMenu() {
+        navList.style.display = (navList.style.display === "flex") ? "none" : "flex";
+    }
 
-    window.addEventListener("scroll", function () {
+    function handleScroll() {
         let currentScrollPos = window.scrollY;
 
         if (prevScrollPos > currentScrollPos) {
@@ -29,7 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
             logo.style.display = "block";
         }
 
-
         prevScrollPos = currentScrollPos;
-    });
+    }
+
+    function handleScrolledNavbar() {
+        navbar.classList.add("navbar-scrolled");
+        logo.style.display = "block";
+    }
+
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            navList.style.display = "flex";
+        } else {
+            navList.style.display = "none";
+        }
+    }
+    mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+    let prevScrollPos = window.scrollY;
+    checkHeaderClass();
 });

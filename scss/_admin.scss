@@ -83,10 +83,6 @@
     }
 
     @media (max-width: 768px) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
         width: 100%;
         overflow-x: scroll;
     }
@@ -98,12 +94,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 30%;
-    margin-right: 30%;
     margin-top: 10vh;
     background-color: $azul-oscuro3;
     padding: 25px;
     color: white;
+    width: 500px;
 
     div {
         margin-top: 25px;
