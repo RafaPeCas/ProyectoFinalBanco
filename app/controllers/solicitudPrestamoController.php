@@ -38,6 +38,7 @@ class SolicitudPrestamoController
 
     public function cambiarEstado($id_peticion, $estado){
         $this->modelo->cambiarEstado($id_peticion, $estado);
+        header("Location: ../views/admin.php");
         return true; 
     }
 }
