@@ -15,38 +15,67 @@
 
 #prestamosMain {
 
+
+
     .error {
         text-align: center;
         font-size: 1.5em;
         padding: 5px;
     }
 
-    .correct{
+    .correct {
         text-align: center;
         font-size: 1.5em;
         padding: 5px;
 
     }
 
+   
+    @media (max-width: 600px) {
+        .formPrestamoWrapper {
+            width: 350px;
+        }
+
+    }
+    @media (min-width: 601px) {
+        .formPrestamoWrapper {
+            width: 500px;
+        }
+
+    }
+
+
     .formPrestamoWrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: $azul-claro;
-        padding: 50px;
+        background-color: $azul-oscuro3;
         margin-top: 10vh;
-        width: 500px;
+        margin-bottom: 5vh;
         box-shadow: 15px 15px 15px black;
+        color: white;
+        border-radius: 15px 0px 15px 0px;
+       
+
+        .saldoActual {
+            text-align: center;
+            width: 100%;
+        }
+
+        .hasta {
+            text-align: center;
+            width: 100%;
+            border-bottom: 2px rgb(255, 255, 255) solid;
+        }
     }
 
     form {
-        background-color: $azul-claro3;
-        padding: 25px;
+        padding: 50px 0px 50px 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        width: 80%;
 
         .form-item {
             display: flex;
@@ -58,17 +87,23 @@
         input {
             border: black solid 1px;
             padding: 5px;
+            border-radius: 15px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .form-item {
                 flex-direction: column;
+            }
+            input{
+                width: 100%;
             }
         }
 
         .btnEnviar {
+            
+
             &:hover {
-                background-color: $azul-oscuro3;
+                background-color: $azul-claro;
                 cursor: pointer;
                 color: white;
             }

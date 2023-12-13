@@ -36,9 +36,10 @@ if (!$_SESSION['logueado']) {
 
   <section class="centrar">
     <section class="formPrestamoWrapper">
+      <div class="saldoActual">
       <?php
-      echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2>";
-      echo "<p id='cantidadMax'>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p>";
+      echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2></div>";
+      echo "<div class='hasta'><p>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p></div>";
       ?>
       <form action="../routes/procesarSolicitudPrestamo.php" name="prestamo" method="post">
         <div class="form-item">
