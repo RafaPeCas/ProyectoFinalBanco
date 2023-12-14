@@ -57,6 +57,11 @@ class UsuarioController
         }
     }
 
+    public function actualizarUsuario($datosUsuario){
+        $this->modelo->actualizarUsuario($datosUsuario);
+        header("Location: ../../public/index.php");
+    }
+    
     // public function recuperarPass($dni, $email){
     //     //WIP
     //     try{

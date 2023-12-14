@@ -25,38 +25,31 @@
         if (isset($_SESSION["usuario"]["passsigin"]))
             echo " Su contraseña por defecto es: " . $_SESSION["usuario"]["passsigin"] . " cambiela wey";
         ?>
-        <form action="procesar_modificacion.php" method="post" style="display: flex; flex-direction:column; background: green; color: white; font-size:30px;">
-            <input type="hidden" name="id_usuario" value="ID_DEL_USUARIO_A_MODIFICAR">
+        <form action="../routes/procesarActualizacionUsuario.php" method="post">
 
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" required>
+            <input type="text" name="nombre" value="<?php echo $_SESSION["usuario"]["nombre"] ?>" required>
 
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" name="apellidos" required>
+            <label for="apellido1">Apellido1:</label>
+            <input type="text" name="apellido1" value="<?php echo strstr($_SESSION["usuario"]["apellidos"], ' ', true) ?>" required>
 
-            <label for="pass">Contraseña:</label>
-            <input type="password" name="pass" required>
-
-            <label for="DNI">DNI:</label>
-            <input type="text" name="DNI" required>
-
-            <label for="email">Email:</label>
-            <input type="email" name="email" required>
+            <label for="apellido2">Apellido2:</label>
+            <input type="text" name="apellido2" value="<?php echo trim(strrchr($_SESSION["usuario"]["apellidos"], ' ')) ?>" required>
 
             <label for="direccion">Dirección:</label>
-            <input type="text" name="direccion" required>
+            <input type="text" name="direccion" value="<?php echo $_SESSION["usuario"]["direccion"] ?>" required>
 
             <label for="cp">Código Postal:</label>
-            <input type="text" name="cp" required>
+            <input type="text" name="cp" value="<?php echo $_SESSION["usuario"]["cp"] ?>" required>
 
             <label for="ciudad">Ciudad:</label>
-            <input type="text" name="ciudad" required>
+            <input type="text" name="ciudad" value="<?php echo $_SESSION["usuario"]["ciudad"] ?>" required>
 
             <label for="provincia">Provincia:</label>
-            <input type="text" name="provincia" required>
+            <input type="text" name="provincia" value="<?php echo $_SESSION["usuario"]["provincia"] ?>" required>
 
             <label for="pais">País:</label>
-            <input type="text" name="pais" required>
+            <input type="text" name="pais" value="<?php echo $_SESSION["usuario"]["pais"] ?>" required>
 
             <button type="submit">Guardar Cambios</button>
         </form>

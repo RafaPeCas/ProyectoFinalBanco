@@ -25,6 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cuentaController->actualizarSaldo($id_emisor, $cantidad, "ingreso");
 
     $movimientoController = new MovimientosController();
-    $movimientoController->crearNuevoMovimiento($id_emisor, "ingreso", $cantidad);
+    $movimientoController->crearNuevoMovimiento($id_emisor, "Ingreso Préstamo", $cantidad);
     header ("Location: ../views/admin.php");
 }

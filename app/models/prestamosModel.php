@@ -31,7 +31,7 @@ class PrestamosModel
 
     public function mostrarPrestamos($idCuenta)
     {
-        $query = "SELECT * FROM prestamos WHERE id_cuenta = ?";
+        $query = "SELECT * FROM prestamos WHERE id_cuenta = ? ORDER BY fecha_vencimiento ASC";
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("i", $idCuenta);
         $stmt->execute();

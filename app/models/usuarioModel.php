@@ -76,6 +76,24 @@ class UsuarioModel
         return null;
     }
 
+    public function actualizarUsuario($datosUsuario){
+        $id_usuario= $_SESSION["usuario"]["id_usuario"];
+        $nombre = $datosUsuario["nombre"];
+        $apellidos = $datosUsuario["apellido1"] . " " . $datosUsuario["apellido2"];
+        $direccion = $datosUsuario["direccion"];
+        $cp = $datosUsuario["cp"];
+        $ciudad = $datosUsuario["ciudad"];
+        $provincia = $datosUsuario["provincia"];
+        $pais = $datosUsuario["pais"];
+
+        $query = "UPDATE usuarios SET nombre = ?, apellidos = ?, direccion = ?, cp = ?, ciudad = ?, provincia = ?, pais = ? WHERE id_usuario = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("sssssssi", $nombre, $apellidos, $direccion, $cp, $ciudad, $provincia, $pais, $id_usuario);
+        $stmt->execute();
+
+        return true;
+    }
+
     // public function verificarCuenta($dni, $email)
     // //WIP
     // {

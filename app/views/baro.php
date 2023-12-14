@@ -50,14 +50,13 @@
                     echo "</tr></thead><tbody>";
 
                     foreach ($resultado as $movimiento) {
-                        if ($movimiento['tipo_movimiento'] === "ingreso") {
-                            echo "<tr>
+
+                        echo "<tr>
                             <td>" . $movimiento['id'] . "</td>
                             <td>" . $movimiento['tipo_movimiento'] . "</td>
-                            <td>" . number_format(hexdec($movimiento['monto'])/100, 2, '.', '.') . "€</td>
+                            <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
                             <td>" . $movimiento['fecha_hora'] . "</td>
                           </tr>";
-                        }
                     }
 
                     echo "</tbody></table>";
