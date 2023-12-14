@@ -13,8 +13,9 @@ class PrestamoController
 
     public function solicitarPrestamo($idCuenta, $cantidad, $mensualidad, $tiempo)
     {
-        $cantidad=str_pad(dechex($cantidad * 100), 2, '0', STR_PAD_LEFT);
-        $mensualidad=str_pad(dechex($mensualidad * 100), 2, '0', STR_PAD_LEFT);
+
+        $cantidad=str_pad(dechex($cantidad), 2, '0', STR_PAD_LEFT);
+        $mensualidad=str_pad(dechex($mensualidad), 2, '0', STR_PAD_LEFT);
 
         $resultado = $this->modelo->crearNuevoPrestamo($idCuenta, $cantidad, $mensualidad, $tiempo);
 
@@ -23,5 +24,10 @@ class PrestamoController
         } else {
             return false;
         }
+    }
+
+    public function mostrarPrestamos($idCuenta){
+        $prestamos = $this->modelo->mostrarPrestamos($idCuenta);
+        return $prestamos;
     }
 }

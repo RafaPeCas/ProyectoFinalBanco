@@ -20,7 +20,7 @@ function ValidarMotivo(e) {
         e.preventDefault();
         return;
     }
-    
+
     campo.classList.add("correct");
 
 }
@@ -55,9 +55,9 @@ function ValidarCantidad(e) {
         return;
     }
 
-    let cantidadMaxima = Math.floor((dineroJS.innerHTML*0.15));
+    let cantidadMaxima = Math.floor((dineroJS.innerHTML * 0.15));
 
-    if  (campo.value>cantidadMaxima/100 || campo.value<1){
+    if (campo.value > cantidadMaxima / 100 || campo.value < 1) {
         campo.classList.add("error");
         label.textContent = "Cantidad inválida:";
         setTimeout(function () {
@@ -77,3 +77,29 @@ function validar(e) {
 }
 
 formularioPrestamo.addEventListener("submit", validar);
+
+let palabras = ["Solicitar préstamo", "Préstamos"];
+let i = 0;
+
+function cambiar(direccion) {
+    let formulario = document.getElementById("formularioPrestamo");
+    contenedorContenedorTabla.classList.toggle("ocultar");
+    formulario.classList.toggle("ocultar");
+    enunciadoPrestamos.innerHTML = palabras[i];
+
+    direccion ? i++ : i--;
+
+    if (i >= palabras.length) {
+        i = 0;
+    } else if (i < 0) {
+        i = palabras.length - 1;
+    }
+}
+
+function pagarPrestamo(id_prestamo) {
+
+    formularioPagarPrestamo.classList.remove("ocultar");
+    document.getElementById('id_peticion').value = id_peticion;
+    document.getElementById('cantidad').value = cantidad;
+
+}

@@ -6,4 +6,5 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controlador = new SolicitudPrestamoController();
     $resultado = $controlador->cambiarEstado($_POST["id_peticion"], "rechazada");
+    header("Location: ../views/admin.php");
 }

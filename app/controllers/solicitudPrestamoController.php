@@ -18,7 +18,7 @@ class SolicitudPrestamoController
                 header("Location: ../views/prestamos.php?error=true");
                 exit();
             }
-
+            $datosPrestamo["cantidad"]=dechex($datosPrestamo["cantidad"]*100);
             $registroSolicitud = $this->modelo->solicitarPrestamo($datosPrestamo);
             if ($registroSolicitud) {
                 header("Location: ../views/prestamos.php?acierto=true");

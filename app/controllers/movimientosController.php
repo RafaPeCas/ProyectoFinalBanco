@@ -11,8 +11,9 @@ class MovimientosController
         $this->modelo = new MovimientosModel(new mysqli("localhost", "root", "", "bancoriadb"));
     }
 
-    public function crearNuevoMovimiento($idCuenta, $tipoMovimiento, $monto, $fechaMovimiento)
+    public function crearNuevoMovimiento($idCuenta, $tipoMovimiento, $monto)
     {
+        $fechaMovimiento = date("Y-m-d H:i:s");
         if($monto > hexdec($_SESSION["cuenta"]["saldo"]) && $tipoMovimiento==="gasto"){
             header("location: ../views/baro.php?error=true");
             return false;

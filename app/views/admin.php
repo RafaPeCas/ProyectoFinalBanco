@@ -62,7 +62,7 @@
                     echo "<tr>";
                     echo "<td>" . $fila['id_peticion'] . "</td>";
                     echo "<td>" . $fila['id_cuenta'] . "</td>";
-                    echo "<td>" . number_format(hexdec($fila['Cantidad']) / 100, 2, '.', '.') . "€</td>";
+                    echo "<td>" . number_format(hexdec($fila['Cantidad'])/100, 2, '.', '.') . "€</td>";
                     echo "<td>" . $fila['fecha_solicitud'] . "</td>";
                     echo "<td>" . $fila['estado'] . "</td>";
                     echo "<td>" . $fila['motivo'] . "</td>";
@@ -94,7 +94,7 @@
                     <form action="../routes/procesarAceptarSolicitud.php" name="prestamo" method="post">
                         <div class="form-item">
                             <label for="mensualidad" id="mensualidad">Mensualidad:</label>
-                            <input type="decimal" id="mensualidad" name="mensualidad">
+                            <input type="number" id="mensualidad" name="mensualidad">
                         </div>
                         <div class="form-item">
                             <label for="tiempo" id="tiempo">Tiempo (en dias):</label>

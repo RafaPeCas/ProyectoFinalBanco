@@ -55,7 +55,7 @@ class CuentaController
         $saldoFinal = dechex($saldoFinal);
         $this->modelo->actualizarSaldo($idCuenta, $saldoFinal);
         $this->iniciarSesionCuenta($_SESSION["usuario"]["id_usuario"]);
-        header("Location: ../views/baro.php");
+        return true;
     }
 
     private function iniciarSesionCuenta($id_usuario)
