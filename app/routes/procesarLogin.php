@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $controladorCuenta = new CuentaController();
         $resultadoCuenta = $controladorCuenta->iniciarSesion($_SESSION["usuario"]["id_usuario"]);
         if ($resultadoCuenta) {
-            var_dump($_SESSION);
             if($_SESSION["usuario"]["isAdmin"]){
                  header("Location: ../views/admin.php");
                  exit();

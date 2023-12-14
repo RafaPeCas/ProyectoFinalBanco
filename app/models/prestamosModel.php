@@ -13,15 +13,17 @@ class PrestamosModel
     public function crearNuevoPrestamo($idCuenta, $cantidad, $mensualidad, $tiempo)
     {
         $fechaSolicitud = date("Y-m-d H:i:s");
+        $fechaObjeto = new DateTime($fechaSolicitud);
+        $fechaObjeto->add(new DateInterval("P{$tiempo}D"));
+        $fechaVencimiento = $fechaObjeto->format('Y-m-d H:i:s');
 
-        $query = "INSERT INTO prestamos (id_cuenta, Cantidad, fecha_solicitud, mensualidad, tiempo) VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO prestamos (id_cuenta, Cantidad, fecha_solicitud, fecha_vencimiento, mensualidad, tiempo) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->conexion->prepare($query);
 
-        $stmt->bind_param("isssi", $idCuenta, str_pad(dechex($cantidad*100), 2, '0', STR_PAD_LEFT), $fechaSolicitud, str_pad(dechex($mensualidad*100), 2, '0', STR_PAD_LEFT), $tiempo);
+        $stmt->bind_param("issssi", $idCuenta, $cantidad, $fechaSolicitud, $fechaVencimiento, $mensualidad , $tiempo);
 
-        $resultado = $stmt->execute();
+        $stmt->execute();
 
-        return $resultado;
+        return true;
     }
-   
 }

@@ -63,13 +63,13 @@ function exchangeCurrency(currency) {
     }
 }
 
-function favoritar(elemento) {
-    let amount = document.getElementById("amount");
-    fav = document.getElementById("currency").innerHTML
+// function favoritar(elemento) {
+//     let amount = document.getElementById("amount");
+//     fav = document.getElementById("currency").innerHTML
 
-    window.location.href = "../../public/prestamosController.php?fav="+fav+"&dineros="+amount;
+//     window.location.href = "../../public/prestamosController.php?fav="+fav+"&dineros="+amount;
 
-}
+// }
 
 function porDefecto() {
     exchangeCurrency(fav);

@@ -94,9 +94,9 @@ function ValidarTiempo(e) {
         return;
     }
 
-    if (campo.value > 30 || campo.value < 1) {
+    if (campo.value < 1) {
         campo.classList.add("error");
-        label.textContent = "Entre 1 y 30 días:";
+        label.textContent = "Al menos 1 día:";
         setTimeout(function () {
             label.classList.add("bote");
         }, 1);

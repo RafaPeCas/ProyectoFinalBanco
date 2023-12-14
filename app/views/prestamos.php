@@ -37,23 +37,24 @@ if (!$_SESSION['logueado']) {
   <section class="centrar">
     <section class="formPrestamoWrapper">
       <div class="saldoActual">
-      <?php
-      echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2></div>";
-      echo "<div class='hasta'><p>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p></div>";
-      ?>
-      <form action="../routes/procesarSolicitudPrestamo.php" name="prestamo" method="post">
-        <div class="form-item">
-          <label for="motivo" id="motivo">Motivo del Préstamo:</label>
-          <input type="text" id="motivo" name="motivo">
-        </div>
-        <div class="form-item">
-          <label for="cantidad" id="cantidad">Cantidad del Préstamo:</label>
-          <input type="double" id="cantidad" name="cantidad" min="1" step="1">
-        </div>
+        <?php
+        echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2></div>";
+        echo "<div id='cantidadMax' class='hasta'><p>Pide un préstamo de hasta " . number_format(floor(hexdec($_SESSION["cuenta"]["saldo"]) * 0.15) / 100, 2, '.', '.') . "€</p></div>";
+        ?>
+        <form action="../routes/procesarSolicitudPrestamo.php" name="prestamo" method="post">
+          <div class="form-item">
+            <label for="motivo" id="motivo">Motivo del Préstamo:</label>
+            <input type="text" id="motivo" name="motivo">
+          </div>
+          <div class="form-item">
+            <label for="cantidad" id="cantidad">Cantidad del Préstamo:</label>
+            <input type="double" id="cantidad" name="cantidad" min="1" step="1">
+          </div>
 
-        <input type="submit" value="Enviar Solicitud" class="btnEnviar">
-      </form>
+          <input type="submit" value="Enviar Solicitud" class="btnEnviar">
+        </form>
     </section>
+    
   </section>
 
 

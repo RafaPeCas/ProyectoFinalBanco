@@ -1,5 +1,5 @@
 <footer class="footer">
   <div class="wrapper">
-    <small class="copyright">Blubla blubla</small>
+    <small class="copyright">Bancoria</small>
   </div>
 </footer>

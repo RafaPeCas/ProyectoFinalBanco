@@ -58,6 +58,7 @@ if (!$_SESSION['logueado']) {
                         <img class="calendarIcon" src="../../public/images/date-icon.svg" alt="">
                         <div id="datetime"></div>
                     </section>
+                    <p>Tu IBAN es: <?php echo $_SESSION["cuenta"]["iban"] ?></p>
                 </section>
             </section>
 

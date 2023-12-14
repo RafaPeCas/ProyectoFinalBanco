@@ -17,7 +17,7 @@ class CuentaController
             $cuenta = $this->modelo->rescatarDatosCuenta($id_usuario);
 
             if ($cuenta) {
-                $this->iniciarSesionCuenta($cuenta);
+                $this->iniciarSesionCuenta($id_usuario);
                 return true;
             }
         } catch (Exception $e) {
@@ -29,9 +29,8 @@ class CuentaController
     {
         try {
             $registroCuentaExitoso = $this->modelo->registrarCuenta($id_usuario);
-            $cuenta = $this->modelo->rescatarDatosCuenta($id_usuario);
             if ($registroCuentaExitoso) {
-                $this->iniciarSesionCuenta($cuenta);
+                $this->iniciarSesionCuenta($id_usuario);
                 return true;
             } else {
 
@@ -45,8 +44,23 @@ class CuentaController
         }
     }
 
-    private function iniciarSesionCuenta($cuenta)
+    public function actualizarSaldo($idCuenta, $saldoARestar, $tipoMovimiento)
     {
+        if ($tipoMovimiento === "gasto") {
+            $saldoFinal = hexdec($_SESSION["cuenta"]["saldo"]) - $saldoARestar;
+        } else {
+            $saldoFinal = hexdec($_SESSION["cuenta"]["saldo"]) + $saldoARestar;
+        }
+        echo hexdec($_SESSION["cuenta"]["saldo"]);
+        $saldoFinal = dechex($saldoFinal);
+        $this->modelo->actualizarSaldo($idCuenta, $saldoFinal);
+        $this->iniciarSesionCuenta($_SESSION["usuario"]["id_usuario"]);
+        header("Location: ../views/baro.php");
+    }
+
+    private function iniciarSesionCuenta($id_usuario)
+    {
+        $cuenta = $this->modelo->rescatarDatosCuenta($id_usuario);
         $_SESSION['cuenta'] = $cuenta;
     }
 }

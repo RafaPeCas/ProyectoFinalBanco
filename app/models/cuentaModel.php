@@ -86,4 +86,12 @@ class CuentaModel
         return $cuenta;
     }
 
+    public function actualizarSaldo($idCuenta, $saldo){
+        $query = "UPDATE cuenta_bancaria SET saldo = ? WHERE id_cuenta = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("si", $saldo, $idCuenta);
+        $stmt->execute();
+        return true;
+    }
+
 }

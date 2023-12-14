@@ -24,7 +24,7 @@ CREATE TABLE cuenta_bancaria (
   id_cuenta INT PRIMARY KEY AUTO_INCREMENT,
   id_usuario INT,
   iban VARCHAR(24) NOT NULL,
-  saldo DECIMAL(10,2),
+  saldo varchar(100),
   favorito varchar(1) default "€"
 );
 
@@ -33,14 +33,14 @@ CREATE TABLE tarjetas (
   id_cuenta INT,
   num_tarjeta INT,
   fecha_cad DATE,
-  saldo INT,
+  saldo varchar(100),
   CVV VARCHAR(10)
 );
 
 CREATE TABLE prestamos (
   id_prestamo INT PRIMARY KEY AUTO_INCREMENT,
   id_cuenta INT,
-  Cantidad INT,
+  Cantidad varchar(100),
   fecha_solicitud DATETIME,
   mensualidad INT,
   tiempo INT
@@ -49,7 +49,7 @@ CREATE TABLE prestamos (
 CREATE TABLE peticion_prestamos (
   id_peticion INT PRIMARY KEY AUTO_INCREMENT,
   id_cuenta INT,
-  Cantidad DECIMAL(10,2),
+  Cantidad varchar(100),
   fecha_solicitud DATETIME,
   estado VARCHAR(30),
   motivo VARCHAR(50)
@@ -59,7 +59,7 @@ CREATE TABLE movimientos (
   id INT PRIMARY KEY AUTO_INCREMENT,
   id_cuenta INT,
   tipo_movimiento VARCHAR(50) NOT NULL,
-  monto DECIMAL(10,2) NOT NULL,
+  monto varchar(100) NOT NULL,
   fecha_hora TIMESTAMP NOT NULL
 );
 
@@ -115,4 +115,4 @@ INSERT INTO usuarios (nombre, apellidos, pass, DNI, email, fecha_nacimiento, dir
  ('admin','admin','admin','admin','admin@example.com','2000-01-01','Admin Address',12345,'Admin City','Admin Province','Admin Country','2000-01-01',true);
 
  INSERT INTO cuenta_bancaria (id_usuario, iban, saldo) VALUES
- ('1','ES12123412341234','10000');
+ ('1','ES12123412341234','756b679');
