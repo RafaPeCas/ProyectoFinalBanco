@@ -81,18 +81,17 @@ formularioPrestamo.addEventListener("submit", validar);
 let palabras = ["Solicitar préstamo", "Préstamos"];
 let i = 0;
 
-function cambiar(direccion) {
+function cambiar() {
+    formularioPagarPrestamo.classList.add("ocultar");
     let formulario = document.getElementById("formularioPrestamo");
     contenedorContenedorTabla.classList.toggle("ocultar");
     formulario.classList.toggle("ocultar");
     enunciadoPrestamos.innerHTML = palabras[i];
-
-    direccion ? i++ : i--;
+    solicitarPrestamoButton.innerHTML=palabras[i];
+    i++
 
     if (i >= palabras.length) {
         i = 0;
-    } else if (i < 0) {
-        i = palabras.length - 1;
     }
 }
 
@@ -103,14 +102,14 @@ let totalPagarPrestamo;
 function pagarPrestamo(id_prestamo, totalPagar, mensualidad) {
     formularioPagarPrestamo.classList.remove("ocultar");
     document.getElementById("id_prestamoForm").value = id_prestamo;
-    document.getElementById("totalPrestamo").value= totalPagar;
-    document.getElementById("cantidadPagoPrestamo").value=mensualidad/100;
-    totalPagarPrestamo=totalPagar;
-    totalPagar=totalPagar/100;
-    
+    document.getElementById("totalPrestamo").value = totalPagar;
+    document.getElementById("cantidadPagoPrestamo").value = mensualidad / 100;
+    totalPagarPrestamo = totalPagar;
+    totalPagar = totalPagar / 100;
+
     let resultado = totalPagar.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    document.getElementById("totalPagar").innerHTML=resultado;
-    document.getElementById("nPrestamo").innerHTML=id_prestamo;
+    document.getElementById("totalPagar").innerHTML = resultado;
+    document.getElementById("nPrestamo").innerHTML = id_prestamo;
 
 }
 
@@ -158,7 +157,7 @@ function ValidarCantidadP(e) {
 
 }
 
-function validarP(e){
+function validarP(e) {
     ValidarCantidadP(e);
 }
 

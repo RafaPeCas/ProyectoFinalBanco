@@ -27,9 +27,7 @@ if (!$_SESSION['logueado']) {
   ?>
   <main id='prestamosMain'>
     <div class='enunciado'>
-      <button onclick="cambiar(true)"></button>
       <h1 id='enunciadoPrestamos'>Préstamos</h1>
-      <button onclick="cambiar(false)"></button>
     </div>
     <?php
     echo "<p hidden id='dineroJS'>" . hexdec($_SESSION["cuenta"]["saldo"]) . "</p>";
@@ -63,9 +61,6 @@ if (!$_SESSION['logueado']) {
           echo "</tr></thead><tbody>";
 
           foreach ($resultado as $fila) {
-            if($fila["estado"]==="Pagado"){
-              echo "<tr class='pagado'>";
-            }
             echo "<tr>";
             echo "<td>" . $fila['id_prestamo'] . "</td>";
             echo "<td>" . $fila['id_cuenta'] . "</td>";
@@ -74,7 +69,12 @@ if (!$_SESSION['logueado']) {
             echo "<td>" . $fila['fecha_vencimiento'] . "</td>";
             echo "<td>" . number_format(hexdec($fila['mensualidad']) / 100, 2, '.', '.') . "€</td>";
             echo "<td>" . $fila['estado'] . "</td>";
-            echo "<td><button onclick='pagarPrestamo(" . $fila['id_prestamo'] . ", 0x" . $fila['Cantidad'] . ", 0x" . $fila['mensualidad'] . ")' name='aprobar'>Pagar</button></td>";
+
+            if ($fila['estado'] === "Pagado") {
+              echo "<td><button class='ocultar' onclick='pagarPrestamo(" . $fila['id_prestamo'] . ", 0x" . $fila['Cantidad'] . ", 0x" . $fila['mensualidad'] . ")' name='aprobar'>Pagar</button></td>";
+            } else {
+              echo "<td><button onclick='pagarPrestamo(" . $fila['id_prestamo'] . ", 0x" . $fila['Cantidad'] . ", 0x" . $fila['mensualidad'] . ")' name='aprobar'>Pagar</button></td>";
+            }
           }
 
           echo "</tbody></table>";
@@ -111,7 +111,7 @@ if (!$_SESSION['logueado']) {
           echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2></div>";
           echo "<p>Has seleccionado el prestamo <span id='nPrestamo'></span><br> El total adeudado es de <span id='totalPagar'></span>€</p>"
           ?>
-          
+
           <form action="../routes/procesarPagoPrestamo.php" name="pagoPrestamo" method="post">
             <div class="form-item">
               <label for="cantidad" id="cantidadPagoPrestamolbl">Cantidad a pagar:</label>
@@ -124,7 +124,9 @@ if (!$_SESSION['logueado']) {
           </form>
       </section>
     </section>
-
+    <section class="contenedorButton">
+      <button id="solicitarPrestamoButton" onclick="cambiar()">Solicitar Prestamo</button>
+    </section>
   </main>
 
 </body>

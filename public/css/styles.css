@@ -1046,6 +1046,129 @@ nav #mobile-menu-btn:hover {
   cursor: pointer;
   color: white;
 }
+#prestamosMain .enunciado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#prestamosMain .contenedorButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+#prestamosMain .contenedorButton button {
+  padding: 8px;
+  color: white;
+  border: none;
+  background-color: #0ba3c3;
+  border-radius: 5px 0 5px 0;
+  -webkit-box-shadow: 2px 2px 2px black;
+          box-shadow: 2px 2px 2px black;
+}
+#prestamosMain .contenedorButton button:hover {
+  background-color: #0fc9f2;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  #solicitarPrestamoButton {
+    width: 100%;
+    height: 50px;
+    position: relative;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+  #solicitarPrestamoButton {
+    width: 30%;
+    height: 50px;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #solicitarPrestamoButton {
+    width: 25%;
+    height: 50px;
+    bottom: 0;
+  }
+}
+.contenedorError {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contenedorError {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffcccc;
+  margin-bottom: 20px;
+}
+
+.sacarMeterBaroContainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.SacarBaro, .MeterBaro {
+  width: 48%;
+}
+
+form {
+  margin-top: 10px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+.ocultar {
+  display: none;
+}
 
 @font-face {
   font-family: "conquera-medium";

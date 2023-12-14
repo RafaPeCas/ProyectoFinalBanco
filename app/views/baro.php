@@ -20,7 +20,7 @@
     </header>
     <main>
 
-        <section>
+        <section class="contenedorError">
             <?php
             if (isset($_GET["error"])) {
                 echo "<h1 class='error'>Error al sacar dinero, no puedes sacar más dinero del que tienes</h1>";
@@ -37,7 +37,7 @@
                     <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="gasto" required>
 
                     <label for="monto">Monto:</label>
-                    <input type="text" id="monto" name="monto" required>
+                    <input type="double" id="monto" name="monto" required>
 
                     <input type="submit" value="Registrar Movimiento">
                 </form>
@@ -51,7 +51,7 @@
                     <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="ingreso" required>
 
                     <label for="monto">Monto:</label>
-                    <input type="text" id="monto" name="monto" required>
+                    <input type="double" id="monto" name="monto" required>
 
                     <input type="submit" value="Registrar Movimiento">
                 </form>
@@ -64,14 +64,16 @@
                 <button onclick="ingreso()">ingresos</button>
                 <button onclick="todo()">Todo</button>
             </section>
-            <section id="todoF"> <?php
-                                    include_once("../controllers/movimientosController.php");
+            <section id="todoF">
+                <section>
+                    <?php
+                    include_once("../controllers/movimientosController.php");
 
-                                    $controlador = new MovimientosController();
-                                    $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
+                    $controlador = new MovimientosController();
+                    $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
 
-                                    if (!empty($resultado)) {
-                                        echo "<table border='1'>
+                    if (!empty($resultado)) {
+                        echo "<table border='1'>
                         <tr>
                             <th>ID</th>
                             <th>Tipo de Movimiento</th>
@@ -79,39 +81,7 @@
                             <th>Fecha y Hora</th>
                         </tr>";
 
-                                        foreach ($resultado as $movimiento) {
-                                            echo "<tr>
-                            <td>" . $movimiento['id'] . "</td>
-                            <td>" . $movimiento['tipo_movimiento'] . "</td>
-                            <td>" . number_format(hexdec($movimiento['monto'])/100, 2, '.', '.') . "€</td>
-                            <td>" . $movimiento['fecha_hora'] . "</td>
-                          </tr>";
-                                        }
-
-                                        echo "</table>";
-                                    } else {
-                                        echo "<p>No se encontraron movimientos.</p>";
-                                    }
-
-                                    ?></section>
-            <section id="gastosF" class="ocultar">
-                <?php
-                include_once("../controllers/movimientosController.php");
-
-                $controlador = new MovimientosController();
-                $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
-
-                if (!empty($resultado)) {
-                    echo "<table border='1'>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tipo de Movimiento</th>
-                            <th>Monto</th>
-                            <th>Fecha y Hora</th>
-                        </tr>";
-
-                    foreach ($resultado as $movimiento) {
-                        if ($movimiento['tipo_movimiento'] === "gasto") {
+                        foreach ($resultado as $movimiento) {
                             echo "<tr>
                             <td>" . $movimiento['id'] . "</td>
                             <td>" . $movimiento['tipo_movimiento'] . "</td>
@@ -119,24 +89,23 @@
                             <td>" . $movimiento['fecha_hora'] . "</td>
                           </tr>";
                         }
+
+                        echo "</table>";
+                    } else {
+                        echo "<p>No se encontraron movimientos.</p>";
                     }
 
-                    echo "</table>";
-                } else {
-                    echo "<p>No se encontraron movimientos.</p>";
-                }
+                    ?>
+                </section>
+                <section id="gastosF" class="ocultar">
+                    <?php
+                    include_once("../controllers/movimientosController.php");
 
-                ?>
-            </section>
-            <section id="ingresosF" class="ocultar">
-                <?php
-                include_once("../controllers/movimientosController.php");
+                    $controlador = new MovimientosController();
+                    $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
 
-                $controlador = new MovimientosController();
-                $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
-
-                if (!empty($resultado)) {
-                    echo "<table border='1'>
+                    if (!empty($resultado)) {
+                        echo "<table border='1'>
                         <tr>
                             <th>ID</th>
                             <th>Tipo de Movimiento</th>
@@ -144,25 +113,59 @@
                             <th>Fecha y Hora</th>
                         </tr>";
 
-                    foreach ($resultado as $movimiento) {
-                        if ($movimiento['tipo_movimiento'] === "ingreso") {
-                            echo "<tr>
+                        foreach ($resultado as $movimiento) {
+                            if ($movimiento['tipo_movimiento'] === "gasto") {
+                                echo "<tr>
+                            <td>" . $movimiento['id'] . "</td>
+                            <td>" . $movimiento['tipo_movimiento'] . "</td>
+                            <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
+                            <td>" . $movimiento['fecha_hora'] . "</td>
+                          </tr>";
+                            }
+                        }
+
+                        echo "</table>";
+                    } else {
+                        echo "<p>No se encontraron movimientos.</p>";
+                    }
+
+                    ?>
+                </section>
+                <section id="ingresosF" class="ocultar">
+                    <?php
+                    include_once("../controllers/movimientosController.php");
+
+                    $controlador = new MovimientosController();
+                    $resultado = $controlador->mostrarMovimientos($_SESSION["cuenta"]["id_cuenta"]);
+
+                    if (!empty($resultado)) {
+                        echo "<table border='1'>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo de Movimiento</th>
+                            <th>Monto</th>
+                            <th>Fecha y Hora</th>
+                        </tr>";
+
+                        foreach ($resultado as $movimiento) {
+                            if ($movimiento['tipo_movimiento'] === "ingreso") {
+                                echo "<tr>
                             <td>" . $movimiento['id'] . "</td>
                             <td>" . $movimiento['tipo_movimiento'] . "</td>
                             <td>" . number_format(hexdec($movimiento['monto']), 2, '.', '.') . "€</td>
                             <td>" . $movimiento['fecha_hora'] . "</td>
                           </tr>";
+                            }
                         }
+
+                        echo "</table>";
+                    } else {
+                        echo "<p>No se encontraron movimientos.</p>";
                     }
+                    ?>
+                </section>
 
-                    echo "</table>";
-                } else {
-                    echo "<p>No se encontraron movimientos.</p>";
-                }
-                ?>
             </section>
-
-        </section>
 
     </main>
     <footer>

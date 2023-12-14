@@ -16,7 +16,7 @@ class MovimientosController
         $fechaMovimiento = date("Y-m-d H:i:s");
         if($monto > hexdec($_SESSION["cuenta"]["saldo"]) && $tipoMovimiento!="ingreso"){
             header("location: ../views/baro.php?error=true");
-            return false;
+            exit();            
         }
         $monto = str_pad(dechex($monto), 2, '0', STR_PAD_LEFT);
         $resultado = $this->modelo->crearNuevoMovimiento($idCuenta, $tipoMovimiento, $monto, $fechaMovimiento);
