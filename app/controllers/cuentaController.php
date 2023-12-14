@@ -51,7 +51,7 @@ class CuentaController
         } else {
             $saldoFinal = hexdec($_SESSION["cuenta"]["saldo"]) + $saldoARestar;
         }
-        echo hexdec($_SESSION["cuenta"]["saldo"]);
+
         $saldoFinal = dechex($saldoFinal);
         $this->modelo->actualizarSaldo($idCuenta, $saldoFinal);
         $this->iniciarSesionCuenta($_SESSION["usuario"]["id_usuario"]);

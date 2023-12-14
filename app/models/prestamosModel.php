@@ -49,4 +49,20 @@ class PrestamosModel
 
         return $prestamos;
     }
+
+    
+    public function actualizarPrestamo($cantidad, $id_prestamo){
+        $estado = "Pendiente";
+        if (hexdec($cantidad)<=0){
+            $estado="Pagado";
+        }
+
+        $query = "UPDATE prestamos SET Cantidad = ?, estado= ? WHERE id_prestamo = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("ssi",  $cantidad, $estado, $id_prestamo);
+        $stmt->execute();
+
+        echo"El prestamo ha sido actualizado";
+        return true;
+    }
 }

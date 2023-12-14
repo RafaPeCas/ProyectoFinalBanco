@@ -94,7 +94,7 @@
                     <form action="../routes/procesarAceptarSolicitud.php" name="prestamo" method="post">
                         <div class="form-item">
                             <label for="mensualidad" id="mensualidad">Mensualidad:</label>
-                            <input type="number" id="mensualidad" name="mensualidad">
+                            <input type="double" id="mensualidad" name="mensualidad">
                         </div>
                         <div class="form-item">
                             <label for="tiempo" id="tiempo">Tiempo (en dias):</label>

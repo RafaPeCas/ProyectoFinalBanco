@@ -26,7 +26,7 @@ if (!$_SESSION['logueado']) {
   echo "</header>";
   ?>
   <main id='prestamosMain'>
-    <div class='enunciado' style="display: flex; justify-content: space-between">
+    <div class='enunciado'>
       <button onclick="cambiar(true)"></button>
       <h1 id='enunciadoPrestamos'>Préstamos</h1>
       <button onclick="cambiar(false)"></button>
@@ -58,10 +58,14 @@ if (!$_SESSION['logueado']) {
                 <th>Fecha Solicitud</th>
                 <th>Fecha Vencimiento</th>
                 <th>Mensualidad</th>
+                <th>Estado</th>
                 <th></th>";
           echo "</tr></thead><tbody>";
 
           foreach ($resultado as $fila) {
+            if($fila["estado"]==="Pagado"){
+              echo "<tr class='pagado'>";
+            }
             echo "<tr>";
             echo "<td>" . $fila['id_prestamo'] . "</td>";
             echo "<td>" . $fila['id_cuenta'] . "</td>";
@@ -69,7 +73,8 @@ if (!$_SESSION['logueado']) {
             echo "<td>" . $fila['fecha_solicitud'] . "</td>";
             echo "<td>" . $fila['fecha_vencimiento'] . "</td>";
             echo "<td>" . number_format(hexdec($fila['mensualidad']) / 100, 2, '.', '.') . "€</td>";
-            echo "<td><button onclick='pagarPrestamo(" . $fila['id_prestamo'] . ")' name='aprobar'>Pagar</button></td>";
+            echo "<td>" . $fila['estado'] . "</td>";
+            echo "<td><button onclick='pagarPrestamo(" . $fila['id_prestamo'] . ", 0x" . $fila['Cantidad'] . ", 0x" . $fila['mensualidad'] . ")' name='aprobar'>Pagar</button></td>";
           }
 
           echo "</tbody></table>";
@@ -104,12 +109,15 @@ if (!$_SESSION['logueado']) {
         <div class="saldoActual">
           <?php
           echo "<h2> Saldo actual:" . number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') . "€</h2></div>";
+          echo "<p>Has seleccionado el prestamo <span id='nPrestamo'></span><br> El total adeudado es de <span id='totalPagar'></span>€</p>"
           ?>
           
-          <form action="../routes/procesarSolicitudPrestamo.php" name="prestamo" method="post">
+          <form action="../routes/procesarPagoPrestamo.php" name="pagoPrestamo" method="post">
             <div class="form-item">
-              <label for="cantidad" id="cantidad">Cantidad a pagar:</label>
-              <input type="double" id="cantidad" name="cantidad" min="1" step="1">
+              <label for="cantidad" id="cantidadPagoPrestamolbl">Cantidad a pagar:</label>
+              <input type="double" id="cantidadPagoPrestamo" name="cantidadPagoPrestamo" min="1" step="1">
+              <input hidden type="text" name="id_prestamoForm" id="id_prestamoForm" value="">
+              <input hidden type="text" name="totalPrestamo" id="totalPrestamo" value="">
             </div>
 
             <input type="submit" value="Enviar Solicitud" class="btnEnviar">

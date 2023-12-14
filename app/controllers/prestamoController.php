@@ -30,4 +30,8 @@ class PrestamoController
         $prestamos = $this->modelo->mostrarPrestamos($idCuenta);
         return $prestamos;
     }
+
+    public function actualizarPrestamo($cantidad, $id_prestamo){
+        $this->modelo->actualizarPrestamo($cantidad, $id_prestamo);
+    }
 }
