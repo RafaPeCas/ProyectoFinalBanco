@@ -94,6 +94,17 @@ class UsuarioModel
         return true;
     }
 
+    public function actualizarSesionUsuario($id_usuario){
+        $query = "SELECT * FROM usuarios WHERE id_usuario = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $usuario = $resultado->fetch_assoc();
+
+        $_SESSION['usuario'] = $usuario;
+    }
+
     // public function verificarCuenta($dni, $email)
     // //WIP
     // {

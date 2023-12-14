@@ -21,7 +21,7 @@
     <main>
         <h2>Modificar Usuario</h2>
         <?php
-        
+
         if (isset($_SESSION["usuario"]["passsigin"]))
             echo " Su contraseña por defecto es: " . $_SESSION["usuario"]["passsigin"] . " cambiela wey";
         ?>
@@ -62,9 +62,12 @@
         </form>
 
         <form action="../routes/procesarContraseña.php" method="post">
+            <h2>No te equivoques que luego no hay vuelta atrás</h2>
             <label for="pass">Contraseña:</label>
-            <input type="password" name="pass" required>
+            <input type="password" name="pass" id="passwordInput" required>
+            <button type="submit">Cambiar contraseña</button>
         </form>
+        <button type="button" id="mostrarContraseña" onmouseleave="ocultarContra()" onmouseover="mostrarContra()">Mostrar/Ocultar Contraseña</button>
     </main>
 
 </body>

@@ -50,3 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let prevScrollPos = window.scrollY;
     checkHeaderClass();
 });
+
+function mostrarContra() {
+    let passwordInput = document.getElementById("passwordInput");
+    passwordInput.type = "text";
+}
+
+function ocultarContra(){
+    let passwordInput = document.getElementById("passwordInput");
+    passwordInput.type = "password";
+}

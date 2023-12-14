@@ -59,7 +59,13 @@ class UsuarioController
 
     public function actualizarUsuario($datosUsuario){
         $this->modelo->actualizarUsuario($datosUsuario);
-        header("Location: ../../public/index.php");
+        $this->actualizarSesionUsuario();
+        header("Location: ../views/ajustes.php");
+    }
+
+    public function actualizarSesionUsuario(){
+        $id_usuario = $_SESSION["usuario"]["id_usuario"];
+        $this->modelo->actualizarSesionUsuario($id_usuario);
     }
     
     // public function recuperarPass($dni, $email){
