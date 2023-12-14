@@ -48,11 +48,13 @@ if (!$_SESSION['logueado']) {
         <article class="welcomeWrapper">
             <section id="welcome">
                 <div id="userPicture">
-                    <img src="../../public/images/mauroResized.jpeg" alt="">
+                    <?php
+                    echo "<img src=../../public/images/".$_SESSION["usuario"]["foto_perfil"]." alt='".$_SESSION["usuario"]["foto_perfil"]."'>";
+                    ?>
                 </div>
                 <section id="info">
                     <div id="saludito">
-                        <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"] . "  " . $_SESSION["usuario"]["passsigin"] ?> </h1>
+                        <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"]?> </h1>
                     </div>
                     <section class="saluditoTemporal">
                         <img class="calendarIcon" src="../../public/images/date-icon.svg" alt="">

@@ -78,6 +78,8 @@ if (!$_SESSION['logueado']) {
           }
 
           echo "</tbody></table>";
+        }else{
+          echo "<h1 class='registroVacio'>No has pedido ningún préstamo aún</h1>";
         }
         ?>
       </section>

@@ -68,7 +68,7 @@
                     echo "<td>" . $fila['motivo'] . "</td>";
 
                     if ($fila['estado'] === "pendiente") {
-                        echo "<td><button onclick='aceptar(" . $fila['id_peticion'] . ", " . hexdec($fila['Cantidad']) . ")' name='aprobar'>Aprobar</button></td>";
+                        echo "<td><button onclick='aceptar(" . $fila['id_peticion'] . ", " . hexdec($fila['Cantidad']) . "," . $fila['id_cuenta'] . ")' name='aprobar'>Aprobar</button></td>";
 
                         echo "<td><form method='post' action='../routes/procesarRechazarSolicitud.php'>";
                         echo "<input type='hidden' name='id_peticion' value='" . $fila['id_peticion'] . "'>";
@@ -101,6 +101,7 @@
                             <input type="number" id="tiempo" name="tiempo" >
                             <input type='hidden' name='id_peticion' id='id_peticion' value=''>
                             <input type='hidden' name='cantidad' id='cantidad' value=''>
+                            <input type='hidden' name='id_emisor' id='id_emisor' value=''>
                         </div>
 
                         <button class="boton" type="submit">Aprobar préstamo</button>

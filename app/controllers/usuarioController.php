@@ -51,6 +51,10 @@ class UsuarioController
         session_start();
         $_SESSION['usuario'] = $usuario;
         $_SESSION['logueado'] = true;
+
+        if(strlen($_SESSION['usuario']["passsigin"])>4){
+            unset($_SESSION['usuario']["passsigin"]);
+        }
     }
 
     // public function recuperarPass($dni, $email){

@@ -17,6 +17,7 @@ CREATE TABLE usuarios (
   provincia VARCHAR(50) NOT NULL,
   pais VARCHAR(50) NOT NULL,
   fecha_registro DATETIME NOT NULL,
+  foto_perfil VARCHAR(50) NOT NULL DEFAULT "defecto.png",
   isAdmin BOOLEAN DEFAULT false NOT NULL 
 );
 
@@ -42,8 +43,10 @@ CREATE TABLE prestamos (
   id_cuenta INT,
   Cantidad varchar(100),
   fecha_solicitud DATETIME,
-  mensualidad INT,
-  tiempo INT
+  fecha_vencimiento DATETIME,
+  mensualidad VARCHAR(100),
+  tiempo INT,
+  estado VARCHAR(20) DEFAULT "Pendiente"
 );
 
 CREATE TABLE peticion_prestamos (

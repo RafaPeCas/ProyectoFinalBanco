@@ -1,19 +1,27 @@
 "use strict"
 
-function todo(){
-    todoF.classList.remove("ocultar");
-    gastosF.classList.add("ocultar");
-    ingresosF.classList.add("ocultar");
-}
+function estilarBotonEstado() {
+    let estadoPediditaElement = document.getElementById("estadoPedidita");
 
-function ingreso(){
-    todoF.classList.add("ocultar");
-    gastosF.classList.add("ocultar");
-    ingresosF.classList.remove("ocultar");
-}
+    if (estadoPediditaElement) {
+        let estadoPedidita = estadoPediditaElement.innerHTML;
 
-function gasto(){
-    todoF.classList.add("ocultar");
-    gastosF.classList.remove("ocultar");
-    ingresosF.classList.add("ocultar");
+        botonAceptados.classList.remove("seleccionado");
+        botonPendientes.classList.remove("seleccionado");
+        botonRechazados.classList.remove("seleccionado");
+
+        switch (estadoPedidita) {
+            case "aceptada":
+                botonAceptados.classList.add("seleccionado");
+                break;
+            case "rechazada":
+                botonRechazados.classList.add("seleccionado");
+                break;
+            case "pendiente":
+                botonPendientes.classList.add("seleccionado");
+                break;
+            default:
+                break;
+        }
+    }
 }

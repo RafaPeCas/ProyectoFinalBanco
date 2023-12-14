@@ -1,10 +1,15 @@
 "use strict"
 
-function aceptar(id_peticion, cantidad) {
+function aceptar(id_peticion, cantidad, id_emisor) {
     aceptarPrestamo.classList.remove("ocultar");
+
+    let prueba = document.getElementById("cantidad");
+
     document.getElementById('id_peticion').value = id_peticion;
     document.getElementById('cantidad').value = cantidad;
-    validar();
+    document.getElementById('id_emisor').value= id_emisor;
+
+    validar;
 }
 
 estilarBotonEstado();
@@ -35,9 +40,6 @@ function estilarBotonEstado() {
     }
 }
 
-"use strict"
-
-"use strict"
 
 let formularioAceptarPrestamo = document.getElementsByName('prestamo')[0];
 
@@ -46,7 +48,7 @@ function ValidarMensualidad(e) {
     let label = document.getElementById("mensualidad");
     let cantidad =document.getElementById('cantidad').value;
 
-    label.textContent = "Motivo del Préstamo:"
+    label.textContent = "Mensualidad:"
     campo.classList.remove("error");
     campo.classList.remove("correct");
     label.classList.remove("bote");
@@ -62,6 +64,7 @@ function ValidarMensualidad(e) {
     }
 
     if (campo.value > cantidad/100 || campo.value < 1) {
+        console.log(cantidad);
         campo.classList.add("error");
         label.textContent = "Inserta una mensualidad ente 1€ y "+cantidad/100+"€";
         setTimeout(function () {

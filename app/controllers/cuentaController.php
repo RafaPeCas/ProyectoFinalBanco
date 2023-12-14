@@ -46,6 +46,7 @@ class CuentaController
 
     public function actualizarSaldo($idCuenta, $saldoARestar, $tipoMovimiento)
     {
+        $this->iniciarSesionCuentaUsuario($idCuenta);
         if ($tipoMovimiento === "gasto") {
             $saldoFinal = hexdec($_SESSION["cuenta"]["saldo"]) - $saldoARestar;
         } else {
@@ -54,13 +55,18 @@ class CuentaController
 
         $saldoFinal = dechex($saldoFinal);
         $this->modelo->actualizarSaldo($idCuenta, $saldoFinal);
-        $this->iniciarSesionCuenta($_SESSION["usuario"]["id_usuario"]);
+        $this->iniciarSesionCuentaUsuario($idCuenta);
         return true;
     }
 
     private function iniciarSesionCuenta($id_usuario)
     {
         $cuenta = $this->modelo->rescatarDatosCuenta($id_usuario);
+        $_SESSION['cuenta'] = $cuenta;
+    }
+
+    private function iniciarSesionCuentaUsuario($idCuenta){
+        $cuenta = $this->modelo->rescatarDatosCuentaUsuario($idCuenta);
         $_SESSION['cuenta'] = $cuenta;
     }
 }

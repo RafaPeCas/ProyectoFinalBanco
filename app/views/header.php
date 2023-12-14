@@ -5,6 +5,8 @@
     <li><a href="welcome.php">Inicio</a></li>
     <li><a href="prestamos.php">Préstamos</a></li>
     <li><a href="baro.php">Gestionar baro</a></li>
+    <li><a href="ajustes.php">Ajustes</a></li>
+    <li><a href="chat.php">Chat</a></li>
     <?php
     if ($_SESSION["usuario"]["isAdmin"]){
       echo "<li><a href='admin.php'>Vista de administrador</a></li>";

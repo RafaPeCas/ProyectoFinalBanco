@@ -1112,64 +1112,6 @@ nav #mobile-menu-btn:hover {
           flex-direction: column;
 }
 
-.contenedorError {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffcccc;
-  margin-bottom: 20px;
-}
-
-.sacarMeterBaroContainers {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.SacarBaro, .MeterBaro {
-  width: 48%;
-}
-
-form {
-  margin-top: 10px;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #333;
-  color: #fff;
-}
-
-.ocultar {
-  display: none;
-}
-
 @font-face {
   font-family: "conquera-medium";
   src: url(../fonts/Conquera-Medium.woff2);
