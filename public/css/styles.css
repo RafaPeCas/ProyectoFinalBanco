@@ -1245,7 +1245,38 @@ nav #mobile-menu-btn:hover {
           flex-direction: column;
 }
 
+.sacarMeterBaroContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 15px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#meterBaro #formAceptarWrapper {
+  margin: 15px 0;
+}
+
+#sacarBaro #formAceptarWrapper {
+  margin: 15px 0;
+}
+
 @media (max-width: 768px) {
+  .sacarMeterBaroContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
   #meterBaro {
     width: 100%;
   }
@@ -1283,6 +1314,18 @@ nav #mobile-menu-btn:hover {
   }
   #sacarBaro .SacarBaro form input {
     margin: 5px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1125px) {
+  .sacarMeterBaroContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 15px;
   }
 }
 #ajustes {

@@ -5,10 +5,33 @@
     flex-direction: column;
 }
 
+.sacarMeterBaroContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    justify-content: space-around;
+}
+
+#meterBaro{
+    #formAceptarWrapper{
+        margin: 15px 0;
+    }
+}
+#sacarBaro{
+    #formAceptarWrapper{
+        margin: 15px 0;
+    }
+}
+
 @media (max-width: 768px) {
+    .sacarMeterBaroContainer{
+        display: flex;
+        flex-direction: column;
+        
+        margin: 0;
+    }
     #meterBaro {
         width: 100%;
-        
         .MeterBaro{
             border-radius: 0px;
             padding-bottom: 20px;
@@ -36,4 +59,14 @@
             }
         }
     }
+}
+
+@media (min-width: 769px) and (max-width: 1125px) {
+    .sacarMeterBaroContainer{
+        display: flex;
+        flex-direction: column;
+        
+        margin: 15px;
+    }
+    
 }
