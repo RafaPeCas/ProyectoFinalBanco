@@ -1062,19 +1062,19 @@ nav #mobile-menu-btn:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 .contenedorButton button {
   padding: 8px;
   color: white;
   border: none;
-  background-color: #0ba3c3;
+  background-color: #015bc8;
   border-radius: 5px 0 5px 0;
   -webkit-box-shadow: 2px 2px 2px black;
           box-shadow: 2px 2px 2px black;
 }
 .contenedorButton button:hover {
-  background-color: #0fc9f2;
+  background-color: #014495;
   cursor: pointer;
 }
 

@@ -95,7 +95,7 @@
             </section>
 
             <section class="sacarMeterBaroContainer centrar">
-                <div class="" id="sacarBaro">
+                <div class="ocultar" id="sacarBaro">
                     <section class="SacarBaro" id="formAceptarWrapper">
                         <h1>Sacar dinero</h1>
 
@@ -110,14 +110,14 @@
                             <label for="monto">Monto:</label>
                             <input type="double" id="monto" name="monto" required>
 
-                            <input type="submit" value="Registrar Movimiento">
+                            <input type="submit" value="Retirar">
                         </form>
                     </section>
                 </div>
-                <div class="" id="meterBaro">
+                <div class="ocultar" id="meterBaro">
                     <section class="MeterBaro" id="formAceptarWrapper">
                         <h1>Ingresar dinero</h1>
-                        <p> Dinero disponible:
+                        <p> Dinero actual:
                             <?php
                             echo "" . hexdec($_SESSION["cuenta"]["saldo"]) / 100 . "€";
                             ?>
@@ -129,7 +129,7 @@
                             <label for="monto">Monto:</label>
                             <input type="double" id="monto" name="monto" required>
 
-                            <input type="submit" value="Registrar Movimiento">
+                            <input type="submit" value="Ingresar">
                         </form>
                     </section>
                 </div>

@@ -30,3 +30,27 @@ function estilarBotonEstado() {
         }
     }
 }
+
+function cambiar() {
+
+
+    if (solicitarPrestamoButton.classList.contains("sacar")) {
+        sacarBaro.classList.toggle("ocultar");
+        meterBaro.classList.toggle("ocultar");
+        solicitarPrestamoButton.classList.toggle("sacar")
+        solicitarPrestamoButton.classList.toggle("meter")
+        solicitarPrestamoButton.innerHTML="Ingresar dinero"
+    } else if (solicitarPrestamoButton.classList.contains("meter")) {
+        sacarBaro.classList.toggle("ocultar");
+        meterBaro.classList.toggle("ocultar");
+        solicitarPrestamoButton.classList.toggle("sacar")
+        solicitarPrestamoButton.classList.toggle("meter")
+        solicitarPrestamoButton.innerHTML="Sacar dinero"
+    } else {
+        meterBaro.classList.toggle("ocultar");
+        solicitarPrestamoButton.classList.toggle("sacar")
+        solicitarPrestamoButton.innerHTML="Sacar dinero"
+    }
+
+
+}
