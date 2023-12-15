@@ -1,24 +1,29 @@
 "use strict"
 
+estilarBotonEstado();
+
 function estilarBotonEstado() {
-    let estadoPediditaElement = document.getElementById("estadoPedidita");
+    let tabElement = document.getElementById("estadoTab");
 
-    if (estadoPediditaElement) {
-        let estadoPedidita = estadoPediditaElement.innerHTML;
+    if (tabElement) {
+        let tab = estadoTab.innerHTML;
+        todo.classList.remove("seleccionado");
+        gasto.classList.remove("seleccionado");
+        ingreso.classList.remove("seleccionado");
+        prestamo.classList.remove("seleccionado");
 
-        botonAceptados.classList.remove("seleccionado");
-        botonPendientes.classList.remove("seleccionado");
-        botonRechazados.classList.remove("seleccionado");
-
-        switch (estadoPedidita) {
-            case "aceptada":
-                botonAceptados.classList.add("seleccionado");
+        switch (tab) {
+            case "todo":
+                todo.classList.add("seleccionado");
                 break;
-            case "rechazada":
-                botonRechazados.classList.add("seleccionado");
+            case "gasto":
+                gasto.classList.add("seleccionado");
                 break;
-            case "pendiente":
-                botonPendientes.classList.add("seleccionado");
+            case "ingreso":
+                ingreso.classList.add("seleccionado");
+                break;
+            case "prestamo":
+                prestamo.classList.add("seleccionado");
                 break;
             default:
                 break;

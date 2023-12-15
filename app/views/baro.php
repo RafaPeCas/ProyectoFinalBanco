@@ -16,24 +16,29 @@
         <?php
         session_start();
         include_once("header.php");
+
+        $tab = "todo";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["tab"])) {
+            $tab = $_POST["tab"];
+            echo "<p hidden id='estadoTab'>" . $tab . "</p>";
+        }
         ?>
     </header>
     <main>
-
-
         <section>
-
             <section class="contenedorFormulario">
                 <h1>Registro de gastos e ingresos</h1>
                 <form method="post" id="formularioEstado">
-                    <button>Todo</button>
-                    <button>gastos</button>
-                    <button>ingresos</button>
-                    <button>pagos</button>
+                    <button type="submit" name="tab" class="seleccionado" value="todo" id="todo">Todo</button>
+                    <button type="submit" name="tab" class="" value="gasto" id="gasto">gastos</button>
+                    <button type="submit" name="tab" class="" value="ingreso" id="ingreso">ingresos</button>
+                    <button type="submit" name="tab" class="" value="prestamo" id="prestamo">prestamos</button>
                 </form>
             </section>
             <section id="contenedorTabla">
                 <?php
+
                 include_once("../controllers/movimientosController.php");
 
                 $controlador = new MovimientosController();
@@ -50,16 +55,37 @@
                     echo "</tr></thead><tbody>";
 
                     foreach ($resultado as $movimiento) {
-
-                        echo "<tr>
+                        if ($tab == "todo") {
+                            echo "<tr>
                             <td>" . $movimiento['id'] . "</td>
                             <td>" . $movimiento['tipo_movimiento'] . "</td>
                             <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
                             <td>" . $movimiento['fecha_hora'] . "</td>
-                          </tr>";
+                        </tr>";
+                        } else if ($movimiento['tipo_movimiento'] === $tab) {
+                            echo "<tr>
+                                    <td>" . $movimiento['id'] . "</td>
+                                    <td>" . $movimiento['tipo_movimiento'] . "</td>
+                                    <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
+                                    <td>" . $movimiento['fecha_hora'] . "</td>
+                                </tr>";
+                        } else if ($tab == "prestamo") {
+                                 if ($movimiento['tipo_movimiento'] === "Pago préstamo" || $movimiento['tipo_movimiento'] === "Ingreso préstamo") {
+                                     echo "<tr>
+                                             <td>" . $movimiento['id'] . "</td>
+                                             <td>" . $movimiento['tipo_movimiento'] . "</td>
+                                             <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
+                                             <td>" . $movimiento['fecha_hora'] . "</td>
+                                         </tr>";
+                             }
+                             
+                        }
+                        
                     }
-
                     echo "</tbody></table>";
+                }else {
+                    echo "<tr><td colspan='8'><h1 class='registroVacio'>No hay Registros disponibles</h1></td></tr>";
+
                 }
                 ?>
             </section>
