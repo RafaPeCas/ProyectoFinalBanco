@@ -35,9 +35,9 @@
         <article id="solicitudesPrestamo" class="">
             <section class="contenedorFormulario">
                 <div class="botonesTitulo">
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(-1)" class="izq">Datos prestamos</button>
                     <h1>Solicitudes de prestamo</h1>
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(1)" class="drc">Datos cuentas</button>
                 </div>
 
                 <form method="post" id="formularioEstado">
@@ -101,9 +101,9 @@
             ?>
             <section class="contenedorFormulario">
                 <div class="botonesTitulo">
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(-1)" class="izq">Solicitudes de prestamo</button>
                     <h1>Datos cuentas</h1>
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(1)" class="drc">Datos Usuarios</button>
                 </div>
             </section>
             <section id="contenedorTabla">
@@ -141,9 +141,9 @@
             ?>
             <section class="contenedorFormulario">
                 <div class="botonesTitulo">
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(-1)" class="izq">Datos cuentas</button>
                     <h1>Datos Usuarios</h1>
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(1)" class="drc">Datos prestamos</button>
                 </div>
             </section>
             <section id="contenedorTabla">
@@ -196,9 +196,9 @@
             ?>
             <section class="contenedorFormulario">
                 <div class="botonesTitulo">
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(-1)" class="izq">Datos Usuarios</button>
                     <h1>Datos prestamos</h1>
-                    <button onclick="cambiarTab()"></button>
+                    <button onclick="cambiarTab(1)" class="drc">Solicitudes de prestamo</button>
                 </div>
             </section>
             <section id="contenedorTabla">
@@ -259,8 +259,8 @@
                     </form>
                 </section>
             </div>
-
         </section>
+        <button onclick="cambiarTab(1)" class="cambiarTabButton">Cambiar vista</button>
     </main>
 </body>
 

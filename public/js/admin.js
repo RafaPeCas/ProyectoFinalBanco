@@ -116,13 +116,13 @@ function validar(e) {
 
 formularioAceptarPrestamo.addEventListener("submit", validar);
 
-var secciones = document.querySelectorAll('article');
-var indiceSeccionActual = 0;
+let secciones = document.querySelectorAll('article');
+let indiceSeccionActual = 0;
 
-function cambiarTab() {
+function cambiarTab(direccion) {
     secciones[indiceSeccionActual].classList.add('ocultar');
 
-    indiceSeccionActual = (indiceSeccionActual + 1) % secciones.length;
+    indiceSeccionActual = (indiceSeccionActual + direccion + secciones.length) % secciones.length;
 
     secciones[indiceSeccionActual].classList.remove('ocultar');
 }

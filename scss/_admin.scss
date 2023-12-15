@@ -34,7 +34,77 @@
     .seleccionado {
         background-color: $azul-claro3 !important;
     }
+    
+}
 
+.botonesTitulo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .drc {
+        background: rgb(1, 45, 98);
+        background: linear-gradient(90deg, rgba(1, 45, 98, 1) 0%, rgba(63, 212, 245, 1) 100%);
+    }
+    .izq {
+        background: rgb(63, 212, 245);
+        background: linear-gradient(90deg, rgba(63, 212, 245, 1) 0%, rgba(1, 45, 98, 1) 100%);
+    }
+
+    button {
+        cursor: pointer;
+        color: white;
+        box-shadow: none;
+        border: none;
+    }
+
+    @media only screen and (max-width: 659px) {
+        button {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 660px) and (max-width: 1099px) {
+        button {
+            width: 80px;
+        }
+    }
+
+
+    @media only screen and (min-width: 1100px) {
+        button {
+            width: 180px;
+        }
+    }
+
+}
+.cambiarTabButton {
+    display: none;
+}
+@media only screen and (max-width: 659px) {
+    .cambiarTabButton {
+        border: black solid 2px;
+        border: none;
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: $azul-oscuro2;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            background-color: $azul-oscuro3;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 13px; 
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3fd4f5; 
+    border-radius: 10px; 
 }
 
 #contenedorTabla {
@@ -43,6 +113,9 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    
 
     #tablaPeticiones {
         width: 100%;
@@ -73,17 +146,19 @@
                     border: none;
                     border-bottom: 1px solid $azul-claro3;
                     width: auto;
-                    button{
+
+                    button {
                         padding: 8px;
                         color: white;
                         border: none;
                         background-color: $azul-oscuro3;
                         border-radius: 5px 0 5px 0;
                         box-shadow: 2px 2px 2px black;
-                        &:hover{
+
+                        &:hover {
                             background-color: $azul-oscuro;
                             cursor: pointer;
-                           
+
                         }
                     }
                 }
@@ -126,7 +201,7 @@
         margin-right: 0%;
     }
 
-    input{
+    input {
         font-size: 1em;
         border-radius: 15px;
     }
@@ -145,7 +220,7 @@
 
 }
 
-.registroVacio{
+.registroVacio {
     background-color: $azul-claro3;
     text-align: center;
     width: 100%;
