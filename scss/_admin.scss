@@ -1,3 +1,4 @@
+
 #adminMain {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -81,6 +82,7 @@
 .cambiarTabButton {
     display: none;
 }
+
 @media only screen and (max-width: 659px) {
     .cambiarTabButton {
         border: black solid 2px;
@@ -92,32 +94,35 @@
         color: white;
         cursor: pointer;
         &:hover{
-            background-color: $azul-oscuro3;
+            background-color: $azul-oscuro2;
         }
     }
 }
 
 ::-webkit-scrollbar {
-    width: 13px; 
-
+    width: 10px; 
+    background: rgba(0, 0, 0, 0.265);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #3fd4f5; 
+    background-color: $azul-claro; 
     border-radius: 10px; 
 }
 
 #contenedorTabla {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
-    max-height: 500px;
-    overflow-y: scroll;
+    height: 100%;
+    max-height: 35vh;
+    overflow: auto;
     
 
     #tablaPeticiones {
+        height: 100%;
         width: 100%;
         border-collapse: collapse;
 
@@ -172,7 +177,7 @@
 
     @media (max-width: 768px) {
         width: 100%;
-        overflow-x: scroll;
+        overflow: auto;
     }
 }
 
