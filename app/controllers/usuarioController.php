@@ -67,6 +67,11 @@ class UsuarioController
         $id_usuario = $_SESSION["usuario"]["id_usuario"];
         $this->modelo->actualizarSesionUsuario($id_usuario);
     }
+
+    public function mostrarUsuarios(){
+        $usuarios = $this->modelo->mostrarUsuarios();
+        return $usuarios;
+    }
     
     // public function recuperarPass($dni, $email){
     //     //WIP

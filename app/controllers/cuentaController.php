@@ -65,8 +65,15 @@ class CuentaController
         $_SESSION['cuenta'] = $cuenta;
     }
 
-    private function iniciarSesionCuentaUsuario($idCuenta){
+    private function iniciarSesionCuentaUsuario($idCuenta)
+    {
         $cuenta = $this->modelo->rescatarDatosCuentaUsuario($idCuenta);
         $_SESSION['cuenta'] = $cuenta;
+    }
+
+    public function mostrarCuentas()
+    {
+        $resultado = $this->modelo->mostrarCuentas();
+        return $resultado;
     }
 }

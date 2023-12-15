@@ -105,6 +105,21 @@ class UsuarioModel
         $_SESSION['usuario'] = $usuario;
     }
 
+    public function mostrarUsuarios(){
+        $query = "SELECT * FROM usuarios";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $usuarios[] = $fila;
+            }
+        }
+        return $usuarios;
+        exit();
+    }
+
     // public function verificarCuenta($dni, $email)
     // //WIP
     // {

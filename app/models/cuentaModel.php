@@ -92,7 +92,7 @@ class CuentaModel
         $stmt->bind_param("i", $id_cuenta);
         $stmt->execute();
         $resultado = $stmt->get_result();
-        echo $id_cuenta;
+
         if ($resultado->num_rows > 0) {
             $cuenta = $resultado->fetch_assoc();
         }
@@ -106,6 +106,21 @@ class CuentaModel
         $stmt->bind_param("si", $saldo, $idCuenta);
         $stmt->execute();
         return true;
+    }
+
+    public function mostrarCuentas(){
+        $query = "SELECT * FROM cuenta_bancaria";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $cuentas[] = $fila;
+            }
+        }
+        return $cuentas;
+        exit();
     }
 
 }

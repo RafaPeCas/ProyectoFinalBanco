@@ -34,4 +34,9 @@ class PrestamoController
     public function actualizarPrestamo($cantidad, $id_prestamo){
         $this->modelo->actualizarPrestamo($cantidad, $id_prestamo);
     }
+
+    public function mostrarTodosPrestamos(){
+        $prestamos = $this->modelo->mostrarTodosPrestamos();
+        return $prestamos;
+    }
 }
