@@ -115,27 +115,26 @@
         justify-content: center;
     }
 
-    .contenedorButton {
-        display: flex;
-        justify-content: center;
-        margin-top: 25px;
-        button{
-            padding: 8px;
-            color: white;
-            border: none;
-            background-color: $azul-claro3;
-            border-radius: 5px 0 5px 0;
-            box-shadow: 2px 2px 2px black;
-            &:hover{
-                background-color: $azul-claro;
-                cursor: pointer;
-               
-            }
-        }
-    }
-
 }
 
+.contenedorButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    button{
+        padding: 8px;
+        color: white;
+        border: none;
+        background-color: $azul-claro3;
+        border-radius: 5px 0 5px 0;
+        box-shadow: 2px 2px 2px black;
+        &:hover{
+            background-color: $azul-claro;
+            cursor: pointer;
+           
+        }
+    }
+}
 
 @media only screen and (max-width: 600px) {
     #solicitarPrestamoButton {

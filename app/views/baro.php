@@ -136,7 +136,7 @@
             </section>
 
             <section class="contenedorButton">
-                <button id="solicitarPrestamoButton" onclick="cambiar()">Solicitar Prestamo</button>
+                <button id="solicitarPrestamoButton" onclick="cambiar()">Ingresar dinero</button>
             </section>
 
     </main>
