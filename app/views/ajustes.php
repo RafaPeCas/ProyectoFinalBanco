@@ -23,6 +23,19 @@
         if (isset($_SESSION["usuario"]["passsigin"]))
             echo "<p id='importante'> Su contraseña por defecto es: " . $_SESSION["usuario"]["passsigin"] . " cambiela wey</p>";
         ?>
+        <section class="cambiarContraWrapper">
+            <form action="../routes/procesarContraseña.php" method="post">
+                <h2>Modificar contraseña</h2>
+                <label for="pass">Contraseña:</label>
+                <div class="mostrarPass">
+                    <input type="password" name="pass" id="passwordInput" required>
+                    <button type="button" id="mostrarContr" onmouseleave="ocultarContra()" onmouseover="mostrarContra()">👁️</button>
+                </div>
+
+                <button type="submit">Cambiar contraseña</button>
+            </form>
+
+        </section>
         <section class="modificarUsuarioWrapper">
             <h2>Modificar Usuario</h2>
             <form action="../routes/procesarActualizacionUsuario.php" method="post">
@@ -64,19 +77,7 @@
             </form>
         </section>
 
-        <section class="cambiarContraWrapper">
-            <form action="../routes/procesarContraseña.php" method="post">
-                <h2>No te equivoques que luego no hay vuelta atrás</h2>
-                <label for="pass">Contraseña:</label>
-                <div class="mostrarPass">
-                    <input type="password" name="pass" id="passwordInput" required>
-                    <button type="button" id="mostrarContr" onmouseleave="ocultarContra()" onmouseover="mostrarContra()">👁️</button>
-                </div>
-                
-                <button type="submit">Cambiar contraseña</button>
-            </form>
-            
-        </section>
+
 
     </main>
 

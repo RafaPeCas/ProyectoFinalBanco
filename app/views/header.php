@@ -11,7 +11,7 @@
       echo "<li><a href='../../public/index.php'>Cerrar sesión</a></li>
       <li><a href='welcome.php'>Inicio</a></li>
       <li><a href='prestamos.php'>Préstamos</a></li>
-      <li><a href='baro.php'>Gestionar baro</a></li>
+      <li><a href='baro.php'>Gestionar dinero</a></li>
       <li><a href='ajustes.php'>Ajustes</a></li>
       <li><a href='chat.php'>Chat</a></li>";
     }

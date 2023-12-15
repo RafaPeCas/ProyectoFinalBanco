@@ -221,10 +221,10 @@
                         echo "<tr>";
                         echo "<td>" . $fila['id_prestamo'] . "</td>";
                         echo "<td>" . $fila['id_cuenta'] . "</td>";
-                        echo "<td>" . $fila['Cantidad'] . "</td>";
+                        echo "<td>" . number_format(hexdec($fila['Cantidad']) / 100, 2, '.', '.')  . "€</td>";
                         echo "<td>" . $fila['fecha_solicitud'] . "</td>";
                         echo "<td>" . $fila['fecha_vencimiento'] . "</td>";
-                        echo "<td>" . $fila['mensualidad'] . "</td>";
+                        echo "<td>" . number_format(hexdec($fila['mensualidad']) / 100, 2, '.', '.') . "€</td>";
                         echo "<td>" . $fila['tiempo'] . "</td>";
                         echo "<td>" . $fila['estado'] . "</td>";
                         echo "</tr>";

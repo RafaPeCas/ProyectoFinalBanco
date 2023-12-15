@@ -95,7 +95,7 @@
             </section>
 
             <section class="sacarMeterBaroContainer centrar">
-                <div class="ocultar" id="sacarBaro">
+                <div class="" id="sacarBaro">
                     <section class="SacarBaro" id="formAceptarWrapper">
                         <h1>Sacar dinero</h1>
 
@@ -114,7 +114,7 @@
                         </form>
                     </section>
                 </div>
-                <div class="ocultar" id="meterBaro">
+                <div class="" id="meterBaro">
                     <section class="MeterBaro" id="formAceptarWrapper">
                         <h1>Ingresar dinero</h1>
                         <p> Dinero actual:
@@ -135,9 +135,9 @@
                 </div>
             </section>
 
-            <section class="contenedorButton">
+            <!-- <section class="contenedorButton">
                 <button id="solicitarPrestamoButton" onclick="cambiar()">Ingresar dinero</button>
-            </section>
+            </section> -->
 
     </main>
     <footer>
