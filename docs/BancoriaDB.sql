@@ -66,18 +66,12 @@ CREATE TABLE movimientos (
   fecha_hora TIMESTAMP NOT NULL
 );
 
-CREATE TABLE chat (
-  id_chat INT PRIMARY KEY AUTO_INCREMENT,
-  nombre_chat VARCHAR(40)
-);
-
 CREATE TABLE mensaje_chat (
   id_mensaje INT PRIMARY KEY AUTO_INCREMENT,
-  id_chat INT,
   mensaje VARCHAR(500),
   fecha_envio DATETIME,
-  id_emisor INT,
-  id_receptor INT
+  id_usuario INT,
+  envio_admin BOOL
 );
 
 CREATE TABLE transferencia (
@@ -108,11 +102,8 @@ ALTER TABLE transferencia
   ADD FOREIGN KEY (id_cuenta_receptor) REFERENCES cuenta_bancaria(id_cuenta);
 
 ALTER TABLE mensaje_chat
-  ADD FOREIGN KEY (id_emisor) REFERENCES usuarios(id_usuario),
-  ADD FOREIGN KEY (id_receptor) REFERENCES usuarios(id_usuario);
+  ADD FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario);
 
-ALTER TABLE mensaje_chat
-  ADD FOREIGN KEY (id_chat) REFERENCES chat(id_chat);
   
 INSERT INTO usuarios (nombre, apellidos, pass, DNI, email, fecha_nacimiento, direccion, cp, ciudad, provincia, pais, fecha_registro, isAdmin) VALUES
  ('admin','admin','admin','admin','admin@example.com','2000-01-01','Admin Address',12345,'Admin City','Admin Province','Admin Country','2000-01-01',true);
