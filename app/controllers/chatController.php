@@ -18,7 +18,7 @@ class ChatController
 
     public function enviarMensaje($mensaje, $id_usuario, $envio_admin){
         $this->modelo->guardarMensaje($mensaje, $id_usuario, $envio_admin);
-        header ("Location: ../views/chat.php");
+        header ("Location: ../views/chat.php?chat=".$id_usuario);
     }
 
 }

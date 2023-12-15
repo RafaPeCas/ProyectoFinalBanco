@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="shortcut icon" href="../../public/images/Favicon.ico" type="image/x-icon">
     <script defer src="../../public/js/app.js"></script>
+    <script defer src="../../public/js/chat.js"></script>
 </head>
 
 <body>
@@ -18,11 +19,14 @@
         include_once("header.php");
         ?>
     </header>
-    <article id="datosUsuario" class="">
+    <article id="datosUsuario" class="ocultar">
         <?php
         include_once("../controllers/usuarioController.php");
         $controladorUsuarios = new UsuarioController();
         $resultadoUsuarios = $controladorUsuarios->mostrarUsuarios();
+        ?>
+        <?php
+        echo "<p hidden id='impresora'>" . $_SESSION["usuario"]["isAdmin"] . "</p>";
         ?>
         <section class="contenedorFormulario">
             <div class="botonesTitulo">
@@ -40,13 +44,7 @@
                         <th>Apellidos</th>
                         <th>DNI</th>
                         <th>Email</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>Dirección</th>
-                        <th>Cp</th>
-                        <th>Ciudad</th>
-                        <th>Provincia</th>
-                        <th>País</th>
-                        <th>Fecha de registro</th>";
+                        <th></th>";
                 echo "</tr></thead><tbody>";
 
                 foreach ($resultadoUsuarios as $fila) {
@@ -56,13 +54,9 @@
                     echo "<td>" . $fila['apellidos'] . "</td>";
                     echo "<td>" . $fila['DNI'] . "</td>";
                     echo "<td>" . $fila['email'] . "</td>";
-                    echo "<td>" . $fila['fecha_nacimiento'] . "</td>";
-                    echo "<td>" . $fila['direccion'] . "</td>";
-                    echo "<td>" . $fila['cp'] . "</td>";
-                    echo "<td>" . $fila['ciudad'] . "</td>";
-                    echo "<td>" . $fila['provincia'] . "</td>";
-                    echo "<td>" . $fila['pais'] . "</td>";
-                    echo "<td>" . $fila['fecha_registro'] . "</td>";
+                    echo "<td><form method='post'>
+                    <button type='submit' name='id_usuario' value='" . $fila['id_usuario'] . "'> comenzar chat </button>
+                    </form></td>";
                     echo "</tr>";
                 }
 
@@ -72,20 +66,39 @@
         </section>
     </article>
 
-    <div class="ventanaChat">
+    <div id="chatCompleto" class="ventanaChat ">
         <div class="chat">
             <div class="mensajes">
                 <?php
+                if ($_SERVER["REQUEST_METHOD"] == "GET"&& isset($_GET["chat"])) {
+                    $id_usuarioM = $_GET["chat"];
+                } else {
+                    $id_usuarioM = $_SESSION["usuario"]["id_usuario"];
+                }
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_usuario"])) {
+                    $id_usuarioM = $_POST["id_usuario"];
+                }
+                echo "<p hidden id='nevera'>$id_usuarioM</p>";
                 include_once("../controllers/chatController.php");
                 $controlador = new ChatController();
                 $mensajes = $controlador->mostrarMensajes();
                 if (isset($mensajes) && is_array($mensajes) && count($mensajes) > 0) {
 
                     foreach ($mensajes as $mensaje) {
-                        if ($mensaje["envio_admin"]) {
-                            echo "<p class='recibido'>" . $mensaje["mensaje"] . "</p>";
-                        } else {
-                            echo "<p class='enviado'>" . $mensaje["mensaje"] . "</p>";
+                        if ($id_usuarioM == $mensaje["id_usuario"]) {
+                            if ($mensaje["envio_admin"]) {
+                                if($_SESSION["usuario"]["isAdmin"]) {
+                                    echo "<p class='enviado'>" . $mensaje["mensaje"] . "</p>";
+                                } else {
+                                    echo "<p class='recibido'>" . $mensaje["mensaje"] . "</p>";
+                                }
+                            } else {
+                                if(!$_SESSION["usuario"]["isAdmin"]) {
+                                    echo "<p class='enviado'>" . $mensaje["mensaje"] . "</p>";
+                                } else {
+                                    echo "<p class='recibido'>" . $mensaje["mensaje"] . "</p>";
+                                }
+                            }
                         }
                     }
                 }
@@ -93,12 +106,20 @@
                 ?>
             </div>
 
-            <form action="php/enviarMensaje.php" id="gug" method="post" class="">
+            <form action="../routes/procesarEnvioMensaje.php" id="gug" method="post" class="">
                 <input type="text" class="teclado" name="mensaje" id="mensaje" required>
                 <input type="submit" value="enviar" class="g">
+                <input hidden type="text" id="formularioId" name="id_usuario" value="">
             </form>
+
+
         </div>
     </div>
 </body>
+<footer>
+    <?php
+    include_once("footer.php")
+    ?>
+</footer>
 
 </html>

@@ -60,3 +60,5 @@ function ocultarContra(){
     let passwordInput = document.getElementById("passwordInput");
     passwordInput.type = "password";
 }
+
+

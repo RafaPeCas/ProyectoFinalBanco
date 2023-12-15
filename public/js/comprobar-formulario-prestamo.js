@@ -55,7 +55,7 @@ function ValidarCantidad(e) {
         return;
     }
 
-    let cantidadMaxima = Math.floor((dineroJS.innerHTML * 0.15));
+    let cantidadMaxima = Math.floor((dineroJS.innerHTML / 0.15));
 
     if (campo.value > cantidadMaxima / 100 || campo.value < 1) {
         campo.classList.add("error");

@@ -1354,6 +1354,11 @@ nav #mobile-menu-btn:hover {
   width: 84%;
 }
 
+#chatCompleto {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
 .enviado {
   background-color: rgba(43, 142, 255, 0.527);
   -ms-flex-item-align: end;

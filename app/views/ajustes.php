@@ -19,10 +19,6 @@
         ?>
     </header>
     <main id="ajustes">
-        <?php
-        if (isset($_SESSION["usuario"]["passsigin"]))
-            echo "<p id='importante'> Su contraseña por defecto es: " . $_SESSION["usuario"]["passsigin"] . " cambiela wey</p>";
-        ?>
         <section class="cambiarContraWrapper">
             <form action="../routes/procesarContraseña.php" method="post">
                 <h2>Modificar contraseña</h2>
@@ -41,7 +37,7 @@
             <form action="../routes/procesarActualizacionUsuario.php" method="post">
 
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="<?php echo $_SESSION["usuario"]["nombre"] ?>" required>
+                <input  type="text" name="nombre" value="<?php echo $_SESSION["usuario"]["nombre"] ?>" required>
 
                 <label for="apellido1">Apellido1:</label>
                 <input type="text" name="apellido1" value="<?php echo strstr($_SESSION["usuario"]["apellidos"], ' ', true) ?>" required>
@@ -53,7 +49,7 @@
                 <input type="text" name="direccion" value="<?php echo $_SESSION["usuario"]["direccion"] ?>" required>
 
                 <label for="cp">Código Postal:</label>
-                <input type="text" name="cp" value="<?php echo $_SESSION["usuario"]["cp"] ?>" required>
+                <input minlength="4" maxlength="5" type="number" name="cp" value="<?php echo $_SESSION["usuario"]["cp"] ?>" required>
 
                 <label for="ciudad">Ciudad:</label>
                 <input type="text" name="ciudad" value="<?php echo $_SESSION["usuario"]["ciudad"] ?>" required>
