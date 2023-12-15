@@ -70,22 +70,19 @@
                                     <td>" . $movimiento['fecha_hora'] . "</td>
                                 </tr>";
                         } else if ($tab == "prestamo") {
-                                 if ($movimiento['tipo_movimiento'] === "Pago préstamo" || $movimiento['tipo_movimiento'] === "Ingreso préstamo") {
-                                     echo "<tr>
+                            if ($movimiento['tipo_movimiento'] === "Pago préstamo" || $movimiento['tipo_movimiento'] === "Ingreso préstamo") {
+                                echo "<tr>
                                              <td>" . $movimiento['id'] . "</td>
                                              <td>" . $movimiento['tipo_movimiento'] . "</td>
                                              <td>" . number_format(hexdec($movimiento['monto']) / 100, 2, '.', '.') . "€</td>
                                              <td>" . $movimiento['fecha_hora'] . "</td>
                                          </tr>";
-                             }
-                             
+                            }
                         }
-                        
                     }
                     echo "</tbody></table>";
-                }else {
+                } else {
                     echo "<tr><td colspan='8'><h1 class='registroVacio'>No hay Registros disponibles</h1></td></tr>";
-
                 }
                 ?>
             </section>
@@ -94,39 +91,54 @@
                 if (isset($_GET["error"])) {
                     echo "<h1 class='error'>Error al sacar dinero, no puedes sacar más dinero del que tienes</h1>";
                 }
-                echo hexdec($_SESSION["cuenta"]["saldo"]) / 100 . "€";
                 ?>
             </section>
 
-            <section class="sacarMeterBaroContainers">
-                <section class="SacarBaro">
-                    <h2>Formulario de gastos</h2>
+            <section class="sacarMeterBaroContainer centrar">
+                <div class="" id="sacarBaro">
+                    <section class="SacarBaro" id="formAceptarWrapper">
+                        <h1>Sacar dinero</h1>
 
-                    <form action="../routes/procesarNuevoMovimiento.php" method="post">
+                        <form action="../routes/procesarNuevoMovimiento.php" method="post">
+                            <p> Dinero disponible:
+                                <?php
+                                echo "" . hexdec($_SESSION["cuenta"]["saldo"]) / 100 . "€";
+                                ?>
+                            </p>
+                            <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="gasto" required>
 
-                        <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="gasto" required>
+                            <label for="monto">Monto:</label>
+                            <input type="double" id="monto" name="monto" required>
 
-                        <label for="monto">Monto:</label>
-                        <input type="double" id="monto" name="monto" required>
+                            <input type="submit" value="Registrar Movimiento">
+                        </form>
+                    </section>
+                </div>
+                <div class="" id="meterBaro">
+                    <section class="MeterBaro" id="formAceptarWrapper">
+                        <h1>Ingresar dinero</h1>
+                        <p> Dinero disponible:
+                            <?php
+                            echo "" . hexdec($_SESSION["cuenta"]["saldo"]) / 100 . "€";
+                            ?>
+                        </p>
+                        <form action="../routes/procesarNuevoMovimiento.php" method="post">
 
-                        <input type="submit" value="Registrar Movimiento">
-                    </form>
-                </section>
+                            <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="ingreso" required>
 
-                <section class="MeterBaro">
-                    <h2>Formulario de ingresos</h2>
+                            <label for="monto">Monto:</label>
+                            <input type="double" id="monto" name="monto" required>
 
-                    <form action="../routes/procesarNuevoMovimiento.php" method="post">
-
-                        <input hidden type="text" id="tipoMovimiento" name="tipoMovimiento" value="ingreso" required>
-
-                        <label for="monto">Monto:</label>
-                        <input type="double" id="monto" name="monto" required>
-
-                        <input type="submit" value="Registrar Movimiento">
-                    </form>
-                </section>
+                            <input type="submit" value="Registrar Movimiento">
+                        </form>
+                    </section>
+                </div>
             </section>
+
+            <section class="contenedorButton">
+                <button id="solicitarPrestamoButton" onclick="cambiar()">Solicitar Prestamo</button>
+            </section>
+
     </main>
     <footer>
         <?php include_once("footer.php") ?>
