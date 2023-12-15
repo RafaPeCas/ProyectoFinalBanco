@@ -49,12 +49,12 @@ if (!$_SESSION['logueado']) {
             <section id="welcome">
                 <div id="userPicture">
                     <?php
-                    echo "<img src=../../public/images/".$_SESSION["usuario"]["foto_perfil"]." alt='".$_SESSION["usuario"]["foto_perfil"]."'>";
+                    echo "<img src=../../public/images/" . $_SESSION["usuario"]["foto_perfil"] . " alt='" . $_SESSION["usuario"]["foto_perfil"] . "'>";
                     ?>
                 </div>
                 <section id="info">
                     <div id="saludito">
-                        <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"]?> </h1>
+                        <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"] ?> </h1>
                     </div>
                     <section class="saluditoTemporal">
                         <img class="calendarIcon" src="../../public/images/date-icon.svg" alt="">
@@ -63,6 +63,12 @@ if (!$_SESSION['logueado']) {
                     <p>Tu IBAN es: <?php echo $_SESSION["cuenta"]["iban"] ?></p>
                 </section>
             </section>
+
+            <?php
+                if (isset($_GET['registro'])) {
+                    echo "<a href='ajustes.php'><button id='importante'>Establece tu contraseña</button></a>";
+                } 
+            ?>
 
             <section id="userMoney">
                 <h2>Saldo: <span id="amountLbl"><?php echo number_format(hexdec($_SESSION["cuenta"]["saldo"]) / 100, 2, '.', '.') ?></span><span id="currency"> €</span></h2>
