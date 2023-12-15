@@ -32,9 +32,14 @@
     ?>
 
     <main id="adminMain">
-        <section class="solicitudesPrestamo ocultar">
+        <article id="solicitudesPrestamo" class="">
             <section class="contenedorFormulario">
-                <h1>Solicitudes de prestamo</h1>
+                <div class="botonesTitulo">
+                    <button onclick="cambiarTab()"></button>
+                    <h1>Solicitudes de prestamo</h1>
+                    <button onclick="cambiarTab()"></button>
+                </div>
+
                 <form method="post" id="formularioEstado">
                     <button type="submit" name="estadoSolicitud" class="" value="aceptada" id="botonAceptados">Aceptados</button>
                     <button type="submit" name="estadoSolicitud" class="seleccionado" value="pendiente" id="botonPendientes">Pendientes</button>
@@ -87,15 +92,19 @@
                 }
                 ?>
             </section>
-        </section>
-        <section class="datosCuenta ocultar">
+        </article>
+        <article id="datosCuenta" class="ocultar">
             <?php
             include_once("../controllers/cuentaController.php");
             $controladorCuentas = new CuentaController();
             $resultadoCuentas = $controladorCuentas->mostrarCuentas();
             ?>
             <section class="contenedorFormulario">
-                <h1>Datos cuentas</h1>
+                <div class="botonesTitulo">
+                    <button onclick="cambiarTab()"></button>
+                    <h1>Datos cuentas</h1>
+                    <button onclick="cambiarTab()"></button>
+                </div>
             </section>
             <section id="contenedorTabla">
                 <?php
@@ -123,15 +132,19 @@
                 }
                 ?>
             </section>
-        </section>
-        <section class="datosUsuario ocultar">
+        </article>
+        <article id="datosUsuario" class="ocultar">
             <?php
             include_once("../controllers/usuarioController.php");
             $controladorUsuarios = new UsuarioController();
             $resultadoUsuarios = $controladorUsuarios->mostrarUsuarios();
             ?>
             <section class="contenedorFormulario">
-                <h1>Datos cuentas</h1>
+                <div class="botonesTitulo">
+                    <button onclick="cambiarTab()"></button>
+                    <h1>Datos Usuarios</h1>
+                    <button onclick="cambiarTab()"></button>
+                </div>
             </section>
             <section id="contenedorTabla">
                 <?php
@@ -174,17 +187,19 @@
                 }
                 ?>
             </section>
-        </section>
-        <section class="datosPrestamos">
+        </article>
+        <article id="datosPrestamos" class="ocultar">
             <?php
             include_once("../controllers/prestamoController.php");
             $controladorPrestamos = new PrestamoController();
             $resultadoPrestamos = $controladorPrestamos->mostrarTodosPrestamos();
             ?>
             <section class="contenedorFormulario">
-                <button></button>
-                <h1>Datos prestamos</h1>
-                <button></button>
+                <div class="botonesTitulo">
+                    <button onclick="cambiarTab()"></button>
+                    <h1>Datos prestamos</h1>
+                    <button onclick="cambiarTab()"></button>
+                </div>
             </section>
             <section id="contenedorTabla">
                 <?php
@@ -221,7 +236,7 @@
                 }
                 ?>
             </section>
-        </section>
+        </article>
         <section class="ocultar" id="aceptarPrestamo">
             <div class="centrar">
                 <section id="formAceptarWrapper">

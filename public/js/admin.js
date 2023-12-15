@@ -7,7 +7,7 @@ function aceptar(id_peticion, cantidad, id_emisor) {
 
     document.getElementById('id_peticion').value = id_peticion;
     document.getElementById('cantidad').value = cantidad;
-    document.getElementById('id_emisor').value= id_emisor;
+    document.getElementById('id_emisor').value = id_emisor;
 
     validar;
 }
@@ -46,7 +46,7 @@ let formularioAceptarPrestamo = document.getElementsByName('prestamo')[0];
 function ValidarMensualidad(e) {
     let campo = formularioAceptarPrestamo.mensualidad;
     let label = document.getElementById("mensualidad");
-    let cantidad =document.getElementById('cantidad').value;
+    let cantidad = document.getElementById('cantidad').value;
 
     label.textContent = "Mensualidad:"
     campo.classList.remove("error");
@@ -63,10 +63,10 @@ function ValidarMensualidad(e) {
         return;
     }
 
-    if (campo.value > cantidad/100 || campo.value < 1) {
+    if (campo.value > cantidad / 100 || campo.value < 1) {
         console.log(cantidad);
         campo.classList.add("error");
-        label.textContent = "Inserta una mensualidad ente 1€ y "+cantidad/100+"€";
+        label.textContent = "Inserta una mensualidad ente 1€ y " + cantidad / 100 + "€";
         setTimeout(function () {
             label.classList.add("bote");
         }, 1);
@@ -115,3 +115,14 @@ function validar(e) {
 }
 
 formularioAceptarPrestamo.addEventListener("submit", validar);
+
+var secciones = document.querySelectorAll('article');
+var indiceSeccionActual = 0;
+
+function cambiarTab() {
+    secciones[indiceSeccionActual].classList.add('ocultar');
+
+    indiceSeccionActual = (indiceSeccionActual + 1) % secciones.length;
+
+    secciones[indiceSeccionActual].classList.remove('ocultar');
+}
