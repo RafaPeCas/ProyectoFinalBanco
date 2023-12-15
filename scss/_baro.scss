@@ -1,6 +1,39 @@
-.contenedorError{
+.contenedorError {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    #meterBaro {
+        width: 100%;
+        
+        .MeterBaro{
+            border-radius: 0px;
+            padding-bottom: 20px;
+            form{
+                display: flex;
+                flex-direction: column;
+                input{
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    #sacarBaro {
+        width: 100%;
+        
+        .SacarBaro{
+            border-radius: 0px;
+            padding-bottom: 20px;
+            form{
+                display: flex;
+                flex-direction: column;
+                input{
+                    margin: 5px;
+                }
+            }
+        }
+    }
 }

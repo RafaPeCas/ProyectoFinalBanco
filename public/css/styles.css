@@ -536,6 +536,30 @@ nav #mobile-menu-btn:hover {
   width: 100%;
 }
 
+@media only screen and (max-width: 659px) {
+  .login-form {
+    width: 100%;
+    font-size: 0.8em;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 0;
+  }
+  .login-form #formWrapper {
+    width: 90%;
+  }
+}
 .errorBg {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -662,8 +686,29 @@ nav #mobile-menu-btn:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgb(224, 224, 224);
+  background: rgb(11, 163, 195);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(11, 163, 195)), color-stop(25%, rgb(63, 212, 245)), color-stop(50%, rgb(15, 201, 242)), color-stop(75%, rgb(63, 212, 245)), to(rgb(11, 163, 195)));
+  background: linear-gradient(0deg, rgb(11, 163, 195) 0%, rgb(63, 212, 245) 25%, rgb(15, 201, 242) 50%, rgb(63, 212, 245) 75%, rgb(11, 163, 195) 100%);
   margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 100px;
+  -webkit-box-shadow: 15px 15px 15px black;
+          box-shadow: 15px 15px 15px black;
+}
+
+@media only screen and (max-width: 659px) {
+  .welcomeWrapper {
+    border-radius: 0;
+  }
+}
+#userPicture img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  margin-top: 15px;
+  -webkit-box-shadow: 15px 15px 15px black;
+          box-shadow: 15px 15px 15px black;
+  border: 3px black solid;
 }
 
 #welcome {
@@ -683,18 +728,13 @@ nav #mobile-menu-btn:hover {
   width: auto;
   height: 250px;
   overflow: hidden;
+  text-align: center;
+  font-weight: bold;
 }
 #welcome h1 {
-  font-family: "Arial", sans-serif;
-  font-size: 1.8em;
+  font-size: 1.2em;
   margin: 0;
   text-align: center;
-}
-#welcome #userPicture img {
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  padding: 112px 20px 112px 20px;
 }
 #welcome p {
   text-wrap: balance;
@@ -989,6 +1029,7 @@ nav #mobile-menu-btn:hover {
     width: 100%;
     margin-left: 0%;
     margin-right: 0%;
+    padding: 0;
   }
 }
 #formAceptarWrapper input {
@@ -1048,11 +1089,6 @@ nav #mobile-menu-btn:hover {
   font-size: 1.5em;
   padding: 5px;
 }
-@media (max-width: 600px) {
-  #prestamosMain .formPrestamoWrapper {
-    width: 350px;
-  }
-}
 @media (min-width: 601px) {
   #prestamosMain .formPrestamoWrapper {
     width: 500px;
@@ -1088,6 +1124,12 @@ nav #mobile-menu-btn:hover {
   text-align: center;
   width: 100%;
   border-bottom: 2px rgb(255, 255, 255) solid;
+}
+@media (max-width: 600px) {
+  #prestamosMain .formPrestamoWrapper {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 #prestamosMain form {
   padding: 50px 0px 50px 0px;
@@ -1203,6 +1245,46 @@ nav #mobile-menu-btn:hover {
           flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  #meterBaro {
+    width: 100%;
+  }
+  #meterBaro .MeterBaro {
+    border-radius: 0px;
+    padding-bottom: 20px;
+  }
+  #meterBaro .MeterBaro form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #meterBaro .MeterBaro form input {
+    margin: 5px;
+  }
+  #sacarBaro {
+    width: 100%;
+  }
+  #sacarBaro .SacarBaro {
+    border-radius: 0px;
+    padding-bottom: 20px;
+  }
+  #sacarBaro .SacarBaro form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #sacarBaro .SacarBaro form input {
+    margin: 5px;
+  }
+}
 #ajustes {
   display: -webkit-box;
   display: -ms-flexbox;

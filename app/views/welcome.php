@@ -46,12 +46,13 @@ if (!$_SESSION['logueado']) {
             ?>
         </p>
         <article class="welcomeWrapper">
+            <div id="userPicture">
+                <?php
+                echo "<img src=../../public/images/" . $_SESSION["usuario"]["foto_perfil"] . " alt='" . $_SESSION["usuario"]["foto_perfil"] . "'>";
+                ?>
+            </div>
             <section id="welcome">
-                <div id="userPicture">
-                    <?php
-                    echo "<img src=../../public/images/" . $_SESSION["usuario"]["foto_perfil"] . " alt='" . $_SESSION["usuario"]["foto_perfil"] . "'>";
-                    ?>
-                </div>
+
                 <section id="info">
                     <div id="saludito">
                         <h1>Bienvenido de nuevo <?php echo $_SESSION["usuario"]["nombre"] ?> </h1>
@@ -65,9 +66,9 @@ if (!$_SESSION['logueado']) {
             </section>
 
             <?php
-                if (isset($_GET['registro'])) {
-                    echo "<a href='ajustes.php'><button id='importante'>Establece tu contraseña</button></a>";
-                } 
+            if (isset($_GET['registro'])) {
+                echo "<a href='ajustes.php'><button id='importante'>Establece tu contraseña</button></a>";
+            }
             ?>
 
             <section id="userMoney">

@@ -43,7 +43,7 @@ if (isset($_SESSION['usuario'])) {
                     <input type="text" name="dniRegistro" id="dniRegistro" maxlength="9" class="form-style" placeholder="12345678X" />
                 </div>
                 <div class="form-item">
-                    <p class="formLabel" id="fNac">Fecha de nacimiento:</p>
+                    <p class="formLabel" id="fNac">Fecha nacimiento:</p>
                     <input type="date" name="fNac" id="fNac" class="form-style" />
                 </div>
             </div>
