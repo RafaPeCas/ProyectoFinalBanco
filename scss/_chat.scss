@@ -1,0 +1,59 @@
+.enviado {
+    background-color: rgba(43, 142, 255, 0.527);
+    align-self: flex-end;
+}
+
+.recibido {
+    background-color: rgba(128, 128, 128, 0.671);
+    align-self: flex-start;
+}
+
+.mensajes {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mensajes p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 8px;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.ventanaChat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 550px;
+}
+
+.teclado {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.g {
+    position: absolute;
+    height: 100%;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.mensajes {
+    height: 400px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+#gug{
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: end;
+
+}
