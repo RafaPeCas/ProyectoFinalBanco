@@ -35,8 +35,9 @@
         </section>
         <section id="contenedorTabla">
             <?php
-            if (isset($resultadoUsuarios) && is_array($resultadoUsuarios) && count($resultadoUsuarios) > 0) {
-                echo "<table id='tablaPeticiones'>
+            if ($_SESSION["usuario"]["isAdmin"]) {
+                if (isset($resultadoUsuarios) && is_array($resultadoUsuarios) && count($resultadoUsuarios) > 0) {
+                    echo "<table id='tablaPeticiones'>
                 <thead>
                     <tr>
                         <th>ID usuario</th>
@@ -45,23 +46,25 @@
                         <th>DNI</th>
                         <th>Email</th>
                         <th></th>";
-                echo "</tr></thead><tbody>";
+                    echo "</tr></thead><tbody>";
 
-                foreach ($resultadoUsuarios as $fila) {
-                    echo "<tr>";
-                    echo "<td>" . $fila['id_usuario'] . "</td>";
-                    echo "<td>" . $fila['nombre'] . "</td>";
-                    echo "<td>" . $fila['apellidos'] . "</td>";
-                    echo "<td>" . $fila['DNI'] . "</td>";
-                    echo "<td>" . $fila['email'] . "</td>";
-                    echo "<td><form method='post'>
+                    foreach ($resultadoUsuarios as $fila) {
+                        echo "<tr>";
+                        echo "<td>" . $fila['id_usuario'] . "</td>";
+                        echo "<td>" . $fila['nombre'] . "</td>";
+                        echo "<td>" . $fila['apellidos'] . "</td>";
+                        echo "<td>" . $fila['DNI'] . "</td>";
+                        echo "<td>" . $fila['email'] . "</td>";
+                        echo "<td><form method='post'>
                     <button type='submit' name='id_usuario' value='" . $fila['id_usuario'] . "'> comenzar chat </button>
                     </form></td>";
-                    echo "</tr>";
-                }
+                        echo "</tr>";
+                    }
 
-                echo "</tbody></table>";
+                    echo "</tbody></table>";
+                }
             }
+
             ?>
         </section>
     </article>
@@ -70,7 +73,7 @@
         <div class="chat">
             <div class="mensajes">
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "GET"&& isset($_GET["chat"])) {
+                if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["chat"])) {
                     $id_usuarioM = $_GET["chat"];
                 } else {
                     $id_usuarioM = $_SESSION["usuario"]["id_usuario"];
@@ -87,13 +90,13 @@
                     foreach ($mensajes as $mensaje) {
                         if ($id_usuarioM == $mensaje["id_usuario"]) {
                             if ($mensaje["envio_admin"]) {
-                                if($_SESSION["usuario"]["isAdmin"]) {
+                                if ($_SESSION["usuario"]["isAdmin"]) {
                                     echo "<p class='enviado'>" . $mensaje["mensaje"] . "</p>";
                                 } else {
                                     echo "<p class='recibido'>" . $mensaje["mensaje"] . "</p>";
                                 }
                             } else {
-                                if(!$_SESSION["usuario"]["isAdmin"]) {
+                                if (!$_SESSION["usuario"]["isAdmin"]) {
                                     echo "<p class='enviado'>" . $mensaje["mensaje"] . "</p>";
                                 } else {
                                     echo "<p class='recibido'>" . $mensaje["mensaje"] . "</p>";
