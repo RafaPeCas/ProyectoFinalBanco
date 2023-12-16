@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controllerCuenta = new CuentaController();
     $controllerPrestamos = new PrestamoController();
 
-    $controllerCuenta->actualizarSaldo($id_cuenta, $monto, "gasto");
     $controllerMovimientos->crearNuevoMovimiento($id_cuenta, "Pago préstamo", $monto);
     $totalPrestamo= dechex($totalPrestamo-$monto);
 
     $controllerPrestamos->actualizarPrestamo($totalPrestamo, $id_prestamo);
+    $controllerCuenta->actualizarSaldo($id_cuenta, $monto, "gasto");
     header("Location: ../views/prestamos.php");
 
 }
