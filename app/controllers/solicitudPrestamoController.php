@@ -15,7 +15,7 @@ class SolicitudPrestamoController
     {
         try {
             if(!$this->modelo->haySolicitudPendiente()) {
-                header("Location: ../views/prestamos.php?error=true");
+                header("Location: ../views/prestamos.php?acierto=false");
                 exit();
             }
             $datosPrestamo["cantidad"]=dechex($datosPrestamo["cantidad"]*100);

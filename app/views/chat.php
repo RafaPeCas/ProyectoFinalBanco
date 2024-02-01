@@ -72,9 +72,9 @@
             </section>
         </article>
 
-        <div id="chatCompleto" class="ventanaChat ">
+        <div id="chatContainer" class="ventanaChat">
             <div class="chat">
-                <div class="mensajes">
+                <div class="msgContainer">
                     <?php
                     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["chat"])) {
                         $id_usuarioM = $_GET["chat"];
@@ -112,9 +112,12 @@
                     ?>
                 </div>
 
-                <form action="../routes/procesarEnvioMensaje.php" id="gug" method="post" class="">
-                    <input type="text" class="teclado" name="mensaje" id="mensaje" required>
-                    <input type="submit" value="enviar" class="g">
+                <form action="../routes/procesarEnvioMensaje.php" method="post">
+                    <div class="chatControls">
+                        <input type="text" class="keyboard" name="mensaje" id="mensaje" required>
+                        <input type="submit" value="enviar" class="sendButton">
+                    </div>
+
                     <input hidden type="text" id="formularioId" name="id_usuario" value="">
                 </form>
             </div>

@@ -32,12 +32,17 @@ if (!$_SESSION['logueado']) {
     <?php
     echo "<p hidden id='dineroJS'>" . hexdec($_SESSION["cuenta"]["saldo"]) . "</p>";
 
-    if (isset($_GET["error"])) {
-      echo "<h1 class='error'>ERROR AL PEDIR EL PRESTAMO, ya hay una solicitud pendiente</h1>";
-    }
+
     if (isset($_GET["acierto"])) {
-      echo "<h1 class='correct'>Prestamo solicitado correctamente, esperando la confirmación de un administrador</h1>";
+      if (!$_GET["acierto"]) {
+        echo "<h1 class='error'>ERROR AL PEDIR EL PRESTAMO, ya hay una solicitud pendiente</h1>";
+      }else{
+        echo "<h1 class='correct'>Prestamo solicitado correctamente, esperando la confirmación de un administrador</h1>";
+      }
     }
+
+
+    
     ?>
     <section id="contenedorContenedorTabla">
       <section id="contenedorTabla">
@@ -78,8 +83,8 @@ if (!$_SESSION['logueado']) {
           }
 
           echo "</tbody></table>";
-        }else{
-          echo "<h1 class='registroVacio'>No has pedido ningún préstamo aún</h1>";
+        }else if(!isset($_GET["acierto"])){
+          echo "<h1 class='registroVacio'>Ningún préstamos disponible</h1>";
         }
         ?>
       </section>
